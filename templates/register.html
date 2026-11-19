@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}注册 - Text RPG{% endblock %}
+
+{% block content %}
+<div class="auth-card">
+  <h1 class="title">創建新账号</h1>
+  <p class="subtitle">Create New Account</p>
+
+  <form method="post" class="auth-form">
+    <label>用户名 / Username</label>
+    <input type="text" name="username" required autofocus minlength="2" maxlength="20" placeholder="2~20 字符">
+
+    <label>密碼 / Password</label>
+    <input type="password" name="password" required minlength="3" placeholder="至少 3 位">
+
+    <label>確認密碼 / Confirm</label>
+    <input type="password" name="confirm" required placeholder="再次输入密碼">
+
+    <button type="submit" class="btn btn-primary">注册 Register</button>
+  </form>
+
+  <p class="auth-footer">
+    已有账号？ <a href="{{ url_for('login') }}">返回登入</a>
+  </p>
+</div>
+{% endblock %}

@@ -1,0 +1,1 @@
+test 123 100000 1 0 100 120 120 iron_sword iron_armor None None adamantite_axe iron_armor 5 2 zh 0 1 None None None

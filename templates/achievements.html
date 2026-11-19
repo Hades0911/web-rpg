@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Achievements' if ui_lang=='en' else '成就' }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回' }}</a>
+  <h1 style="margin:0;font-size:1.1rem;">🏆 {{ 'Achievements' if ui_lang=='en' else '成就' }}</h1>
+  <span>{{ unlocked|length }}/{{ all_achievements|length }}</span>
+</header>
+
+<section class="status-panel">
+  <div class="stat-grid">
+    <div class="stat-item">{{ 'Login Streak' if ui_lang=='en' else '連續登入' }}<br><strong>{{ streak }} {{ 'days' if ui_lang=='en' else '天' }}</strong></div>
+    <div class="stat-item">{{ 'Unlocked' if ui_lang=='en' else '已解鎖' }}<br><strong>{{ unlocked|length }}</strong></div>
+  </div>
+</section>
+
+<section class="inventory-section">
+  <h2>🏆 {{ 'All Achievements' if ui_lang=='en' else '所有成就' }}</h2>
+  <div class="item-list" style="display:grid;">
+    {% for ach in all_achievements %}
+    <div class="item-card" style="{% if ach.id in unlocked_ids %}border-color:#4caf50;background:#1a2a1a{% else %}opacity:0.5{% endif %}">
+      <div class="item-name">
+        {% if ach.id in unlocked_ids %}✅{% else %}🔒{% endif %}
+        {{ ach.name }}
+      </div>
+      <div class="item-stat">{{ ach.desc }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Social' if ui_lang=='en' else '社交' }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回' }}</a>
+  <h1 style="margin:0;font-size:1.1rem;">👥 {{ 'Social' if ui_lang=='en' else '社交' }}</h1>
+</header>
+
+<section class="status-panel">
+  <h3>💬 {{ 'Chat' if ui_lang=='en' else '聊天' }}</h3>
+  <div id="chat-box" style="height:200px;overflow-y:auto;background:#111;padding:10px;border-radius:8px;margin:10px 0;">
+    {% for msg in messages %}
+    <div><strong>{{ msg.user }}</strong>: {{ msg.msg }} <span style="color:#666;font-size:0.8rem">{{ msg.time }}</span></div>
+    {% endfor %}
+  </div>
+  <form id="chat-form" style="display:flex;gap:8px;">
+    <input type="text" id="chat-input" placeholder="{{ 'Say something...' if ui_lang=='en' else '說點什麼...' }}" style="flex:1;padding:8px;border-radius:6px;border:1px solid #333;background:#1a1a1a;color:#fff;">
+    <button type="submit" class="btn btn-primary">{{ 'Send' if ui_lang=='en' else '發送' }}</button>
+  </form>
+</section>
+
+<section class="status-panel">
+  <h3>👫 {{ 'Friends' if ui_lang=='en' else '好友' }} ({{ friends|length }})</h3>
+  <div class="item-list" style="display:grid;margin:10px 0;">
+    {% for f in friends %}
+    <div class="item-card">
+      <div class="item-name">{{ f }}</div>
+      <button class="btn btn-sm btn-outline gift-btn" data-user="{{ f }}">🎁 {{ 'Gift' if ui_lang=='en' else '送禮' }}</button>
+    </div>
+    {% else %}
+    <p style="color:#666">{{ 'No friends yet' if ui_lang=='en' else '還沒有好友' }}</p>
+    {% endfor %}
+  </div>
+  <form id="add-friend-form" style="display:flex;gap:8px;">
+    <input type="text" id="friend-input" placeholder="{{ 'Username' if ui_lang=='en' else '用戶名' }}" style="flex:1;padding:8px;border-radius:6px;border:1px solid #333;background:#1a1a1a;color:#fff;">
+    <button type="submit" class="btn btn-primary">{{ 'Add' if ui_lang=='en' else '添加' }}</button>
+  </form>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('chat-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const input = document.getElementById('chat-input');
+  if (!input.value.trim()) return;
+  await fetch('/api/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({msg: input.value})});
+  input.value = '';
+  location.reload();
+};
+document.getElementById('add-friend-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const input = document.getElementById('friend-input');
+  const res = await fetch('/api/friend', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({friend: input.value})});
+  const data = await res.json();
+  alert(data.ok ? '已添加' : (data.error || '失敗'));
+  if (data.ok) location.reload();
+};
+document.querySelectorAll('.gift-btn').forEach(btn => {
+  btn.onclick = async () => {
+    const gold = prompt('送多少金幣？', '1000');
+    if (!gold) return;
+    const res = await fetch('/api/gift', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({to: btn.dataset.user, gold: parseInt(gold)})});
+    const data = await res.json();
+    alert(data.ok ? '已送出 ' + data.sent + ' 金幣' : (data.error || '失敗'));
+    if (data.ok) location.reload();
+  };
+});
+</script>
+{% endblock %}

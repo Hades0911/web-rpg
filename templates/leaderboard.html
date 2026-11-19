@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Leaderboard' if ui_lang=='en' else '排行榜' }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回' }}</a>
+  <h1 style="margin:0;font-size:1.15rem;">🏆 {{ 'Leaderboard' if ui_lang=='en' else '排行榜' }}</h1>
+</header>
+
+<div style="display:flex;gap:8px;margin:15px 0;flex-wrap:wrap;">
+  <a href="?cat=power" class="btn btn-sm {% if category=='power' %}btn-primary{% else %}btn-outline{% endif %}">{{ 'Power' if ui_lang=='en' else '戰力' }}</a>
+  <a href="?cat=gold" class="btn btn-sm {% if category=='gold' %}btn-primary{% else %}btn-outline{% endif %}">{{ 'Gold' if ui_lang=='en' else '金幣' }}</a>
+  <a href="?cat=floor" class="btn btn-sm {% if category=='floor' %}btn-primary{% else %}btn-outline{% endif %}">{{ 'Floor' if ui_lang=='en' else '深淵層' }}</a>
+  <a href="?cat=level" class="btn btn-sm {% if category=='level' %}btn-primary{% else %}btn-outline{% endif %}">{{ 'Level' if ui_lang=='en' else '等級' }}</a>
+  <a href="?cat=tokens" class="btn btn-sm {% if category=='tokens' %}btn-primary{% else %}btn-outline{% endif %}">{{ 'Tokens' if ui_lang=='en' else '代幣' }}</a>
+</div>
+
+{% if entries|length > 0 %}
+<div style="display:flex;justify-content:center;align-items:flex-end;gap:15px;padding:20px;background:var(--panel);border-radius:12px;margin-bottom:20px;">
+  {% if entries|length > 1 %}
+  <div style="text-align:center;">
+    <div style="font-size:0.85rem;margin-bottom:5px;">🥈 <a href="/player/{{ entries[1].username }}" style="color:inherit;">{{ entries[1].username }}</a></div>
+    <div style="width:60px;height:50px;background:#6b7280;border-radius:6px 6px 0 0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;">2</div>
+  </div>
+  {% endif %}
+  <div style="text-align:center;">
+    <div style="font-size:0.85rem;margin-bottom:5px;color:#eab308;">🥇 <a href="/player/{{ entries[0].username }}" style="color:#eab308;">{{ entries[0].username }}</a></div>
+    <div style="width:80px;height:80px;background:linear-gradient(to top,#ca8a04,#eab308);border-radius:6px 6px 0 0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;font-size:1.2rem;">1</div>
+  </div>
+  {% if entries|length > 2 %}
+  <div style="text-align:center;">
+    <div style="font-size:0.85rem;margin-bottom:5px;">🥉 <a href="/player/{{ entries[2].username }}" style="color:inherit;">{{ entries[2].username }}</a></div>
+    <div style="width:60px;height:35px;background:#b45309;border-radius:6px 6px 0 0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;">3</div>
+  </div>
+  {% endif %}
+</div>
+{% endif %}
+
+<section class="status-panel">
+  <table style="width:100%;border-collapse:collapse;">
+    <thead>
+      <tr style="border-bottom:1px solid var(--border);">
+        <th style="text-align:left;padding:8px;">#</th>
+        <th style="text-align:left;padding:8px;">{{ 'Player' if ui_lang=='en' else '玩家' }}</th>
+        <th style="text-align:right;padding:8px;">
+          {% if category=='power' %}{{ 'Power' if ui_lang=='en' else '戰力' }}
+          {% elif category=='gold' %}{{ 'Gold' if ui_lang=='en' else '金幣' }}
+          {% elif category=='floor' %}{{ 'Floor' if ui_lang=='en' else '深淵層' }}
+          {% elif category=='level' %}{{ 'Level' if ui_lang=='en' else '等級' }}
+          {% else %}{{ 'Tokens' if ui_lang=='en' else '代幣' }}{% endif %}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for e in entries %}
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:8px;">{{ loop.index }}</td>
+        <td style="padding:8px;"><a href="/player/{{ e.username }}" style="color:var(--accent);">{{ e.username }}</a></td>
+        <td style="text-align:right;padding:8px;">
+          {% if category=='power' %}{{ e.combat_power }}
+          {% elif category=='gold' %}{{ e.gold }}
+          {% elif category=='floor' %}{{ e.abyss_floor }}
+          {% elif category=='level' %}{{ e.level }}
+          {% else %}{{ e.abyss_tokens }}{% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Power Shrine' if ui_lang=='en' else '超能力神殿' }}{% endblock %}
+
+{% block content %}
+<div id="roll-anim" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:9999;text-align:center;padding-top:15%;">
+  <div id="roll-phase" style="font-size:0.9rem;color:#888;margin-bottom:10px;">{{ 'Wishing...' if ui_lang=='en' else '祈願中...' }}</div>
+  <div id="roll-circle" style="width:150px;height:150px;margin:0 auto;border-radius:50%;background:radial-gradient(circle,#333,#111);border:3px solid #444;display:flex;align-items:center;justify-content:center;font-size:2rem;">
+    <span id="roll-icon" style="font-size:2.5rem;font-weight:bold;">✨</span>
+  </div>
+  <p id="roll-text" style="margin-top:15px;font-size:1.2rem;">{{ 'Summoning' if ui_lang=='en' else '召喚中' }}</p>
+  <div id="roll-result" style="display:none;margin-top:15px;font-size:1rem;max-height:50vh;overflow-y:auto;"></div>
+  <button id="roll-close" class="btn btn-outline" style="display:none;position:absolute;top:20px;right:20px;padding:8px 20px;" onclick="document.getElementById('roll-anim').style.display='none'">{{ '✕ Close' if ui_lang=='en' else '✕ 關閉' }}</button>
+</div>
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回' }}</a>
+  <h1 style="margin:0;font-size:1.1rem;">🔮 {{ 'Power Shrine' if ui_lang=='en' else '超能力神殿' }}</h1>
+</header>
+
+<section class="status-panel">
+  <div class="stat-grid">
+    <div class="stat-item">{{ 'Equipped' if ui_lang=='en' else '已裝備' }}<br><strong>{{ get_display_name(status.equipped_power, ui_lang) }}</strong></div>
+    <div class="stat-item">{{ 'Owned' if ui_lang=='en' else '擁有' }}<br><strong>{{ powers|length }}</strong></div>
+    <div class="stat-item">{{ 'Gold' if ui_lang=='en' else '金幣' }}<br><strong id="gold-display">{{ "{:,}".format(status.gold) }}</strong></div>
+  </div>
+</section>
+
+<section class="battle-controls">
+  <h2>{{ 'Pull Power' if ui_lang=='en' else '抽取超能力' }}</h2>
+  <p class="hint">{{ 'Single 20,000 · Ten 180,000 (duplicates refund gold)' if ui_lang=='en' else '單抽 20,000 · 十連 180,000（重複返還金幣）' }}</p>
+  <div class="btn-row">
+    <button class="btn btn-primary" id="pull-1">{{ 'Single' if ui_lang=='en' else '單抽' }}</button>
+    <button class="btn btn-primary" id="pull-10">{{ 'Ten' if ui_lang=='en' else '十連抽' }}</button>
+  </div>
+</section>
+
+<section class="battle-result" id="result-panel" style="display:none;">
+  <h3>{{ 'Result' if ui_lang=='en' else '抽取结果' }}</h3>
+  <div id="result-content" class="battle-log"></div>
+</section>
+
+<section class="inventory-section">
+  <h2>{{ 'Owned Powers' if ui_lang=='en' else '已擁有超能力' }}</h2>
+  <p class="hint">{{ 'Hover for description' if ui_lang=='en' else '滑鼠移上看說明' }}</p>
+  <div class="item-list">
+    {% for p in powers %}
+    <div class="item-card {% if p.name == status.equipped_power %}equipped{% endif %}"
+         title="{{ (p.desc_en if ui_lang=='en' else p.desc_zh) or p.desc_en or '' }}">
+      <div class="item-name">
+        <span class="tier tier-{{ p.grade|upper if p.grade|upper in ['S','A','B','C','D'] else 'D' }}">{{ p.grade|upper }}</span>
+        {{ get_display_name(p.name, ui_lang) }}
+      </div>
+      <div class="item-stat">{{ p.effect }} · {{ p.score }}</div>
+      {% if p.name == status.equipped_power %}
+        <button class="btn btn-sm btn-outline equip-power-btn" data-name="{{ p.name }}" style="border-color:#4caf50;color:#4caf50">{{ 'Unequip' if ui_lang=='en' else '卸下' }}</button>
+      {% else %}
+        <button class="btn btn-sm btn-primary equip-power-btn" data-name="{{ p.name }}">{{ 'Equip' if ui_lang=='en' else '裝備' }}</button>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function playRoll(callback) {
+  const anim = document.getElementById('roll-anim');
+  const circle = document.getElementById('roll-circle');
+  const text = document.getElementById('roll-text');
+  const phase = document.getElementById('roll-phase');
+  anim.style.display = 'block';
+  document.getElementById('roll-result').style.display = 'none';
+  document.getElementById('roll-close').style.display = 'none';
+  const colors = ['#9e9e9e','#26c6da','#ab47bc','#ffd54f','#ef5350'];
+  const names = ['D','C','B','A','S'];
+  let step = 0;
+  const timer = setInterval(() => {
+    const ci = step % 5;
+    circle.style.borderColor = colors[ci];
+    circle.style.boxShadow = '0 0 20px ' + colors[ci];
+    document.getElementById('roll-icon').innerHTML = '<span class="tier tier-' + names[ci] + '" style="font-size:2.5rem;">' + names[ci] + '</span>';
+    text.textContent = '';
+    step++;
+    if (step > 15) { clearInterval(timer); callback(); }
+  }, 150);
+}
+function showRollResult(data) {
+  const colors = {S:'#ef5350', A:'#ffd54f', B:'#ab47bc', C:'#26c6da', D:'#9e9e9e'};
+  const circle = document.getElementById('roll-circle');
+  const icon = document.getElementById('roll-icon');
+  const resultDiv = document.getElementById('roll-result');
+  // Show highest tier in circle
+  if (data.results && data.results.length) {
+    const tiers = ['S','A','B','C','D'];
+    let best = 'D';
+    data.results.forEach(r => { if (tiers.indexOf(r.tier||r.grade) < tiers.indexOf(best)) best = r.tier||r.grade; });
+    circle.style.background = 'radial-gradient(circle,' + colors[best] + ',#111)';
+    circle.style.borderColor = colors[best];
+    icon.innerHTML = '<span class="tier tier-' + best + '" style="font-size:2.5rem;">' + best + '</span>';
+  }
+  const closeBtn = document.getElementById('roll-close');
+  if (!data.ok) {
+    resultDiv.innerHTML = '<span style="color:#ef5350">' + (data.error||'失敗') + '</span>';
+  } else {
+    let html = '';
+    (data.results || []).forEach(r => {
+      html += '<div style="margin:10px 0;padding:10px;background:#1a1a1a;border-radius:8px;border-left:4px solid ' + (colors[r.tier]||'#666') + ';">';
+      html += '<span class="tier tier-' + (r.tier || r.grade) + '">' + (r.tier || r.grade) + '</span> ' + (r.display || r.name) + '</div>';
+    });
+    resultDiv.innerHTML = html;
+  }
+  resultDiv.style.display = 'block';
+  closeBtn.style.display = 'inline-block';
+}
+</script>
+
+<script>
+async function doPull(count) {
+  await new Promise(r => { playRoll(() => {}); setTimeout(r, 3000); });
+  const res = await fetch('/api/pull-power', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({count: count})
+  });
+  const data = await res.json();
+  showRollResult(data);
+  if (data.gold !== undefined) document.getElementById('gold-display').textContent = data.gold.toLocaleString();
+}
+document.getElementById('pull-1').addEventListener('click', () => doPull(1));
+document.getElementById('pull-10').addEventListener('click', () => doPull(10));
+document.querySelectorAll('.equip-power-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const res = await fetch('/api/equip-power', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name: btn.dataset.name})
+    });
+    const data = await res.json();
+    if (data.ok) location.reload();
+    else alert(data.error || 'Failed');
+  });
+});
+</script>
+{% endblock %}

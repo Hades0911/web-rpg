@@ -1,0 +1,1 @@
+testuser 1234 205099 4 153 245 293 315 iron_sword iron_armor Smoke Smoke muramasa,durandal,iron_sword,rusty_sword quantum_suit,iron_armor 0 2 zh 2 2 None None

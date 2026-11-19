@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Login' if ui_lang=='en' else '登入' }} - Text RPG{% endblock %}
+
+{% block content %}
+<div class="auth-card">
+  <h1 class="title">⚔️ 编程课 RPG</h1>
+  <p class="subtitle">Programming Class Text RPG</p>
+
+  <form method="post" class="auth-form">
+    <label>用户名 / Username</label>
+    <input type="text" name="username" required autofocus placeholder="输入用户名">
+
+    <label>密碼 / Password</label>
+    <input type="password" name="password" required placeholder="输入密碼">
+
+    <button type="submit" class="btn btn-primary">{{ 'Login' if ui_lang=='en' else '登入' }} Login</button>
+  </form>
+
+  <p class="auth-footer">
+    還没有账号？ <a href="{{ url_for('register') }}">立即注册</a>
+  </p>
+</div>
+{% endblock %}

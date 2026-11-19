@@ -1,0 +1,11 @@
+// main.js - small shared helpers
+document.addEventListener('DOMContentLoaded', () => {
+  // Auto-hide flash messages after 4 seconds
+  document.querySelectorAll('.flash').forEach(el => {
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.4s';
+      el.style.opacity = '0';
+      setTimeout(() => el.remove(), 400);
+    }, 4000);
+  });
+});

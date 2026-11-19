@@ -1,0 +1,1 @@
+logictest 123 5000 10 500 1000 200 300 iron_sword iron_armor None None iron_sword iron_armor 5 2 zh 10 5 None None helmet:divine_helmet

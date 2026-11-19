@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}主选單 - {{ status.username }}{% endblock %}
+
+{% block content %}
+<div class="dash-header">
+  <div>
+    <div class="dash-name">{{ status.username }} <span class="dash-lv">Lv.{{ status.level }}</span></div>
+    <div class="dash-bars">
+      <div class="dash-bar-row" title="生命 {{ status.hp }} / {{ status.max_hp }}">
+        <span>HP</span>
+        <div class="dash-bar"><div class="dash-fill hp" style="width:{{ (status.hp / status.max_hp * 100)|int }}%"></div></div>
+      </div>
+      <div class="dash-bar-row" title="經驗 {{ status.xp }} / {{ status.xp_to_next_level }}">
+        <span>XP</span>
+        <div class="dash-bar"><div class="dash-fill xp" style="width:{{ status.xp_percent }}%"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="dash-cp">{{ "Power" if ui_lang == "en" else "戰力" }}<br><strong>{{ "{:,}".format(status.combat_power) }}</strong></div>
+  <a href="{{ url_for('logout') }}" class="btn btn-sm btn-outline">{{ "Logout" if ui_lang == "en" else "登出" }}</a>
+</div>
+
+<div class="dash-stats">
+  <div class="ds-item">🪙 {{ "{:,}".format(status.gold) }} {{ "Gold" if ui_lang == "en" else "金幣" }}</div>
+  <div class="ds-item">🔮 {{ status.abyss_tokens }} {{ "Tokens" if ui_lang == "en" else "代幣" }}</div>
+  <div class="ds-item" title="{{ status.weapon_raw_desc }}">⚔️ {% if status.weapon_raw %}<span class="tier tier-{{ status.weapon_tier }}">{{ status.weapon_tier }}</span>{% endif %} {{ get_display_name(status.weapon_raw, ui_lang) }}{% if status.weapon_level %}+{{ status.weapon_level }}{% endif %} <span style="font-size:0.7rem;color:var(--muted)">{{ status.weapon_range }}/{{ status.weapon_speed }}</span></div>
+    <div class="ds-item" title="{{ status.power_desc }}">✨ {{ get_display_name(status.equipped_power, ui_lang) }}</div>
+</div>
+
+<div class="dash-stats" style="margin-top:8px;font-size:0.8rem;">
+  {% for slot in ['helmet','chest','gloves','boots','cloak'] %}
+  <div class="ds-item" title="{{ status.slot_descs.get(slot, '') if status.slot_descs else '' }}">
+    {{ {'helmet':'頭盔','chest':'胸甲','gloves':'手套','boots':'靴子','cloak':'披風'}[slot] if ui_lang!='en' else slot|capitalize }}:
+    {% if status.armor_slots.get(slot) %}<span class="tier tier-{{ status.slot_tiers.get(slot, 'D') }}">{{ status.slot_tiers.get(slot, 'D') }}</span>{% endif %} {{ get_display_name(status.armor_slots.get(slot), ui_lang) if status.armor_slots and status.armor_slots.get(slot) else '—' }}
+  </div>
+  {% endfor %}
+</div>
+
+
+<div class="equip-grid">
+  <div class="equip-slot"></div>
+  <div class="equip-slot tier-border-{{ status.slot_tiers.get('helmet', 'D') if status.slot_tiers else 'D' }} {% if not status.armor_slots.get('helmet') %}empty{% endif %}" onclick="location.href='/inventory'" title="{{ status.slot_descs.get('helmet', '') if status.slot_descs else '' }}">
+    {{ '頭盔' if ui_lang!='en' else 'Helmet' }}<br>
+    <strong>{% if status.armor_slots.get('helmet') %}<span class="tier tier-{{ status.slot_tiers.get('helmet', 'D') }}">{{ status.slot_tiers.get('helmet', 'D') }}</span> {% endif %}{{ get_display_name(status.armor_slots.get('helmet'), ui_lang) if status.armor_slots.get('helmet') else '—' }}</strong>
+  </div>
+  <div class="equip-slot"></div>
+  <div class="equip-slot tier-border-{{ status.weapon_tier }}" onclick="location.href='/inventory'">
+    {{ '武器' if ui_lang!='en' else 'Weapon' }}<br>
+    <strong>{% if status.weapon_raw %}<span class="tier tier-{{ status.weapon_tier }}">{{ status.weapon_tier }}</span>{% endif %} {{ get_display_name(status.weapon_raw, ui_lang) }}{% if status.weapon_level %}+{{ status.weapon_level }}{% endif %}</strong>
+  </div>
+  <div class="equip-slot tier-border-{{ status.slot_tiers.get('chest', 'D') if status.slot_tiers else 'D' }} {% if not status.armor_slots.get('chest') %}empty{% endif %}" onclick="location.href='/inventory'" title="{{ status.slot_descs.get('chest', '') if status.slot_descs else '' }}">
+    {{ '胸甲' if ui_lang!='en' else 'Chest' }}<br>
+    <strong>{% if status.armor_slots.get('chest') %}<span class="tier tier-{{ status.slot_tiers.get('chest', 'D') }}">{{ status.slot_tiers.get('chest', 'D') }}</span> {% endif %}{{ get_display_name(status.armor_slots.get('chest'), ui_lang) if status.armor_slots.get('chest') else '—' }}</strong>
+  </div>
+  <div class="equip-slot tier-border-{{ status.slot_tiers.get('cloak', 'D') if status.slot_tiers else 'D' }} {% if not status.armor_slots.get('cloak') %}empty{% endif %}" onclick="location.href='/inventory'" title="{{ status.slot_descs.get('cloak', '') if status.slot_descs else '' }}">
+    {{ '披風' if ui_lang!='en' else 'Cloak' }}<br>
+    <strong>{% if status.armor_slots.get('cloak') %}<span class="tier tier-{{ status.slot_tiers.get('cloak', 'D') }}">{{ status.slot_tiers.get('cloak', 'D') }}</span> {% endif %}{{ get_display_name(status.armor_slots.get('cloak'), ui_lang) if status.armor_slots.get('cloak') else '—' }}</strong>
+  </div>
+  <div class="equip-slot tier-border-{{ status.slot_tiers.get('gloves', 'D') if status.slot_tiers else 'D' }} {% if not status.armor_slots.get('gloves') %}empty{% endif %}" onclick="location.href='/inventory'" title="{{ status.slot_descs.get('gloves', '') if status.slot_descs else '' }}">
+    {{ '手套' if ui_lang!='en' else 'Gloves' }}<br>
+    <strong>{% if status.armor_slots.get('gloves') %}<span class="tier tier-{{ status.slot_tiers.get('gloves', 'D') }}">{{ status.slot_tiers.get('gloves', 'D') }}</span> {% endif %}{{ get_display_name(status.armor_slots.get('gloves'), ui_lang) if status.armor_slots.get('gloves') else '—' }}</strong>
+  </div>
+  <div class="equip-slot tier-border-{{ status.slot_tiers.get('boots', 'D') if status.slot_tiers else 'D' }} {% if not status.armor_slots.get('boots') %}empty{% endif %}" onclick="location.href='/inventory'" title="{{ status.slot_descs.get('boots', '') if status.slot_descs else '' }}">
+    {{ '靴子' if ui_lang!='en' else 'Boots' }}<br>
+    <strong>{% if status.armor_slots.get('boots') %}<span class="tier tier-{{ status.slot_tiers.get('boots', 'D') }}">{{ status.slot_tiers.get('boots', 'D') }}</span> {% endif %}{{ get_display_name(status.armor_slots.get('boots'), ui_lang) if status.armor_slots.get('boots') else '—' }}</strong>
+  </div>
+  <div class="equip-slot"></div>
+</div>
+<nav class="dash-menu">
+  <a href="{{ url_for('battle_page') }}" class="dm-item"><span class="dm-icon">⚔️</span>{{ "Fight" if ui_lang == "en" else "讨伐怪物" }}</a>
+  <a href="{{ url_for('power_shrine_page') }}" class="dm-item"><span class="dm-icon">🔮</span>{{ "Power Shrine" if ui_lang == "en" else "超能力神殿" }}</a>
+  <a href="{{ url_for('blacksmith_page') }}" class="dm-item"><span class="dm-icon">🛠️</span>{{ "Blacksmith" if ui_lang == "en" else "鐵匠铺" }}</a>
+  <a href="{{ url_for('status_page') }}" class="dm-item"><span class="dm-icon">📖</span>{{ "Status" if ui_lang == "en" else "角色狀態" }}</a>
+  <a href="{{ url_for('inventory_page') }}" class="dm-item"><span class="dm-icon">🎒</span>{{ "Inventory" if ui_lang == "en" else "背包" }}</a>
+  <a href="{{ url_for('abyss_page') }}" class="dm-item"><span class="dm-icon">💀</span>{{ "Abyss" if ui_lang == "en" else "無尽深淵" }}</a>
+  <a href="{{ url_for('leaderboard_page') }}" class="dm-item"><span class="dm-icon">🏆</span>{{ "Leaderboard" if ui_lang == "en" else "戰力排行榜" }}</a>
+  <a href="{{ url_for('encyclopedia_page') }}" class="dm-item"><span class="dm-icon">📚</span>{{ "Encyclopedia" if ui_lang == "en" else "全圖鑑" }}</a>
+  <a href="{{ url_for('social_page') }}" class="dm-item"><span class="dm-icon">👥</span>{{ "Social" if ui_lang == "en" else "社交" }}</a>
+  <a href="{{ url_for('quests_page') }}" class="dm-item"><span class="dm-icon">📋</span>{{ "Daily Quests" if ui_lang == "en" else "每日任務" }}</a>
+  <a href="{{ url_for('achievements_page') }}" class="dm-item"><span class="dm-icon">🏆</span>{{ "Achievements" if ui_lang == "en" else "成就" }}</a>
+  <a href="{{ url_for('settings_page') }}" class="dm-item"><span class="dm-icon">⚙️</span>{{ "Settings" if ui_lang == "en" else "游戏設置" }}</a>
+</nav>
+{% endblock %}

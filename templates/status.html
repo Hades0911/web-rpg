@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}角色狀態 - {{ status.username }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回主选單' }}</a>
+  <h1 style="margin:0;font-size:1.2rem;">{{ 'Character Status' if ui_lang=='en' else '角色詳細狀態' }}</h1>
+</header>
+
+<section class="status-panel">
+  <div class="stat-row">
+    <div class="stat">
+      <span class="label">{{ 'HP' if ui_lang=='en' else '生命' }} <span style="font-size:0.75rem;color:var(--muted)">({{ status.base_hp }}+{{ status.armor_hp }})</span></span>
+      <div class="bar-wrap"><div class="bar hp" style="width:{{ (status.hp / status.max_hp * 100)|int }}%"></div></div>
+      
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat">
+      <span class="label">{{ 'XP' if ui_lang=='en' else '經驗' }}</span>
+      <div class="bar-wrap"><div class="bar xp" style="width:{{ status.xp_percent }}%"></div></div>
+      
+    </div>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-item">{{ 'Player' if ui_lang=='en' else '玩家' }}<br><strong>{{ status.username }}</strong></div>
+    <div class="stat-item">{{ 'Level' if ui_lang=='en' else '等級' }}<br><strong>Lv.{{ status.level }}</strong></div>
+    <div class="stat-item">{{ 'Power' if ui_lang=='en' else '戰力' }}<br><strong style="color:var(--magenta)">⚡ {{ "{:,}".format(status.combat_power) }}</strong></div>
+    <div class="stat-item">{{ 'Gold' if ui_lang=='en' else '金幣' }}<br><strong>🪙 {{ "{:,}".format(status.gold) }}</strong></div>
+    <div class="stat-item">{{ 'Abyss Tokens' if ui_lang=='en' else '深淵代幣' }}<br><strong>🔮 {{ status.abyss_tokens }}</strong></div>
+    <div class="stat-item">{{ 'Abyss Floor' if ui_lang=='en' else '深淵層數' }}<br><strong>{{ 'Floor ' ~ status.abyss_floor if ui_lang=='en' else '第 ' ~ status.abyss_floor ~ ' 層' }}</strong></div>
+  </div>
+</section>
+
+
+<section class="status-panel">
+  <h3 style="margin-bottom:10px">{{ 'Armor Slots' if ui_lang=='en' else '防具欄位' }}</h3>
+  <div class="stat-grid">
+    {% for slot in ['helmet','chest','gloves','boots','cloak'] %}
+    <div class="stat-item">
+      {{ {'helmet':'頭盔','chest':'胸甲','gloves':'手套','boots':'靴子','cloak':'披風'}[slot] if ui_lang!='en' else slot|capitalize }}<br>
+      <strong>{{ get_display_name(status.armor_slots.get(slot), ui_lang) if status.armor_slots and status.armor_slots.get(slot) else ('Empty' if ui_lang=='en' else '空') }}</strong>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<section class="status-panel">
+  <h3 style="margin-bottom:12px">{{ 'Current Gear & Stats' if ui_lang=='en' else '當前裝備與屬性' }}</h3>
+  <div class="stat-grid">
+    <div class="stat-item">{{ 'Weapon' if ui_lang=='en' else '武器' }} <span class="tier tier-{{ status.weapon_tier }}">{{ status.weapon_tier }}</span><br><strong title="{{ status.weapon_desc }}">{{ get_display_name(status.weapon_raw, ui_lang) if ui_lang else status.weapon }}{% if status.weapon_level %}+{{ status.weapon_level }}{% endif %}</strong><br>{{ 'Element:' if ui_lang=='en' else '元素:' }} {{ status.weapon_element }}</div>
+    {% for slot in ['helmet','chest','gloves','boots','cloak'] %}
+    <div class="stat-item">
+      {{ {'helmet':'頭盔','chest':'胸甲','gloves':'手套','boots':'靴子','cloak':'披風'}[slot] if ui_lang!='en' else slot|capitalize }}
+      {% if status.armor_slots and status.armor_slots.get(slot) %}<span class="tier tier-{{ status.slot_tiers.get(slot, 'D') if status.slot_tiers else 'D' }}">{{ status.slot_tiers.get(slot, 'D') if status.slot_tiers else 'D' }}</span>{% endif %}<br>
+      <strong>{{ get_display_name(status.armor_slots.get(slot), ui_lang) if status.armor_slots and status.armor_slots.get(slot) else ('—' if ui_lang=='en' else '空') }}</strong>
+    </div>
+    {% endfor %}
+    <div class="stat-item">{{ 'ATK' if ui_lang=='en' else '攻擊力' }}<br><strong>{{ status.atk }}</strong><br><span style="font-size:0.75rem;color:var(--muted)">{{ status.base_atk }}+{{ status.bonus_atk }}</span></div>
+    <div class="stat-item">{{ 'DEF' if ui_lang=='en' else '防禦力' }}<br><strong>{{ status.defense }}</strong><br><span style="font-size:0.75rem;color:var(--muted)">0+{{ status.bonus_def }}</span></div>
+    <div class="stat-item">{{ 'Crit Rate' if ui_lang=='en' else '暴擊率' }}<br><strong>{{ status.crit_ch }}%</strong></div>
+    <div class="stat-item">{{ 'Crit Dmg' if ui_lang=='en' else '暴擊傷害' }}<br><strong>x{{ status.crit_dmg }}</strong></div>
+    <div class="stat-item" title="{{ 'Range 4+: enemy counter damage halved' if ui_lang=='en' else '射程4以上：敵人反擊傷害減半' }}">{{ 'Range' if ui_lang=='en' else '射程' }}<br><strong>{{ status.weapon_range }}</strong></div>
+    <div class="stat-item" title="{{ 'Speed 4+: 20% chance for extra hit' if ui_lang=='en' else '速度4以上：20%機率多打一下' }}">{{ 'Speed' if ui_lang=='en' else '速度' }}<br><strong>{{ status.weapon_speed }}</strong></div>
+  </div>
+</section>
+
+<section class="status-panel">
+  <h3 style="margin-bottom:12px">{{ 'Power' if ui_lang=='en' else '超能力' }}</h3>
+  <div class="stat-grid">
+    <div class="stat-item">{{ 'Equipped' if ui_lang=='en' else '已裝備' }}<br><strong title="{{ status.power_desc }}">{{ get_display_name(status.equipped_power, ui_lang) if ui_lang else status.equipped_power }}</strong></div>
+    <div class="stat-item">{{ 'Effect' if ui_lang=='en' else '效果' }}<br><strong>{{ get_effect_name(status.power_effect, ui_lang) if ui_lang else status.power_effect }}</strong></div>
+    <div class="stat-item">{{ 'Owned' if ui_lang=='en' else '擁有數量' }}<br><strong>{{ status.powers_count }}</strong></div>
+    <div class="stat-item">{{ 'Potions' if ui_lang=='en' else '藥劑' }}<br><strong>{{ status.potions.minor_potion }}</strong></div>
+  </div>
+  {% if status.power_desc %}
+  <p style="margin-top:12px;color:var(--muted);font-size:0.9rem">📜 {{ status.power_desc }}</p>
+  {% endif %}
+  <p style="margin-top:12px">
+    <a href="{{ url_for('power_shrine_page') }}" class="btn btn-sm btn-primary">{{ 'Switch / Pull Power' if ui_lang=='en' else '切換 / 抽取超能力' }}</a>
+    <a href="{{ url_for('inventory_page') }}" class="btn btn-sm btn-outline">{{ 'Manage Gear' if ui_lang=='en' else '管理裝備' }}</a>
+  </p>
+</section>
+
+<section class="status-panel">
+  <h3 style="margin-bottom:12px">{{ 'Collection' if ui_lang=='en' else '圖鑑進度' }}</h3>
+  <div class="stat-grid">
+    <div class="stat-item">已解鎖{{ 'Weapon' if ui_lang=='en' else '武器' }}<br><strong>{{ status.unlocked_weapons_count }}</strong></div>
+    <div class="stat-item">已解鎖{{ 'Armor' if ui_lang=='en' else '防具' }}<br><strong>{{ status.unlocked_armors_count }}</strong></div>
+  </div>
+</section>
+{% endblock %}
+<style>
+.bar.xp { height: 100%; background: linear-gradient(90deg, #5c7cfa, #9b59b6); border-radius: 6px; }
+</style>

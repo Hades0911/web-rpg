@@ -1,0 +1,479 @@
+cloth_tunic 10 10 0 1.0 none A simple woven linen shirt offering minimal protection but complete freedom of movement. |簡單的亞麻布衣，防護微薄但行動毫無束縛。
+tattered_rags 12 5 0 1.0 none Frayed, patched-together scraps offering barely more defense than bare skin. |破爛打滿補丁的碎布，防禦力僅比赤身略強一絲。
+leather_vest 18 20 1 1.0 none A cured hide jerkin providing light protection against glancing cuts and scrapes. |熟皮革製成的輕便背心，可抵禦輕微割傷與擦傷。
+padded_armor 22 25 0 1.0 none Quilted layers of thick cloth stuffed with wool to cushion blunt impacts. |塞滿羊毛的厚實絎縫布甲，能有效緩衝鈍器撞擊。
+hide_armor 26 30 0 1.0 none Heavy untreated animal pelts stitched together for rugged wilderness survival. | 缝合而成的厚重兽皮甲，适合荒野求生的粗犷防护。
+studded_leather 30 35 2 1.1 none Supple leather reinforced with close-set iron rivets for agile defense. | 镶嵌密集铁铆钉的柔韧皮甲，兼顾敏捷与可靠防御。
+ring_mail 35 40 0 1.0 none A heavy leather backing sewn with rows of interlocking metal rings. |厚皮革底襯上縫滿互鎖金屬環的經典環甲。
+chain_shirt 40 45 0 1.0 none A flexible shirt of riveted steel links that turns aside slashing blades. | 铆接精钢链环编织的灵活锁子甲衫，擅长偏转劈砍刀刃。
+scale_mail 45 50 0 1.0 none Overlapping metal scales laced onto leather, resembling the tough hide of a reptile. | 层叠金属鳞片缀于皮革之上，宛如爬行巨兽般坚韧。
+brigandine 50 60 0 1.0 none A durable canvas coat lined internally with overlapping tempered steel plates. |內襯重疊回火鋼板的耐磨帆布戰袍，防護紮實。
+chainmail_hauberk 55 65 0 1.0 none A full-length tunic of dense chainmail protecting torso, shoulders, and thighs. | 覆盖躯干、双肩与大腿的及膝重型锁子甲长衫。
+breastplate 60 70 0 1.0 none A sculpted solid-metal cuirass guarding vital organs while keeping limbs mobile. | 雕琢成型的整块金属胸甲，护住要害同时保持四肢灵活。
+splint_armor 65 80 0 1.0 none Vertical strips of hardened metal riveted to leather backing for rigid protection. | 铆接在皮革底衬上的竖条硬化钢板，提供刚性防护。
+bronze_cuirass 42 50 0 1.0 none A classical hammered-bronze chestplate sculpted in the likeness of heroic physique. | 仿照英雄体魄锤炼而成的古典青铜护胸甲。
+copper_plate 38 45 0 1.0 none Polished reddish copper armor offering solid early-tier metallic protection. |抛光赤红铜甲，為初级戰士提供紮實的金屬防護。
+amethyst_robes 64 80 8 1.4 magic Silk vestments embroidered with arcane amethysts that amplify magical precision. |绣滿奥术紫水晶的絲绸法袍，大幅提升魔法精准度。
+bone_armor 48 55 3 1.2 dark Ribs and skulls bound by dark necromancy into a macabre, intimidating exoskeleton. | 黑暗死灵术捆绑肋骨与颅骨而成的骇人白骨外骨骼。
+chitin_plate 52 62 2 1.1 none Harvested from giant insect carapaces, offering lightweight natural resilience. |取材自巨型昆虫甲壳的几丁质板甲，輕盈且具天然韌性。
+ninja_garb 54 70 20 1.8 stealth Shadow-dyed shinobi attire tailored for silent movement and lethal critical ambushes. |暗影染色的忍者夜行衣，專為無声潜行與致命暴擊暗杀设计。
+ghostly_robes 62 75 14 1.5 ghost Haunted gossamer garments granting eerie agility and spectral protection. | 萦绕鬼魅气息的薄纱长袍，赋予诡异敏捷与幽灵庇护。
+werewolf_pelt 58 82 10 1.4 beast Cursed lycanthrope fur surging with feral beast strength and savage reflexes. | 受诅咒的狼人毛皮甲，奔涌着狂野兽力与凶猛反射神经。
+barbarian_armor 56 78 8 1.3 rage Minimalist iron-studded leather built for fearless, rage-fueled frontline brawls. |簡约的鐵釘皮革蛮族戰甲，專為無畏狂暴的前线肉搏而生。
+gladiator_gear 61 88 10 1.4 none Arena-tested bronze pauldrons and leather straps honed for crowd-pleasing lethality. |历經竞技场血戰的青铜護肩與皮带，專為华丽絕杀而磨砺。
+viking_mail 63 84 8 1.3 rage Fur-trimmed Norse ringmail infused with the fearless fury of northern raiders. |鑲嵌毛皮的北欧维京鎖甲，注入北方掠夺者的無畏狂怒。
+celtic_tunic 34 42 4 1.1 nature Knotwork-embroidered wool garment blessed by ancient druidic nature spirits. |绣有凯尔特绳結纹样的羊毛戰袍，受古老德鲁伊自然之靈祝福。
+druid_vestments 46 58 6 1.2 nature Living moss and woven bark robes humming with restorative forest magic. |活体青苔與樹皮編織的德鲁伊法衣，鸣响着治愈森林魔力。
+bark_armor 32 38 2 1.1 nature Thick iron-oak bark plates bound with vines for sturdy natural protection. |藤蔓捆绑厚重鐵橡樹皮而成的天然護甲，防護稳固。
+iron_helmet 15 20 0 1.0 none A sturdy iron helmet that protects the head from glancing blows. |堅固的鐵盔，保護头部免受擦傷。
+steel_helmet 25 35 0 1.0 none A polished steel helm with a reinforced brim. | 抛光钢盔，帽檐加固。
+leather_boots 8 15 1 1.0 none Soft leather boots that improve mobility. | 柔软皮靴，提升机动性。
+steel_boots 18 30 0 1.0 none Heavy steel boots that guard the feet. | 沉重钢靴，保护双脚。
+leather_gloves 6 10 2 1.1 none Fitted leather gloves for better grip. | 合身皮手套，提升握持。
+steel_gauntlets 14 25 0 1.0 none Articulated steel gauntlets. | 铰接钢护手。
+cloth_hood 5 8 0 1.0 none A simple hood that covers the head. | 简单的头巾。
+mage_robe 12 40 3 1.1 none A flowing robe favored by spellcasters. | 施法者喜爱的飘逸法袍。
+rusty_iron_helmet 16 25 2 1.0 none A rusty iron helmet with a reinforced brow that guards the eyes. | 生鏽的鐵頭盔，加固的帽檐保護雙眼。
+worn_iron_helmet 28 28 3 1.0 none This worn iron helm bears the scars of countless battles. | 這頂破舊鐵頭盔留有無數戰鬥的痕跡。
+sturdy_iron_helmet 48 24 2 1.0 none A sturdy iron helmet with a reinforced brow that guards the eyes. | 堅固的鐵頭盔，加固的帽檐保護雙眼。
+fine_iron_helmet 57 19 2 1.0 none This fine iron helm bears the scars of countless battles. | 這頂精良鐵頭盔留有無數戰鬥的痕跡。
+legendary_iron_helmet 59 79 0 1.0 none This legendary iron helm bears the scars of countless battles. | 這頂傳說鐵頭盔留有無數戰鬥的痕跡。
+ancient_iron_helmet 44 43 1 1.0 none A ancient iron helmet with a reinforced brow that guards the eyes. | 遠古的鐵頭盔，加固的帽檐保護雙眼。
+blessed_iron_helmet 32 79 1 1.0 none A blessed iron helmet forged to deflect blows aimed at the skull. | 祝福的鐵頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+cursed_iron_helmet 61 55 0 1.0 none A cursed iron helmet forged to deflect blows aimed at the skull. | 詛咒的鐵頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+enchanted_iron_helmet 40 54 3 1.0 none A enchanted iron helmet forged to deflect blows aimed at the skull. | 附魔的鐵頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+royal_iron_helmet 42 75 2 1.0 none A royal iron helmet forged to deflect blows aimed at the skull. | 皇家的鐵頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+elite_iron_helmet 48 57 1 1.0 none A elite iron helmet with a reinforced brow that guards the eyes. | 精英的鐵頭盔，加固的帽檐保護雙眼。
+rusty_steel_helmet 13 34 4 1.0 none This rusty steel helm bears the scars of countless battles. | 這頂生鏽鋼頭盔留有無數戰鬥的痕跡。
+worn_steel_helmet 22 27 3 1.0 none A worn steel helmet with a reinforced brow that guards the eyes. | 破舊的鋼頭盔，加固的帽檐保護雙眼。
+sturdy_steel_helmet 8 49 0 1.0 none This sturdy steel helm bears the scars of countless battles. | 這頂堅固鋼頭盔留有無數戰鬥的痕跡。
+fine_steel_helmet 9 96 1 1.0 none A fine steel helmet with a reinforced brow that guards the eyes. | 精良的鋼頭盔，加固的帽檐保護雙眼。
+masterwork_steel_helmet 22 103 3 1.0 none A masterwork steel helmet forged to deflect blows aimed at the skull. | 大師的鋼頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+legendary_steel_helmet 61 41 4 1.0 none A legendary steel helmet forged to deflect blows aimed at the skull. | 傳說的鋼頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+ancient_steel_helmet 75 49 4 1.0 none A ancient steel helmet forged to deflect blows aimed at the skull. | 遠古的鋼頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+blessed_steel_helmet 30 49 2 1.0 none A blessed steel helmet forged to deflect blows aimed at the skull. | 祝福的鋼頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+cursed_steel_helmet 23 44 3 1.0 none A cursed steel helmet forged to deflect blows aimed at the skull. | 詛咒的鋼頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+enchanted_steel_helmet 32 25 0 1.0 none A enchanted steel helmet with a reinforced brow that guards the eyes. | 附魔的鋼頭盔，加固的帽檐保護雙眼。
+elite_steel_helmet 24 40 1 1.0 none A elite steel helmet forged to deflect blows aimed at the skull. | 精英的鋼頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+rusty_bronze_helmet 25 46 0 1.0 none This rusty bronze helm bears the scars of countless battles. | 這頂生鏽青銅頭盔留有無數戰鬥的痕跡。
+worn_bronze_helmet 26 9 0 1.0 none A worn bronze helmet with a reinforced brow that guards the eyes. | 破舊的青銅頭盔，加固的帽檐保護雙眼。
+sturdy_bronze_helmet 31 70 3 1.0 none A sturdy bronze helmet forged to deflect blows aimed at the skull. | 堅固的青銅頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+fine_bronze_helmet 31 31 3 1.0 none This fine bronze helm bears the scars of countless battles. | 這頂精良青銅頭盔留有無數戰鬥的痕跡。
+masterwork_bronze_helmet 52 43 2 1.0 none This masterwork bronze helm bears the scars of countless battles. | 這頂大師青銅頭盔留有無數戰鬥的痕跡。
+legendary_bronze_helmet 45 88 1 1.0 none A legendary bronze helmet forged to deflect blows aimed at the skull. | 傳說的青銅頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+ancient_bronze_helmet 46 38 1 1.0 none A ancient bronze helmet with a reinforced brow that guards the eyes. | 遠古的青銅頭盔，加固的帽檐保護雙眼。
+blessed_bronze_helmet 50 85 1 1.0 none This blessed bronze helm bears the scars of countless battles. | 這頂祝福青銅頭盔留有無數戰鬥的痕跡。
+cursed_bronze_helmet 15 36 2 1.0 none This cursed bronze helm bears the scars of countless battles. | 這頂詛咒青銅頭盔留有無數戰鬥的痕跡。
+enchanted_bronze_helmet 39 82 4 1.0 none A enchanted bronze helmet forged to deflect blows aimed at the skull. | 附魔的青銅頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+royal_bronze_helmet 63 58 1 1.0 none This royal bronze helm bears the scars of countless battles. | 這頂皇家青銅頭盔留有無數戰鬥的痕跡。
+elite_bronze_helmet 55 13 2 1.0 none A elite bronze helmet with a reinforced brow that guards the eyes. | 精英的青銅頭盔，加固的帽檐保護雙眼。
+rusty_silver_helmet 5 46 2 1.0 none A rusty silver helmet forged to deflect blows aimed at the skull. | 生鏽的銀頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+worn_silver_helmet 33 38 1 1.0 none A worn silver helmet forged to deflect blows aimed at the skull. | 破舊的銀頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+sturdy_silver_helmet 47 28 0 1.0 none A sturdy silver helmet with a reinforced brow that guards the eyes. | 堅固的銀頭盔，加固的帽檐保護雙眼。
+fine_silver_helmet 13 45 1 1.0 none A fine silver helmet forged to deflect blows aimed at the skull. | 精良的銀頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+masterwork_silver_helmet 19 57 1 1.0 none A masterwork silver helmet with a reinforced brow that guards the eyes. | 大師的銀頭盔，加固的帽檐保護雙眼。
+legendary_silver_helmet 54 34 4 1.0 none A legendary silver helmet with a reinforced brow that guards the eyes. | 傳說的銀頭盔，加固的帽檐保護雙眼。
+ancient_silver_helmet 60 51 4 1.0 none This ancient silver helm bears the scars of countless battles. | 這頂遠古銀頭盔留有無數戰鬥的痕跡。
+blessed_silver_helmet 33 81 4 1.0 none A blessed silver helmet with a reinforced brow that guards the eyes. | 祝福的銀頭盔，加固的帽檐保護雙眼。
+cursed_silver_helmet 26 50 0 1.0 none A cursed silver helmet forged to deflect blows aimed at the skull. | 詛咒的銀頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+enchanted_silver_helmet 16 58 1 1.0 none This enchanted silver helm bears the scars of countless battles. | 這頂附魔銀頭盔留有無數戰鬥的痕跡。
+royal_silver_helmet 73 51 3 1.0 none A royal silver helmet with a reinforced brow that guards the eyes. | 皇家的銀頭盔，加固的帽檐保護雙眼。
+elite_silver_helmet 32 46 0 1.0 none A elite silver helmet with a reinforced brow that guards the eyes. | 精英的銀頭盔，加固的帽檐保護雙眼。
+rusty_gold_helmet 29 34 1 1.0 none A rusty gold helmet with a reinforced brow that guards the eyes. | 生鏽的金頭盔，加固的帽檐保護雙眼。
+worn_gold_helmet 23 37 1 1.0 none This worn gold helm bears the scars of countless battles. | 這頂破舊金頭盔留有無數戰鬥的痕跡。
+sturdy_gold_helmet 30 56 0 1.0 none This sturdy gold helm bears the scars of countless battles. | 這頂堅固金頭盔留有無數戰鬥的痕跡。
+fine_gold_helmet 37 86 4 1.0 none A fine gold helmet with a reinforced brow that guards the eyes. | 精良的金頭盔，加固的帽檐保護雙眼。
+legendary_gold_helmet 41 72 4 1.0 none A legendary gold helmet forged to deflect blows aimed at the skull. | 傳說的金頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+ancient_gold_helmet 27 107 4 1.0 none A ancient gold helmet forged to deflect blows aimed at the skull. | 遠古的金頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+blessed_gold_helmet 21 106 0 1.0 none A blessed gold helmet forged to deflect blows aimed at the skull. | 祝福的金頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+cursed_gold_helmet 29 96 0 1.0 none A cursed gold helmet with a reinforced brow that guards the eyes. | 詛咒的金頭盔，加固的帽檐保護雙眼。
+enchanted_gold_helmet 18 70 4 1.0 none A enchanted gold helmet with a reinforced brow that guards the eyes. | 附魔的金頭盔，加固的帽檐保護雙眼。
+royal_gold_helmet 72 61 2 1.0 none This royal gold helm bears the scars of countless battles. | 這頂皇家金頭盔留有無數戰鬥的痕跡。
+elite_gold_helmet 65 14 3 1.0 none This elite gold helm bears the scars of countless battles. | 這頂精英金頭盔留有無數戰鬥的痕跡。
+rusty_mithril_helmet 7 47 3 1.0 none A rusty mithril helmet with a reinforced brow that guards the eyes. | 生鏽的秘銀頭盔，加固的帽檐保護雙眼。
+worn_mithril_helmet 18 21 3 1.0 none A worn mithril helmet with a reinforced brow that guards the eyes. | 破舊的秘銀頭盔，加固的帽檐保護雙眼。
+sturdy_mithril_helmet 14 70 3 1.0 none This sturdy mithril helm bears the scars of countless battles. | 這頂堅固秘銀頭盔留有無數戰鬥的痕跡。
+fine_mithril_helmet 46 87 0 1.0 none A fine mithril helmet forged to deflect blows aimed at the skull. | 精良的秘銀頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+masterwork_mithril_helmet 31 81 3 1.0 none A masterwork mithril helmet with a reinforced brow that guards the eyes. | 大師的秘銀頭盔，加固的帽檐保護雙眼。
+legendary_mithril_helmet 77 39 4 1.0 none A legendary mithril helmet with a reinforced brow that guards the eyes. | 傳說的秘銀頭盔，加固的帽檐保護雙眼。
+ancient_mithril_helmet 28 16 2 1.0 none This ancient mithril helm bears the scars of countless battles. | 這頂遠古秘銀頭盔留有無數戰鬥的痕跡。
+blessed_mithril_helmet 65 79 2 1.0 none A blessed mithril helmet with a reinforced brow that guards the eyes. | 祝福的秘銀頭盔，加固的帽檐保護雙眼。
+cursed_mithril_helmet 49 84 4 1.0 none A cursed mithril helmet forged to deflect blows aimed at the skull. | 詛咒的秘銀頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+enchanted_mithril_helmet 37 57 3 1.0 none This enchanted mithril helm bears the scars of countless battles. | 這頂附魔秘銀頭盔留有無數戰鬥的痕跡。
+royal_mithril_helmet 24 93 4 1.0 none A royal mithril helmet forged to deflect blows aimed at the skull. | 皇家的秘銀頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+elite_mithril_helmet 52 87 3 1.0 none This elite mithril helm bears the scars of countless battles. | 這頂精英秘銀頭盔留有無數戰鬥的痕跡。
+rusty_crystal_helmet 14 34 1 1.0 none A rusty crystal helmet with a reinforced brow that guards the eyes. | 生鏽的水晶頭盔，加固的帽檐保護雙眼。
+worn_crystal_helmet 20 45 1 1.0 none A worn crystal helmet with a reinforced brow that guards the eyes. | 破舊的水晶頭盔，加固的帽檐保護雙眼。
+sturdy_crystal_helmet 15 56 0 1.0 none A sturdy crystal helmet with a reinforced brow that guards the eyes. | 堅固的水晶頭盔，加固的帽檐保護雙眼。
+fine_crystal_helmet 54 38 2 1.0 none This fine crystal helm bears the scars of countless battles. | 這頂精良水晶頭盔留有無數戰鬥的痕跡。
+legendary_crystal_helmet 21 100 4 1.0 none A legendary crystal helmet with a reinforced brow that guards the eyes. | 傳說的水晶頭盔，加固的帽檐保護雙眼。
+blessed_crystal_helmet 23 40 2 1.0 none A blessed crystal helmet forged to deflect blows aimed at the skull. | 祝福的水晶頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+cursed_crystal_helmet 27 23 4 1.0 none A cursed crystal helmet with a reinforced brow that guards the eyes. | 詛咒的水晶頭盔，加固的帽檐保護雙眼。
+enchanted_crystal_helmet 40 93 0 1.0 none A enchanted crystal helmet with a reinforced brow that guards the eyes. | 附魔的水晶頭盔，加固的帽檐保護雙眼。
+royal_crystal_helmet 21 118 1 1.0 none A royal crystal helmet with a reinforced brow that guards the eyes. | 皇家的水晶頭盔，加固的帽檐保護雙眼。
+elite_crystal_helmet 18 42 4 1.0 none This elite crystal helm bears the scars of countless battles. | 這頂精英水晶頭盔留有無數戰鬥的痕跡。
+rusty_dragon_helmet 16 7 0 1.0 fire This rusty dragon helm bears the scars of countless battles. | 這頂生鏽龍頭盔留有無數戰鬥的痕跡。
+worn_dragon_helmet 14 14 4 1.0 fire A worn dragon helmet with a reinforced brow that guards the eyes. | 破舊的龍頭盔，加固的帽檐保護雙眼。
+sturdy_dragon_helmet 41 45 0 1.0 fire A sturdy dragon helmet forged to deflect blows aimed at the skull. | 堅固的龍頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+fine_dragon_helmet 27 87 3 1.0 fire A fine dragon helmet forged to deflect blows aimed at the skull. | 精良的龍頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+masterwork_dragon_helmet 33 115 4 1.0 fire A masterwork dragon helmet with a reinforced brow that guards the eyes. | 大師的龍頭盔，加固的帽檐保護雙眼。
+ancient_dragon_helmet 38 51 3 1.0 fire This ancient dragon helm bears the scars of countless battles. | 這頂遠古龍頭盔留有無數戰鬥的痕跡。
+blessed_dragon_helmet 46 58 2 1.0 fire A blessed dragon helmet with a reinforced brow that guards the eyes. | 祝福的龍頭盔，加固的帽檐保護雙眼。
+cursed_dragon_helmet 58 49 2 1.0 fire A cursed dragon helmet with a reinforced brow that guards the eyes. | 詛咒的龍頭盔，加固的帽檐保護雙眼。
+enchanted_dragon_helmet 26 57 0 1.0 fire A enchanted dragon helmet forged to deflect blows aimed at the skull. | 附魔的龍頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+royal_dragon_helmet 16 114 1 1.0 fire A royal dragon helmet forged to deflect blows aimed at the skull. | 皇家的龍頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+elite_dragon_helmet 54 28 0 1.0 fire This elite dragon helm bears the scars of countless battles. | 這頂精英龍頭盔留有無數戰鬥的痕跡。
+rusty_demon_helmet 5 36 0 1.0 dark This rusty demon helm bears the scars of countless battles. | 這頂生鏽惡魔頭盔留有無數戰鬥的痕跡。
+worn_demon_helmet 7 44 0 1.0 dark A worn demon helmet forged to deflect blows aimed at the skull. | 破舊的惡魔頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+sturdy_demon_helmet 8 46 2 1.0 dark A sturdy demon helmet forged to deflect blows aimed at the skull. | 堅固的惡魔頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+fine_demon_helmet 33 67 0 1.0 dark A fine demon helmet with a reinforced brow that guards the eyes. | 精良的惡魔頭盔，加固的帽檐保護雙眼。
+masterwork_demon_helmet 31 97 2 1.0 dark This masterwork demon helm bears the scars of countless battles. | 這頂大師惡魔頭盔留有無數戰鬥的痕跡。
+ancient_demon_helmet 14 57 4 1.0 dark This ancient demon helm bears the scars of countless battles. | 這頂遠古惡魔頭盔留有無數戰鬥的痕跡。
+blessed_demon_helmet 47 23 1 1.0 dark A blessed demon helmet with a reinforced brow that guards the eyes. | 祝福的惡魔頭盔，加固的帽檐保護雙眼。
+cursed_demon_helmet 35 28 4 1.0 dark A cursed demon helmet with a reinforced brow that guards the eyes. | 詛咒的惡魔頭盔，加固的帽檐保護雙眼。
+royal_demon_helmet 43 39 2 1.0 dark This royal demon helm bears the scars of countless battles. | 這頂皇家惡魔頭盔留有無數戰鬥的痕跡。
+elite_demon_helmet 55 81 3 1.0 dark A elite demon helmet with a reinforced brow that guards the eyes. | 精英的惡魔頭盔，加固的帽檐保護雙眼。
+rusty_angel_helmet 15 18 4 1.0 light A rusty angel helmet with a reinforced brow that guards the eyes. | 生鏽的天使頭盔，加固的帽檐保護雙眼。
+worn_angel_helmet 21 52 2 1.0 light This worn angel helm bears the scars of countless battles. | 這頂破舊天使頭盔留有無數戰鬥的痕跡。
+rusty_iron_boots 18 46 3 1.0 none rusty iron boots built for long marches and sudden charges. | 生鏽的鐵靴子，適合長途行軍與衝鋒。
+worn_iron_boots 21 50 3 1.0 none Sturdy worn iron footwear that grips the ground in any terrain. | 堅固的破舊鐵靴，在任何地形都能抓地。
+sturdy_iron_boots 31 39 4 1.0 none sturdy iron boots built for long marches and sudden charges. | 堅固的鐵靴子，適合長途行軍與衝鋒。
+fine_iron_boots 39 63 0 1.0 none fine iron boots built for long marches and sudden charges. | 精良的鐵靴子，適合長途行軍與衝鋒。
+masterwork_iron_boots 16 103 1 1.0 none masterwork iron boots built for long marches and sudden charges. | 大師的鐵靴子，適合長途行軍與衝鋒。
+legendary_iron_boots 32 41 0 1.0 none legendary iron boots built for long marches and sudden charges. | 傳說的鐵靴子，適合長途行軍與衝鋒。
+ancient_iron_boots 54 86 2 1.0 none Sturdy ancient iron footwear that grips the ground in any terrain. | 堅固的遠古鐵靴，在任何地形都能抓地。
+blessed_iron_boots 28 75 4 1.0 none blessed iron boots built for long marches and sudden charges. | 祝福的鐵靴子，適合長途行軍與衝鋒。
+cursed_iron_boots 42 89 2 1.0 none Sturdy cursed iron footwear that grips the ground in any terrain. | 堅固的詛咒鐵靴，在任何地形都能抓地。
+enchanted_iron_boots 12 19 1 1.0 none enchanted iron boots built for long marches and sudden charges. | 附魔的鐵靴子，適合長途行軍與衝鋒。
+royal_iron_boots 12 52 2 1.0 none royal iron boots built for long marches and sudden charges. | 皇家的鐵靴子，適合長途行軍與衝鋒。
+elite_iron_boots 39 39 0 1.0 none elite iron boots built for long marches and sudden charges. | 精英的鐵靴子，適合長途行軍與衝鋒。
+rusty_steel_boots 13 42 1 1.0 none Sturdy rusty steel footwear that grips the ground in any terrain. | 堅固的生鏽鋼靴，在任何地形都能抓地。
+worn_steel_boots 26 56 1 1.0 none Sturdy worn steel footwear that grips the ground in any terrain. | 堅固的破舊鋼靴，在任何地形都能抓地。
+sturdy_steel_boots 46 39 2 1.0 none sturdy steel boots built for long marches and sudden charges. | 堅固的鋼靴子，適合長途行軍與衝鋒。
+fine_steel_boots 40 46 0 1.0 none Sturdy fine steel footwear that grips the ground in any terrain. | 堅固的精良鋼靴，在任何地形都能抓地。
+masterwork_steel_boots 33 72 4 1.0 none Sturdy masterwork steel footwear that grips the ground in any terrain. | 堅固的大師鋼靴，在任何地形都能抓地。
+ancient_steel_boots 41 75 3 1.0 none Sturdy ancient steel footwear that grips the ground in any terrain. | 堅固的遠古鋼靴，在任何地形都能抓地。
+blessed_steel_boots 11 72 2 1.0 none blessed steel boots built for long marches and sudden charges. | 祝福的鋼靴子，適合長途行軍與衝鋒。
+cursed_steel_boots 29 33 0 1.0 none Sturdy cursed steel footwear that grips the ground in any terrain. | 堅固的詛咒鋼靴，在任何地形都能抓地。
+enchanted_steel_boots 26 70 3 1.0 none Sturdy enchanted steel footwear that grips the ground in any terrain. | 堅固的附魔鋼靴，在任何地形都能抓地。
+royal_steel_boots 16 25 0 1.0 none royal steel boots built for long marches and sudden charges. | 皇家的鋼靴子，適合長途行軍與衝鋒。
+elite_steel_boots 48 52 0 1.0 none elite steel boots built for long marches and sudden charges. | 精英的鋼靴子，適合長途行軍與衝鋒。
+rusty_bronze_boots 22 25 3 1.0 none Sturdy rusty bronze footwear that grips the ground in any terrain. | 堅固的生鏽青銅靴，在任何地形都能抓地。
+worn_bronze_boots 30 16 3 1.0 none Sturdy worn bronze footwear that grips the ground in any terrain. | 堅固的破舊青銅靴，在任何地形都能抓地。
+sturdy_bronze_boots 25 77 0 1.0 none sturdy bronze boots built for long marches and sudden charges. | 堅固的青銅靴子，適合長途行軍與衝鋒。
+fine_bronze_boots 34 48 1 1.0 none Sturdy fine bronze footwear that grips the ground in any terrain. | 堅固的精良青銅靴，在任何地形都能抓地。
+masterwork_bronze_boots 60 49 3 1.0 none masterwork bronze boots built for long marches and sudden charges. | 大師的青銅靴子，適合長途行軍與衝鋒。
+legendary_bronze_boots 36 64 0 1.0 none legendary bronze boots built for long marches and sudden charges. | 傳說的青銅靴子，適合長途行軍與衝鋒。
+ancient_bronze_boots 62 27 2 1.0 none ancient bronze boots built for long marches and sudden charges. | 遠古的青銅靴子，適合長途行軍與衝鋒。
+blessed_bronze_boots 12 106 2 1.0 none blessed bronze boots built for long marches and sudden charges. | 祝福的青銅靴子，適合長途行軍與衝鋒。
+cursed_bronze_boots 65 62 2 1.0 none Sturdy cursed bronze footwear that grips the ground in any terrain. | 堅固的詛咒青銅靴，在任何地形都能抓地。
+enchanted_bronze_boots 37 64 2 1.0 none enchanted bronze boots built for long marches and sudden charges. | 附魔的青銅靴子，適合長途行軍與衝鋒。
+royal_bronze_boots 64 46 1 1.0 none royal bronze boots built for long marches and sudden charges. | 皇家的青銅靴子，適合長途行軍與衝鋒。
+elite_bronze_boots 44 53 0 1.0 none elite bronze boots built for long marches and sudden charges. | 精英的青銅靴子，適合長途行軍與衝鋒。
+rusty_silver_boots 22 29 3 1.0 none rusty silver boots built for long marches and sudden charges. | 生鏽的銀靴子，適合長途行軍與衝鋒。
+worn_silver_boots 7 18 4 1.0 none Sturdy worn silver footwear that grips the ground in any terrain. | 堅固的破舊銀靴，在任何地形都能抓地。
+sturdy_silver_boots 43 66 0 1.0 none sturdy silver boots built for long marches and sudden charges. | 堅固的銀靴子，適合長途行軍與衝鋒。
+fine_silver_boots 27 19 4 1.0 none fine silver boots built for long marches and sudden charges. | 精良的銀靴子，適合長途行軍與衝鋒。
+legendary_silver_boots 41 99 1 1.0 none legendary silver boots built for long marches and sudden charges. | 傳說的銀靴子，適合長途行軍與衝鋒。
+blessed_silver_boots 43 89 0 1.0 none Sturdy blessed silver footwear that grips the ground in any terrain. | 堅固的祝福銀靴，在任何地形都能抓地。
+cursed_silver_boots 59 72 0 1.0 none cursed silver boots built for long marches and sudden charges. | 詛咒的銀靴子，適合長途行軍與衝鋒。
+enchanted_silver_boots 67 53 4 1.0 none Sturdy enchanted silver footwear that grips the ground in any terrain. | 堅固的附魔銀靴，在任何地形都能抓地。
+royal_silver_boots 27 72 4 1.0 none Sturdy royal silver footwear that grips the ground in any terrain. | 堅固的皇家銀靴，在任何地形都能抓地。
+elite_silver_boots 26 92 3 1.0 none elite silver boots built for long marches and sudden charges. | 精英的銀靴子，適合長途行軍與衝鋒。
+rusty_gold_boots 28 19 4 1.0 none Sturdy rusty gold footwear that grips the ground in any terrain. | 堅固的生鏽金靴，在任何地形都能抓地。
+worn_gold_boots 6 8 4 1.0 none worn gold boots built for long marches and sudden charges. | 破舊的金靴子，適合長途行軍與衝鋒。
+sturdy_gold_boots 38 22 1 1.0 none Sturdy sturdy gold footwear that grips the ground in any terrain. | 堅固的堅固金靴，在任何地形都能抓地。
+fine_gold_boots 50 79 0 1.0 none Sturdy fine gold footwear that grips the ground in any terrain. | 堅固的精良金靴，在任何地形都能抓地。
+masterwork_gold_boots 57 70 1 1.0 none Sturdy masterwork gold footwear that grips the ground in any terrain. | 堅固的大師金靴，在任何地形都能抓地。
+legendary_gold_boots 77 64 3 1.0 none legendary gold boots built for long marches and sudden charges. | 傳說的金靴子，適合長途行軍與衝鋒。
+ancient_gold_boots 57 83 2 1.0 none ancient gold boots built for long marches and sudden charges. | 遠古的金靴子，適合長途行軍與衝鋒。
+blessed_gold_boots 36 78 1 1.0 none blessed gold boots built for long marches and sudden charges. | 祝福的金靴子，適合長途行軍與衝鋒。
+cursed_gold_boots 27 74 1 1.0 none Sturdy cursed gold footwear that grips the ground in any terrain. | 堅固的詛咒金靴，在任何地形都能抓地。
+enchanted_gold_boots 28 81 1 1.0 none enchanted gold boots built for long marches and sudden charges. | 附魔的金靴子，適合長途行軍與衝鋒。
+royal_gold_boots 24 90 2 1.0 none royal gold boots built for long marches and sudden charges. | 皇家的金靴子，適合長途行軍與衝鋒。
+elite_gold_boots 46 89 3 1.0 none elite gold boots built for long marches and sudden charges. | 精英的金靴子，適合長途行軍與衝鋒。
+rusty_mithril_boots 24 38 1 1.0 none Sturdy rusty mithril footwear that grips the ground in any terrain. | 堅固的生鏽秘銀靴，在任何地形都能抓地。
+worn_mithril_boots 9 49 3 1.0 none worn mithril boots built for long marches and sudden charges. | 破舊的秘銀靴子，適合長途行軍與衝鋒。
+sturdy_mithril_boots 31 44 1 1.0 none sturdy mithril boots built for long marches and sudden charges. | 堅固的秘銀靴子，適合長途行軍與衝鋒。
+fine_mithril_boots 54 50 2 1.0 none fine mithril boots built for long marches and sudden charges. | 精良的秘銀靴子，適合長途行軍與衝鋒。
+masterwork_mithril_boots 25 61 0 1.0 none Sturdy masterwork mithril footwear that grips the ground in any terrain. | 堅固的大師秘銀靴，在任何地形都能抓地。
+legendary_mithril_boots 72 63 3 1.0 none Sturdy legendary mithril footwear that grips the ground in any terrain. | 堅固的傳說秘銀靴，在任何地形都能抓地。
+ancient_mithril_boots 28 51 4 1.0 none Sturdy ancient mithril footwear that grips the ground in any terrain. | 堅固的遠古秘銀靴，在任何地形都能抓地。
+blessed_mithril_boots 68 15 0 1.0 none Sturdy blessed mithril footwear that grips the ground in any terrain. | 堅固的祝福秘銀靴，在任何地形都能抓地。
+cursed_mithril_boots 28 36 2 1.0 none cursed mithril boots built for long marches and sudden charges. | 詛咒的秘銀靴子，適合長途行軍與衝鋒。
+enchanted_mithril_boots 39 110 0 1.0 none Sturdy enchanted mithril footwear that grips the ground in any terrain. | 堅固的附魔秘銀靴，在任何地形都能抓地。
+royal_mithril_boots 25 57 3 1.0 none Sturdy royal mithril footwear that grips the ground in any terrain. | 堅固的皇家秘銀靴，在任何地形都能抓地。
+elite_mithril_boots 14 93 1 1.0 none Sturdy elite mithril footwear that grips the ground in any terrain. | 堅固的精英秘銀靴，在任何地形都能抓地。
+rusty_crystal_boots 17 19 0 1.0 none Sturdy rusty crystal footwear that grips the ground in any terrain. | 堅固的生鏽水晶靴，在任何地形都能抓地。
+worn_crystal_boots 26 38 2 1.0 none Sturdy worn crystal footwear that grips the ground in any terrain. | 堅固的破舊水晶靴，在任何地形都能抓地。
+sturdy_crystal_boots 48 77 3 1.0 none Sturdy sturdy crystal footwear that grips the ground in any terrain. | 堅固的堅固水晶靴，在任何地形都能抓地。
+fine_crystal_boots 19 42 3 1.0 none fine crystal boots built for long marches and sudden charges. | 精良的水晶靴子，適合長途行軍與衝鋒。
+masterwork_crystal_boots 24 105 2 1.0 none masterwork crystal boots built for long marches and sudden charges. | 大師的水晶靴子，適合長途行軍與衝鋒。
+ancient_crystal_boots 30 81 0 1.0 none ancient crystal boots built for long marches and sudden charges. | 遠古的水晶靴子，適合長途行軍與衝鋒。
+blessed_crystal_boots 67 19 0 1.0 none Sturdy blessed crystal footwear that grips the ground in any terrain. | 堅固的祝福水晶靴，在任何地形都能抓地。
+cursed_crystal_boots 31 65 1 1.0 none cursed crystal boots built for long marches and sudden charges. | 詛咒的水晶靴子，適合長途行軍與衝鋒。
+enchanted_crystal_boots 21 92 0 1.0 none Sturdy enchanted crystal footwear that grips the ground in any terrain. | 堅固的附魔水晶靴，在任何地形都能抓地。
+royal_crystal_boots 42 106 1 1.0 none Sturdy royal crystal footwear that grips the ground in any terrain. | 堅固的皇家水晶靴，在任何地形都能抓地。
+elite_crystal_boots 37 36 2 1.0 none elite crystal boots built for long marches and sudden charges. | 精英的水晶靴子，適合長途行軍與衝鋒。
+rusty_dragon_boots 19 14 0 1.0 fire rusty dragon boots built for long marches and sudden charges. | 生鏽的龍靴子，適合長途行軍與衝鋒。
+worn_dragon_boots 11 41 1 1.0 fire worn dragon boots built for long marches and sudden charges. | 破舊的龍靴子，適合長途行軍與衝鋒。
+sturdy_dragon_boots 21 56 0 1.0 fire Sturdy sturdy dragon footwear that grips the ground in any terrain. | 堅固的堅固龍靴，在任何地形都能抓地。
+fine_dragon_boots 43 96 4 1.0 fire Sturdy fine dragon footwear that grips the ground in any terrain. | 堅固的精良龍靴，在任何地形都能抓地。
+masterwork_dragon_boots 49 33 4 1.0 fire Sturdy masterwork dragon footwear that grips the ground in any terrain. | 堅固的大師龍靴，在任何地形都能抓地。
+legendary_dragon_boots 14 39 3 1.0 fire Sturdy legendary dragon footwear that grips the ground in any terrain. | 堅固的傳說龍靴，在任何地形都能抓地。
+ancient_dragon_boots 68 68 2 1.0 fire ancient dragon boots built for long marches and sudden charges. | 遠古的龍靴子，適合長途行軍與衝鋒。
+blessed_dragon_boots 16 96 3 1.0 fire blessed dragon boots built for long marches and sudden charges. | 祝福的龍靴子，適合長途行軍與衝鋒。
+cursed_dragon_boots 63 19 0 1.0 fire cursed dragon boots built for long marches and sudden charges. | 詛咒的龍靴子，適合長途行軍與衝鋒。
+enchanted_dragon_boots 57 78 1 1.0 fire Sturdy enchanted dragon footwear that grips the ground in any terrain. | 堅固的附魔龍靴，在任何地形都能抓地。
+royal_dragon_boots 37 42 0 1.0 fire Sturdy royal dragon footwear that grips the ground in any terrain. | 堅固的皇家龍靴，在任何地形都能抓地。
+elite_dragon_boots 46 71 0 1.0 fire elite dragon boots built for long marches and sudden charges. | 精英的龍靴子，適合長途行軍與衝鋒。
+rusty_demon_boots 14 40 0 1.0 dark Sturdy rusty demon footwear that grips the ground in any terrain. | 堅固的生鏽惡魔靴，在任何地形都能抓地。
+worn_demon_boots 9 14 1 1.0 dark worn demon boots built for long marches and sudden charges. | 破舊的惡魔靴子，適合長途行軍與衝鋒。
+sturdy_demon_boots 20 30 3 1.0 dark sturdy demon boots built for long marches and sudden charges. | 堅固的惡魔靴子，適合長途行軍與衝鋒。
+fine_demon_boots 19 14 1 1.0 dark Sturdy fine demon footwear that grips the ground in any terrain. | 堅固的精良惡魔靴，在任何地形都能抓地。
+masterwork_demon_boots 63 30 4 1.0 dark masterwork demon boots built for long marches and sudden charges. | 大師的惡魔靴子，適合長途行軍與衝鋒。
+ancient_demon_boots 62 60 0 1.0 dark ancient demon boots built for long marches and sudden charges. | 遠古的惡魔靴子，適合長途行軍與衝鋒。
+blessed_demon_boots 25 44 1 1.0 dark Sturdy blessed demon footwear that grips the ground in any terrain. | 堅固的祝福惡魔靴，在任何地形都能抓地。
+cursed_demon_boots 31 98 2 1.0 dark cursed demon boots built for long marches and sudden charges. | 詛咒的惡魔靴子，適合長途行軍與衝鋒。
+enchanted_demon_boots 18 110 4 1.0 dark Sturdy enchanted demon footwear that grips the ground in any terrain. | 堅固的附魔惡魔靴，在任何地形都能抓地。
+royal_demon_boots 61 69 1 1.0 dark royal demon boots built for long marches and sudden charges. | 皇家的惡魔靴子，適合長途行軍與衝鋒。
+elite_demon_boots 48 71 4 1.0 dark Sturdy elite demon footwear that grips the ground in any terrain. | 堅固的精英惡魔靴，在任何地形都能抓地。
+rusty_angel_boots 6 18 1 1.0 light rusty angel boots built for long marches and sudden charges. | 生鏽的天使靴子，適合長途行軍與衝鋒。
+worn_angel_boots 28 46 4 1.0 light Sturdy worn angel footwear that grips the ground in any terrain. | 堅固的破舊天使靴，在任何地形都能抓地。
+rusty_iron_gloves 16 37 0 1.0 none These rusty iron gloves are lined to keep the fingers nimble. | 這雙生鏽鐵手套內襯柔軟，保持手指靈活。
+worn_iron_gloves 35 48 2 1.0 none These worn iron gloves are lined to keep the fingers nimble. | 這雙破舊鐵手套內襯柔軟，保持手指靈活。
+sturdy_iron_gloves 41 75 2 1.0 none These sturdy iron gloves are lined to keep the fingers nimble. | 這雙堅固鐵手套內襯柔軟，保持手指靈活。
+fine_iron_gloves 42 82 2 1.0 none These fine iron gloves are lined to keep the fingers nimble. | 這雙精良鐵手套內襯柔軟，保持手指靈活。
+legendary_iron_gloves 46 84 1 1.0 none legendary iron gauntlets that protect the hands while gripping a weapon. | 傳說的鐵護手，在握持武器時保護雙手。
+ancient_iron_gloves 56 64 3 1.0 none These ancient iron gloves are lined to keep the fingers nimble. | 這雙遠古鐵手套內襯柔軟，保持手指靈活。
+blessed_iron_gloves 36 74 4 1.0 none blessed iron gauntlets that protect the hands while gripping a weapon. | 祝福的鐵護手，在握持武器時保護雙手。
+cursed_iron_gloves 22 44 2 1.0 none These cursed iron gloves are lined to keep the fingers nimble. | 這雙詛咒鐵手套內襯柔軟，保持手指靈活。
+enchanted_iron_gloves 23 18 4 1.0 none These enchanted iron gloves are lined to keep the fingers nimble. | 這雙附魔鐵手套內襯柔軟，保持手指靈活。
+royal_iron_gloves 42 90 4 1.0 none royal iron gauntlets that protect the hands while gripping a weapon. | 皇家的鐵護手，在握持武器時保護雙手。
+rusty_steel_gloves 9 21 3 1.0 none rusty steel gauntlets that protect the hands while gripping a weapon. | 生鏽的鋼護手，在握持武器時保護雙手。
+worn_steel_gloves 16 29 3 1.0 none These worn steel gloves are lined to keep the fingers nimble. | 這雙破舊鋼手套內襯柔軟，保持手指靈活。
+sturdy_steel_gloves 18 65 2 1.0 none These sturdy steel gloves are lined to keep the fingers nimble. | 這雙堅固鋼手套內襯柔軟，保持手指靈活。
+fine_steel_gloves 43 49 1 1.0 none These fine steel gloves are lined to keep the fingers nimble. | 這雙精良鋼手套內襯柔軟，保持手指靈活。
+masterwork_steel_gloves 72 27 3 1.0 none These masterwork steel gloves are lined to keep the fingers nimble. | 這雙大師鋼手套內襯柔軟，保持手指靈活。
+ancient_steel_gloves 25 65 4 1.0 none ancient steel gauntlets that protect the hands while gripping a weapon. | 遠古的鋼護手，在握持武器時保護雙手。
+blessed_steel_gloves 32 44 2 1.0 none blessed steel gauntlets that protect the hands while gripping a weapon. | 祝福的鋼護手，在握持武器時保護雙手。
+cursed_steel_gloves 58 85 2 1.0 none cursed steel gauntlets that protect the hands while gripping a weapon. | 詛咒的鋼護手，在握持武器時保護雙手。
+enchanted_steel_gloves 57 89 0 1.0 none These enchanted steel gloves are lined to keep the fingers nimble. | 這雙附魔鋼手套內襯柔軟，保持手指靈活。
+royal_steel_gloves 27 72 4 1.0 none royal steel gauntlets that protect the hands while gripping a weapon. | 皇家的鋼護手，在握持武器時保護雙手。
+elite_steel_gloves 22 84 0 1.0 none elite steel gauntlets that protect the hands while gripping a weapon. | 精英的鋼護手，在握持武器時保護雙手。
+rusty_bronze_gloves 19 31 3 1.0 none These rusty bronze gloves are lined to keep the fingers nimble. | 這雙生鏽青銅手套內襯柔軟，保持手指靈活。
+worn_bronze_gloves 29 14 1 1.0 none worn bronze gauntlets that protect the hands while gripping a weapon. | 破舊的青銅護手，在握持武器時保護雙手。
+sturdy_bronze_gloves 42 72 4 1.0 none sturdy bronze gauntlets that protect the hands while gripping a weapon. | 堅固的青銅護手，在握持武器時保護雙手。
+fine_bronze_gloves 45 69 0 1.0 none These fine bronze gloves are lined to keep the fingers nimble. | 這雙精良青銅手套內襯柔軟，保持手指靈活。
+masterwork_bronze_gloves 13 78 4 1.0 none These masterwork bronze gloves are lined to keep the fingers nimble. | 這雙大師青銅手套內襯柔軟，保持手指靈活。
+ancient_bronze_gloves 16 48 3 1.0 none ancient bronze gauntlets that protect the hands while gripping a weapon. | 遠古的青銅護手，在握持武器時保護雙手。
+blessed_bronze_gloves 68 16 4 1.0 none blessed bronze gauntlets that protect the hands while gripping a weapon. | 祝福的青銅護手，在握持武器時保護雙手。
+cursed_bronze_gloves 28 85 3 1.0 none cursed bronze gauntlets that protect the hands while gripping a weapon. | 詛咒的青銅護手，在握持武器時保護雙手。
+enchanted_bronze_gloves 15 64 1 1.0 none These enchanted bronze gloves are lined to keep the fingers nimble. | 這雙附魔青銅手套內襯柔軟，保持手指靈活。
+royal_bronze_gloves 69 63 0 1.0 none royal bronze gauntlets that protect the hands while gripping a weapon. | 皇家的青銅護手，在握持武器時保護雙手。
+elite_bronze_gloves 55 92 4 1.0 none elite bronze gauntlets that protect the hands while gripping a weapon. | 精英的青銅護手，在握持武器時保護雙手。
+rusty_silver_gloves 24 24 3 1.0 none rusty silver gauntlets that protect the hands while gripping a weapon. | 生鏽的銀護手，在握持武器時保護雙手。
+worn_silver_gloves 34 29 2 1.0 none These worn silver gloves are lined to keep the fingers nimble. | 這雙破舊銀手套內襯柔軟，保持手指靈活。
+sturdy_silver_gloves 18 37 1 1.0 none These sturdy silver gloves are lined to keep the fingers nimble. | 這雙堅固銀手套內襯柔軟，保持手指靈活。
+fine_silver_gloves 16 81 1 1.0 none fine silver gauntlets that protect the hands while gripping a weapon. | 精良的銀護手，在握持武器時保護雙手。
+legendary_silver_gloves 18 48 2 1.0 none These legendary silver gloves are lined to keep the fingers nimble. | 這雙傳說銀手套內襯柔軟，保持手指靈活。
+ancient_silver_gloves 76 57 2 1.0 none These ancient silver gloves are lined to keep the fingers nimble. | 這雙遠古銀手套內襯柔軟，保持手指靈活。
+blessed_silver_gloves 42 33 4 1.0 none blessed silver gauntlets that protect the hands while gripping a weapon. | 祝福的銀護手，在握持武器時保護雙手。
+cursed_silver_gloves 11 93 4 1.0 none These cursed silver gloves are lined to keep the fingers nimble. | 這雙詛咒銀手套內襯柔軟，保持手指靈活。
+royal_silver_gloves 21 43 4 1.0 none These royal silver gloves are lined to keep the fingers nimble. | 這雙皇家銀手套內襯柔軟，保持手指靈活。
+elite_silver_gloves 53 68 1 1.0 none These elite silver gloves are lined to keep the fingers nimble. | 這雙精英銀手套內襯柔軟，保持手指靈活。
+rusty_gold_gloves 17 17 2 1.0 none rusty gold gauntlets that protect the hands while gripping a weapon. | 生鏽的金護手，在握持武器時保護雙手。
+worn_gold_gloves 5 16 1 1.0 none These worn gold gloves are lined to keep the fingers nimble. | 這雙破舊金手套內襯柔軟，保持手指靈活。
+sturdy_gold_gloves 35 40 4 1.0 none sturdy gold gauntlets that protect the hands while gripping a weapon. | 堅固的金護手，在握持武器時保護雙手。
+fine_gold_gloves 43 19 0 1.0 none fine gold gauntlets that protect the hands while gripping a weapon. | 精良的金護手，在握持武器時保護雙手。
+masterwork_gold_gloves 67 76 0 1.0 none masterwork gold gauntlets that protect the hands while gripping a weapon. | 大師的金護手，在握持武器時保護雙手。
+ancient_gold_gloves 22 65 0 1.0 none These ancient gold gloves are lined to keep the fingers nimble. | 這雙遠古金手套內襯柔軟，保持手指靈活。
+blessed_gold_gloves 12 65 0 1.0 none blessed gold gauntlets that protect the hands while gripping a weapon. | 祝福的金護手，在握持武器時保護雙手。
+cursed_gold_gloves 41 16 0 1.0 none cursed gold gauntlets that protect the hands while gripping a weapon. | 詛咒的金護手，在握持武器時保護雙手。
+enchanted_gold_gloves 54 37 0 1.0 none enchanted gold gauntlets that protect the hands while gripping a weapon. | 附魔的金護手，在握持武器時保護雙手。
+royal_gold_gloves 37 36 0 1.0 none These royal gold gloves are lined to keep the fingers nimble. | 這雙皇家金手套內襯柔軟，保持手指靈活。
+elite_gold_gloves 11 44 3 1.0 none These elite gold gloves are lined to keep the fingers nimble. | 這雙精英金手套內襯柔軟，保持手指靈活。
+rusty_mithril_gloves 21 32 1 1.0 none These rusty mithril gloves are lined to keep the fingers nimble. | 這雙生鏽秘銀手套內襯柔軟，保持手指靈活。
+worn_mithril_gloves 16 48 2 1.0 none These worn mithril gloves are lined to keep the fingers nimble. | 這雙破舊秘銀手套內襯柔軟，保持手指靈活。
+sturdy_mithril_gloves 43 27 4 1.0 none sturdy mithril gauntlets that protect the hands while gripping a weapon. | 堅固的秘銀護手，在握持武器時保護雙手。
+fine_mithril_gloves 26 39 2 1.0 none These fine mithril gloves are lined to keep the fingers nimble. | 這雙精良秘銀手套內襯柔軟，保持手指靈活。
+masterwork_mithril_gloves 43 106 2 1.0 none masterwork mithril gauntlets that protect the hands while gripping a weapon. | 大師的秘銀護手，在握持武器時保護雙手。
+ancient_mithril_gloves 60 57 1 1.0 none These ancient mithril gloves are lined to keep the fingers nimble. | 這雙遠古秘銀手套內襯柔軟，保持手指靈活。
+blessed_mithril_gloves 23 88 2 1.0 none These blessed mithril gloves are lined to keep the fingers nimble. | 這雙祝福秘銀手套內襯柔軟，保持手指靈活。
+cursed_mithril_gloves 49 96 3 1.0 none cursed mithril gauntlets that protect the hands while gripping a weapon. | 詛咒的秘銀護手，在握持武器時保護雙手。
+enchanted_mithril_gloves 35 71 1 1.0 none These enchanted mithril gloves are lined to keep the fingers nimble. | 這雙附魔秘銀手套內襯柔軟，保持手指靈活。
+royal_mithril_gloves 73 51 2 1.0 none royal mithril gauntlets that protect the hands while gripping a weapon. | 皇家的秘銀護手，在握持武器時保護雙手。
+elite_mithril_gloves 45 97 2 1.0 none These elite mithril gloves are lined to keep the fingers nimble. | 這雙精英秘銀手套內襯柔軟，保持手指靈活。
+rusty_crystal_gloves 16 16 1 1.0 none These rusty crystal gloves are lined to keep the fingers nimble. | 這雙生鏽水晶手套內襯柔軟，保持手指靈活。
+worn_crystal_gloves 17 15 4 1.0 none These worn crystal gloves are lined to keep the fingers nimble. | 這雙破舊水晶手套內襯柔軟，保持手指靈活。
+sturdy_crystal_gloves 13 58 2 1.0 none These sturdy crystal gloves are lined to keep the fingers nimble. | 這雙堅固水晶手套內襯柔軟，保持手指靈活。
+fine_crystal_gloves 24 91 0 1.0 none These fine crystal gloves are lined to keep the fingers nimble. | 這雙精良水晶手套內襯柔軟，保持手指靈活。
+legendary_crystal_gloves 79 52 3 1.0 none legendary crystal gauntlets that protect the hands while gripping a weapon. | 傳說的水晶護手，在握持武器時保護雙手。
+ancient_crystal_gloves 51 88 1 1.0 none ancient crystal gauntlets that protect the hands while gripping a weapon. | 遠古的水晶護手，在握持武器時保護雙手。
+blessed_crystal_gloves 14 65 4 1.0 none blessed crystal gauntlets that protect the hands while gripping a weapon. | 祝福的水晶護手，在握持武器時保護雙手。
+cursed_crystal_gloves 31 70 3 1.0 none These cursed crystal gloves are lined to keep the fingers nimble. | 這雙詛咒水晶手套內襯柔軟，保持手指靈活。
+enchanted_crystal_gloves 62 16 2 1.0 none These enchanted crystal gloves are lined to keep the fingers nimble. | 這雙附魔水晶手套內襯柔軟，保持手指靈活。
+royal_crystal_gloves 75 36 4 1.0 none These royal crystal gloves are lined to keep the fingers nimble. | 這雙皇家水晶手套內襯柔軟，保持手指靈活。
+elite_crystal_gloves 36 72 2 1.0 none elite crystal gauntlets that protect the hands while gripping a weapon. | 精英的水晶護手，在握持武器時保護雙手。
+rusty_dragon_gloves 11 32 0 1.0 fire rusty dragon gauntlets that protect the hands while gripping a weapon. | 生鏽的龍護手，在握持武器時保護雙手。
+worn_dragon_gloves 21 48 3 1.0 fire These worn dragon gloves are lined to keep the fingers nimble. | 這雙破舊龍手套內襯柔軟，保持手指靈活。
+sturdy_dragon_gloves 44 71 0 1.0 fire sturdy dragon gauntlets that protect the hands while gripping a weapon. | 堅固的龍護手，在握持武器時保護雙手。
+fine_dragon_gloves 14 46 0 1.0 fire fine dragon gauntlets that protect the hands while gripping a weapon. | 精良的龍護手，在握持武器時保護雙手。
+masterwork_dragon_gloves 48 88 3 1.0 fire These masterwork dragon gloves are lined to keep the fingers nimble. | 這雙大師龍手套內襯柔軟，保持手指靈活。
+ancient_dragon_gloves 36 113 3 1.0 fire These ancient dragon gloves are lined to keep the fingers nimble. | 這雙遠古龍手套內襯柔軟，保持手指靈活。
+blessed_dragon_gloves 30 23 2 1.0 fire blessed dragon gauntlets that protect the hands while gripping a weapon. | 祝福的龍護手，在握持武器時保護雙手。
+cursed_dragon_gloves 49 59 0 1.0 fire These cursed dragon gloves are lined to keep the fingers nimble. | 這雙詛咒龍手套內襯柔軟，保持手指靈活。
+enchanted_dragon_gloves 57 33 3 1.0 fire These enchanted dragon gloves are lined to keep the fingers nimble. | 這雙附魔龍手套內襯柔軟，保持手指靈活。
+royal_dragon_gloves 12 99 3 1.0 fire royal dragon gauntlets that protect the hands while gripping a weapon. | 皇家的龍護手，在握持武器時保護雙手。
+rusty_demon_gloves 17 25 1 1.0 dark These rusty demon gloves are lined to keep the fingers nimble. | 這雙生鏽惡魔手套內襯柔軟，保持手指靈活。
+worn_demon_gloves 21 21 1 1.0 dark These worn demon gloves are lined to keep the fingers nimble. | 這雙破舊惡魔手套內襯柔軟，保持手指靈活。
+sturdy_demon_gloves 25 34 1 1.0 dark These sturdy demon gloves are lined to keep the fingers nimble. | 這雙堅固惡魔手套內襯柔軟，保持手指靈活。
+fine_demon_gloves 51 66 0 1.0 dark These fine demon gloves are lined to keep the fingers nimble. | 這雙精良惡魔手套內襯柔軟，保持手指靈活。
+masterwork_demon_gloves 22 48 2 1.0 dark These masterwork demon gloves are lined to keep the fingers nimble. | 這雙大師惡魔手套內襯柔軟，保持手指靈活。
+legendary_demon_gloves 46 97 4 1.0 dark legendary demon gauntlets that protect the hands while gripping a weapon. | 傳說的惡魔護手，在握持武器時保護雙手。
+ancient_demon_gloves 20 81 3 1.0 dark ancient demon gauntlets that protect the hands while gripping a weapon. | 遠古的惡魔護手，在握持武器時保護雙手。
+blessed_demon_gloves 16 106 0 1.0 dark These blessed demon gloves are lined to keep the fingers nimble. | 這雙祝福惡魔手套內襯柔軟，保持手指靈活。
+cursed_demon_gloves 28 89 0 1.0 dark cursed demon gauntlets that protect the hands while gripping a weapon. | 詛咒的惡魔護手，在握持武器時保護雙手。
+enchanted_demon_gloves 64 71 3 1.0 dark These enchanted demon gloves are lined to keep the fingers nimble. | 這雙附魔惡魔手套內襯柔軟，保持手指靈活。
+royal_demon_gloves 16 64 0 1.0 dark These royal demon gloves are lined to keep the fingers nimble. | 這雙皇家惡魔手套內襯柔軟，保持手指靈活。
+elite_demon_gloves 19 76 1 1.0 dark elite demon gauntlets that protect the hands while gripping a weapon. | 精英的惡魔護手，在握持武器時保護雙手。
+rusty_angel_gloves 24 27 1 1.0 light rusty angel gauntlets that protect the hands while gripping a weapon. | 生鏽的天使護手，在握持武器時保護雙手。
+worn_angel_gloves 19 52 2 1.0 light worn angel gauntlets that protect the hands while gripping a weapon. | 破舊的天使護手，在握持武器時保護雙手。
+rusty_iron_cloak 16 43 0 1.0 none A rusty iron cloak that conceals the wearer and wards off the elements. | 生鏽的鐵披風，遮蔽身形並抵禦風寒。
+worn_iron_cloak 21 16 4 1.0 none A worn iron cloak that conceals the wearer and wards off the elements. | 破舊的鐵披風，遮蔽身形並抵禦風寒。
+sturdy_iron_cloak 34 64 3 1.0 none This sturdy iron mantle flows with the wearer's movements. | 這件堅固鐵披風隨穿戴者的動作飄動。
+fine_iron_cloak 25 63 1 1.0 none A fine iron cloak that conceals the wearer and wards off the elements. | 精良的鐵披風，遮蔽身形並抵禦風寒。
+masterwork_iron_cloak 27 54 3 1.0 none A masterwork iron cloak that conceals the wearer and wards off the elements. | 大師的鐵披風，遮蔽身形並抵禦風寒。
+legendary_iron_cloak 52 34 1 1.0 none This legendary iron mantle flows with the wearer's movements. | 這件傳說鐵披風隨穿戴者的動作飄動。
+ancient_iron_cloak 24 102 4 1.0 none A ancient iron cloak that conceals the wearer and wards off the elements. | 遠古的鐵披風，遮蔽身形並抵禦風寒。
+blessed_iron_cloak 29 89 2 1.0 none This blessed iron mantle flows with the wearer's movements. | 這件祝福鐵披風隨穿戴者的動作飄動。
+cursed_iron_cloak 31 78 3 1.0 none A cursed iron cloak that conceals the wearer and wards off the elements. | 詛咒的鐵披風，遮蔽身形並抵禦風寒。
+enchanted_iron_cloak 57 33 1 1.0 none A enchanted iron cloak that conceals the wearer and wards off the elements. | 附魔的鐵披風，遮蔽身形並抵禦風寒。
+royal_iron_cloak 40 57 1 1.0 none This royal iron mantle flows with the wearer's movements. | 這件皇家鐵披風隨穿戴者的動作飄動。
+elite_iron_cloak 32 44 3 1.0 none A elite iron cloak that conceals the wearer and wards off the elements. | 精英的鐵披風，遮蔽身形並抵禦風寒。
+rusty_steel_cloak 5 9 3 1.0 none A rusty steel cloak that conceals the wearer and wards off the elements. | 生鏽的鋼披風，遮蔽身形並抵禦風寒。
+worn_steel_cloak 13 13 1 1.0 none A worn steel cloak that conceals the wearer and wards off the elements. | 破舊的鋼披風，遮蔽身形並抵禦風寒。
+sturdy_steel_cloak 13 32 4 1.0 none This sturdy steel mantle flows with the wearer's movements. | 這件堅固鋼披風隨穿戴者的動作飄動。
+fine_steel_cloak 31 58 0 1.0 none This fine steel mantle flows with the wearer's movements. | 這件精良鋼披風隨穿戴者的動作飄動。
+legendary_steel_cloak 57 64 2 1.0 none This legendary steel mantle flows with the wearer's movements. | 這件傳說鋼披風隨穿戴者的動作飄動。
+ancient_steel_cloak 24 99 1 1.0 none A ancient steel cloak that conceals the wearer and wards off the elements. | 遠古的鋼披風，遮蔽身形並抵禦風寒。
+blessed_steel_cloak 23 81 1 1.0 none A blessed steel cloak that conceals the wearer and wards off the elements. | 祝福的鋼披風，遮蔽身形並抵禦風寒。
+cursed_steel_cloak 14 48 0 1.0 none This cursed steel mantle flows with the wearer's movements. | 這件詛咒鋼披風隨穿戴者的動作飄動。
+enchanted_steel_cloak 22 72 4 1.0 none A enchanted steel cloak that conceals the wearer and wards off the elements. | 附魔的鋼披風，遮蔽身形並抵禦風寒。
+royal_steel_cloak 40 16 4 1.0 none A royal steel cloak that conceals the wearer and wards off the elements. | 皇家的鋼披風，遮蔽身形並抵禦風寒。
+elite_steel_cloak 36 87 2 1.0 none This elite steel mantle flows with the wearer's movements. | 這件精英鋼披風隨穿戴者的動作飄動。
+rusty_bronze_cloak 27 10 0 1.0 none A rusty bronze cloak that conceals the wearer and wards off the elements. | 生鏽的青銅披風，遮蔽身形並抵禦風寒。
+worn_bronze_cloak 22 49 2 1.0 none A worn bronze cloak that conceals the wearer and wards off the elements. | 破舊的青銅披風，遮蔽身形並抵禦風寒。
+sturdy_bronze_cloak 33 36 4 1.0 none This sturdy bronze mantle flows with the wearer's movements. | 這件堅固青銅披風隨穿戴者的動作飄動。
+fine_bronze_cloak 18 38 0 1.0 none A fine bronze cloak that conceals the wearer and wards off the elements. | 精良的青銅披風，遮蔽身形並抵禦風寒。
+masterwork_bronze_cloak 22 21 1 1.0 none This masterwork bronze mantle flows with the wearer's movements. | 這件大師青銅披風隨穿戴者的動作飄動。
+ancient_bronze_cloak 75 20 3 1.0 none A ancient bronze cloak that conceals the wearer and wards off the elements. | 遠古的青銅披風，遮蔽身形並抵禦風寒。
+blessed_bronze_cloak 61 16 1 1.0 none This blessed bronze mantle flows with the wearer's movements. | 這件祝福青銅披風隨穿戴者的動作飄動。
+cursed_bronze_cloak 18 26 1 1.0 none This cursed bronze mantle flows with the wearer's movements. | 這件詛咒青銅披風隨穿戴者的動作飄動。
+enchanted_bronze_cloak 67 53 2 1.0 none A enchanted bronze cloak that conceals the wearer and wards off the elements. | 附魔的青銅披風，遮蔽身形並抵禦風寒。
+royal_bronze_cloak 48 51 3 1.0 none This royal bronze mantle flows with the wearer's movements. | 這件皇家青銅披風隨穿戴者的動作飄動。
+elite_bronze_cloak 15 48 0 1.0 none This elite bronze mantle flows with the wearer's movements. | 這件精英青銅披風隨穿戴者的動作飄動。
+rusty_silver_cloak 19 15 3 1.0 none A rusty silver cloak that conceals the wearer and wards off the elements. | 生鏽的銀披風，遮蔽身形並抵禦風寒。
+worn_silver_cloak 25 52 3 1.0 none A worn silver cloak that conceals the wearer and wards off the elements. | 破舊的銀披風，遮蔽身形並抵禦風寒。
+sturdy_silver_cloak 12 47 3 1.0 none A sturdy silver cloak that conceals the wearer and wards off the elements. | 堅固的銀披風，遮蔽身形並抵禦風寒。
+fine_silver_cloak 13 84 3 1.0 none This fine silver mantle flows with the wearer's movements. | 這件精良銀披風隨穿戴者的動作飄動。
+masterwork_silver_cloak 42 76 2 1.0 none This masterwork silver mantle flows with the wearer's movements. | 這件大師銀披風隨穿戴者的動作飄動。
+ancient_silver_cloak 40 108 3 1.0 none A ancient silver cloak that conceals the wearer and wards off the elements. | 遠古的銀披風，遮蔽身形並抵禦風寒。
+blessed_silver_cloak 51 64 4 1.0 none This blessed silver mantle flows with the wearer's movements. | 這件祝福銀披風隨穿戴者的動作飄動。
+cursed_silver_cloak 52 66 1 1.0 none This cursed silver mantle flows with the wearer's movements. | 這件詛咒銀披風隨穿戴者的動作飄動。
+enchanted_silver_cloak 62 72 1 1.0 none This enchanted silver mantle flows with the wearer's movements. | 這件附魔銀披風隨穿戴者的動作飄動。
+royal_silver_cloak 27 66 0 1.0 none A royal silver cloak that conceals the wearer and wards off the elements. | 皇家的銀披風，遮蔽身形並抵禦風寒。
+elite_silver_cloak 48 28 0 1.0 none A elite silver cloak that conceals the wearer and wards off the elements. | 精英的銀披風，遮蔽身形並抵禦風寒。
+rusty_gold_cloak 15 10 1 1.0 none A rusty gold cloak that conceals the wearer and wards off the elements. | 生鏽的金披風，遮蔽身形並抵禦風寒。
+worn_gold_cloak 9 28 3 1.0 none A worn gold cloak that conceals the wearer and wards off the elements. | 破舊的金披風，遮蔽身形並抵禦風寒。
+sturdy_gold_cloak 24 48 2 1.0 none This sturdy gold mantle flows with the wearer's movements. | 這件堅固金披風隨穿戴者的動作飄動。
+fine_gold_cloak 24 21 4 1.0 none This fine gold mantle flows with the wearer's movements. | 這件精良金披風隨穿戴者的動作飄動。
+masterwork_gold_cloak 27 76 4 1.0 none This masterwork gold mantle flows with the wearer's movements. | 這件大師金披風隨穿戴者的動作飄動。
+legendary_gold_cloak 46 36 1 1.0 none This legendary gold mantle flows with the wearer's movements. | 這件傳說金披風隨穿戴者的動作飄動。
+ancient_gold_cloak 64 72 1 1.0 none A ancient gold cloak that conceals the wearer and wards off the elements. | 遠古的金披風，遮蔽身形並抵禦風寒。
+blessed_gold_cloak 70 14 3 1.0 none This blessed gold mantle flows with the wearer's movements. | 這件祝福金披風隨穿戴者的動作飄動。
+cursed_gold_cloak 50 23 0 1.0 none This cursed gold mantle flows with the wearer's movements. | 這件詛咒金披風隨穿戴者的動作飄動。
+enchanted_gold_cloak 43 37 0 1.0 none This enchanted gold mantle flows with the wearer's movements. | 這件附魔金披風隨穿戴者的動作飄動。
+royal_gold_cloak 22 19 4 1.0 none A royal gold cloak that conceals the wearer and wards off the elements. | 皇家的金披風，遮蔽身形並抵禦風寒。
+elite_gold_cloak 10 41 0 1.0 none This elite gold mantle flows with the wearer's movements. | 這件精英金披風隨穿戴者的動作飄動。
+rusty_mithril_cloak 12 41 4 1.0 none This rusty mithril mantle flows with the wearer's movements. | 這件生鏽秘銀披風隨穿戴者的動作飄動。
+worn_mithril_cloak 34 35 1 1.0 none This worn mithril mantle flows with the wearer's movements. | 這件破舊秘銀披風隨穿戴者的動作飄動。
+sturdy_mithril_cloak 20 47 3 1.0 none This sturdy mithril mantle flows with the wearer's movements. | 這件堅固秘銀披風隨穿戴者的動作飄動。
+fine_mithril_cloak 20 26 3 1.0 none This fine mithril mantle flows with the wearer's movements. | 這件精良秘銀披風隨穿戴者的動作飄動。
+legendary_mithril_cloak 25 111 3 1.0 none This legendary mithril mantle flows with the wearer's movements. | 這件傳說秘銀披風隨穿戴者的動作飄動。
+ancient_mithril_cloak 46 86 4 1.0 none A ancient mithril cloak that conceals the wearer and wards off the elements. | 遠古的秘銀披風，遮蔽身形並抵禦風寒。
+blessed_mithril_cloak 62 58 0 1.0 none This blessed mithril mantle flows with the wearer's movements. | 這件祝福秘銀披風隨穿戴者的動作飄動。
+cursed_mithril_cloak 26 32 2 1.0 none A cursed mithril cloak that conceals the wearer and wards off the elements. | 詛咒的秘銀披風，遮蔽身形並抵禦風寒。
+enchanted_mithril_cloak 28 53 2 1.0 none This enchanted mithril mantle flows with the wearer's movements. | 這件附魔秘銀披風隨穿戴者的動作飄動。
+royal_mithril_cloak 24 111 3 1.0 none A royal mithril cloak that conceals the wearer and wards off the elements. | 皇家的秘銀披風，遮蔽身形並抵禦風寒。
+rusty_crystal_cloak 24 14 3 1.0 none This rusty crystal mantle flows with the wearer's movements. | 這件生鏽水晶披風隨穿戴者的動作飄動。
+worn_crystal_cloak 11 16 4 1.0 none A worn crystal cloak that conceals the wearer and wards off the elements. | 破舊的水晶披風，遮蔽身形並抵禦風寒。
+sturdy_crystal_cloak 9 18 4 1.0 none This sturdy crystal mantle flows with the wearer's movements. | 這件堅固水晶披風隨穿戴者的動作飄動。
+fine_crystal_cloak 48 40 4 1.0 none This fine crystal mantle flows with the wearer's movements. | 這件精良水晶披風隨穿戴者的動作飄動。
+legendary_crystal_cloak 25 21 1 1.0 none This legendary crystal mantle flows with the wearer's movements. | 這件傳說水晶披風隨穿戴者的動作飄動。
+ancient_crystal_cloak 14 113 3 1.0 none This ancient crystal mantle flows with the wearer's movements. | 這件遠古水晶披風隨穿戴者的動作飄動。
+blessed_crystal_cloak 35 32 2 1.0 none This blessed crystal mantle flows with the wearer's movements. | 這件祝福水晶披風隨穿戴者的動作飄動。
+cursed_crystal_cloak 33 41 1 1.0 none This cursed crystal mantle flows with the wearer's movements. | 這件詛咒水晶披風隨穿戴者的動作飄動。
+enchanted_crystal_cloak 36 68 2 1.0 none This enchanted crystal mantle flows with the wearer's movements. | 這件附魔水晶披風隨穿戴者的動作飄動。
+royal_crystal_cloak 18 61 1 1.0 none This royal crystal mantle flows with the wearer's movements. | 這件皇家水晶披風隨穿戴者的動作飄動。
+elite_crystal_cloak 62 79 4 1.0 none A elite crystal cloak that conceals the wearer and wards off the elements. | 精英的水晶披風，遮蔽身形並抵禦風寒。
+rusty_dragon_cloak 10 42 0 1.0 fire A rusty dragon cloak that conceals the wearer and wards off the elements. | 生鏽的龍披風，遮蔽身形並抵禦風寒。
+worn_dragon_cloak 10 9 1 1.0 fire A worn dragon cloak that conceals the wearer and wards off the elements. | 破舊的龍披風，遮蔽身形並抵禦風寒。
+sturdy_dragon_cloak 9 13 2 1.0 fire A sturdy dragon cloak that conceals the wearer and wards off the elements. | 堅固的龍披風，遮蔽身形並抵禦風寒。
+fine_dragon_cloak 42 38 1 1.0 fire A fine dragon cloak that conceals the wearer and wards off the elements. | 精良的龍披風，遮蔽身形並抵禦風寒。
+masterwork_dragon_cloak 51 31 4 1.0 fire A masterwork dragon cloak that conceals the wearer and wards off the elements. | 大師的龍披風，遮蔽身形並抵禦風寒。
+ancient_dragon_cloak 16 36 0 1.0 fire This ancient dragon mantle flows with the wearer's movements. | 這件遠古龍披風隨穿戴者的動作飄動。
+blessed_dragon_cloak 64 54 2 1.0 fire This blessed dragon mantle flows with the wearer's movements. | 這件祝福龍披風隨穿戴者的動作飄動。
+cursed_dragon_cloak 48 81 0 1.0 fire This cursed dragon mantle flows with the wearer's movements. | 這件詛咒龍披風隨穿戴者的動作飄動。
+enchanted_dragon_cloak 26 56 0 1.0 fire This enchanted dragon mantle flows with the wearer's movements. | 這件附魔龍披風隨穿戴者的動作飄動。
+elite_dragon_cloak 46 48 0 1.0 fire This elite dragon mantle flows with the wearer's movements. | 這件精英龍披風隨穿戴者的動作飄動。
+rusty_demon_cloak 5 34 1 1.0 dark A rusty demon cloak that conceals the wearer and wards off the elements. | 生鏽的惡魔披風，遮蔽身形並抵禦風寒。
+worn_demon_cloak 21 54 3 1.0 dark A worn demon cloak that conceals the wearer and wards off the elements. | 破舊的惡魔披風，遮蔽身形並抵禦風寒。
+sturdy_demon_cloak 50 55 1 1.0 dark A sturdy demon cloak that conceals the wearer and wards off the elements. | 堅固的惡魔披風，遮蔽身形並抵禦風寒。
+fine_demon_cloak 18 50 1 1.0 dark This fine demon mantle flows with the wearer's movements. | 這件精良惡魔披風隨穿戴者的動作飄動。
+masterwork_demon_cloak 57 46 0 1.0 dark A masterwork demon cloak that conceals the wearer and wards off the elements. | 大師的惡魔披風，遮蔽身形並抵禦風寒。
+blessed_demon_cloak 57 64 4 1.0 dark This blessed demon mantle flows with the wearer's movements. | 這件祝福惡魔披風隨穿戴者的動作飄動。
+enchanted_demon_cloak 57 91 1 1.0 dark A enchanted demon cloak that conceals the wearer and wards off the elements. | 附魔的惡魔披風，遮蔽身形並抵禦風寒。
+royal_demon_cloak 34 51 4 1.0 dark A royal demon cloak that conceals the wearer and wards off the elements. | 皇家的惡魔披風，遮蔽身形並抵禦風寒。
+elite_demon_cloak 28 75 1 1.0 dark A elite demon cloak that conceals the wearer and wards off the elements. | 精英的惡魔披風，遮蔽身形並抵禦風寒。
+rusty_angel_cloak 15 37 4 1.0 light A rusty angel cloak that conceals the wearer and wards off the elements. | 生鏽的天使披風，遮蔽身形並抵禦風寒。
+worn_angel_cloak 5 23 1 1.0 light This worn angel mantle flows with the wearer's movements. | 這件破舊天使披風隨穿戴者的動作飄動。
+dragon_gauntlets 60 80 5 1.0 none Gauntlets of dragon hide that crush steel with a grip. | 龍皮護手，一握即可捏碎鋼鐵。
+void_gloves 55 75 4 1.0 none Gloves that phase through matter to strike the soul. | 虛空手套，可穿透物質直擊靈魂。
+celestial_gauntlets 58 78 4 1.0 none Gauntlets blessed by the heavens, guiding every strike. | 天界護手，受天祝福，引導每一擊。
+abyssal_claws 52 70 3 1.0 none Clawed gauntlets that tear through armor and flesh. | 深淵之爪，撕裂鎧甲與血肉。
+windwalker_boots 50 70 5 1.0 none Boots that let the wearer step on air itself. | 風行靴，讓穿戴者踏空而行。
+void_treads 48 65 4 1.0 none Boots that leave no trace and silence every step. | 虛空之靴，不留痕跡，消音每一步。
+dragon_greaves 55 75 4 1.0 none Greaves of dragon scale that never tire. | 龍鱗脛甲，永不疲憊。
+celestial_boots 52 72 5 1.0 none Boots that carry the wearer across the sky. | 天界之靴，載著穿戴者跨越天際。
+abyssal_boots 45 60 3 1.0 none Boots that walk through shadow and stone. | 深淵之靴，穿行於暗影與岩石。
+phoenix_cloak 40 100 5 1.0 none A cloak of living flame that protects and burns foes. | 鳳凰披風，活焰護身並灼燒敵人。
+void_mantle 38 95 4 1.0 none A mantle of pure darkness that swallows light and sound. | 虛空披風，純粹黑暗，吞噬光與聲。
+celestial_shroud 42 105 5 1.0 none A shroud woven from starlight that conceals the wearer. | 天界罩衣，由星光編織，隱蔽穿戴者。
+dragon_cape 35 90 4 1.0 none A cape of dragon wing that grants flight for a moment. | 龍翼披風，片刻間賦予飛行。
+abyssal_cloak 30 85 3 1.0 none A cloak that blends the wearer into the abyss itself. | 深淵披風，讓穿戴者融入深淵。
+divine_helmet 95 150 5 1.0 none A divine helmet that radiates holy light and turns aside any blow. | 神聖頭盔，散發聖光，偏轉任何攻擊。
+legendary_demon_helmet 72 131 3 1.0 dark A legendary demon helmet with a reinforced brow that guards the eyes. | 傳說的惡魔頭盔，加固的帽檐保護雙眼。
+legendary_dragon_helmet 81 115 2 1.0 fire This legendary dragon helm bears the scars of countless battles. | 這頂傳說龍頭盔留有無數戰鬥的痕跡。
+enchanted_demon_helmet 64 99 2 1.0 dark A enchanted demon helmet forged to deflect blows aimed at the skull. | 附魔的惡魔頭盔，專為偏轉擊向頭顱的攻擊而鍛造。
+masterwork_iron_helmet 49 111 2 1.0 none This masterwork iron helm bears the scars of countless battles. | 這頂大師鐵頭盔留有無數戰鬥的痕跡。
+godslayer_armor 250 800 50 4.0 ruin Cataclysmic relic plate forged to topple deities, brimming with apocalyptic ruin. | 专为弑神而锻造的灭世圣物板甲，充盈着末日毁灭神威。
+divine_aegis 230 650 40 3.0 holy The supreme golden bulwark of the heavens, radiating unbeatable holy omnipotence. |诸天至高無上的黄金神盾戰甲，散发無敌神圣全能光辉。
+chrono_plate 210 550 35 2.8 time Temporal clockwork armor reversing wounds before they fully manifest in time. |时之发条重甲，在创傷於时間長河中完全显现前便将其逆轉。
+quantum_suit 200 500 30 2.5 tech Hyper-advanced nanotech exosuit shifting probability states to evade lethal harm. |尖端纳米科技量子外骨骼，切换概率态规避一切致命傷害。
+cosmic_armor 195 480 25 2.2 space Nebula-infused galactic plate bending space-time to shield its cosmic champion. | 星云灌注的银河板甲，扭曲时空守护宇宙冠军。
+legendary_bronze_gloves 86 142 3 1.0 none legendary bronze gauntlets that protect the hands while gripping a weapon. | 傳說的青銅護手，在握持武器時保護雙手。
+legendary_mithril_gloves 90 136 1 1.0 none These legendary mithril gloves are lined to keep the fingers nimble. | 這雙傳說秘銀手套內襯柔軟，保持手指靈活。
+legendary_gold_gloves 72 118 0 1.0 none legendary gold gauntlets that protect the hands while gripping a weapon. | 傳說的金護手，在握持武器時保護雙手。
+legendary_dragon_gloves 52 120 4 1.0 fire These legendary dragon gloves are lined to keep the fingers nimble. | 這雙傳說龍手套內襯柔軟，保持手指靈活。
+legendary_steel_gloves 72 93 2 1.0 none legendary steel gauntlets that protect the hands while gripping a weapon. | 傳說的鋼護手，在握持武器時保護雙手。
+legendary_steel_boots 88 133 4 1.0 none legendary steel boots built for long marches and sudden charges. | 傳說的鋼靴子，適合長途行軍與衝鋒。
+legendary_demon_boots 54 142 4 1.0 dark legendary demon boots built for long marches and sudden charges. | 傳說的惡魔靴子，適合長途行軍與衝鋒。
+legendary_crystal_boots 63 124 1 1.0 none Sturdy legendary crystal footwear that grips the ground in any terrain. | 堅固的傳說水晶靴，在任何地形都能抓地。
+masterwork_silver_boots 39 117 3 1.0 none Sturdy masterwork silver footwear that grips the ground in any terrain. | 堅固的大師銀靴，在任何地形都能抓地。
+ancient_silver_boots 40 116 0 1.0 none Sturdy ancient silver footwear that grips the ground in any terrain. | 堅固的遠古銀靴，在任何地形都能抓地。
+legendary_bronze_cloak 84 144 0 1.0 none A legendary bronze cloak that conceals the wearer and wards off the elements. | 傳說的青銅披風，遮蔽身形並抵禦風寒。
+royal_dragon_cloak 67 117 4 1.0 fire This royal dragon mantle flows with the wearer's movements. | 這件皇家龍披風隨穿戴者的動作飄動。
+legendary_demon_cloak 90 93 4 1.0 dark A legendary demon cloak that conceals the wearer and wards off the elements. | 傳說的惡魔披風，遮蔽身形並抵禦風寒。
+legendary_silver_cloak 86 91 2 1.0 none This legendary silver mantle flows with the wearer's movements. | 這件傳說銀披風隨穿戴者的動作飄動。
+masterwork_steel_cloak 61 94 2 1.0 none A masterwork steel cloak that conceals the wearer and wards off the elements. | 大師的鋼披風，遮蔽身形並抵禦風寒。

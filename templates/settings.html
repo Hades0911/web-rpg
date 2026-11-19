@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Settings' if ui_lang=='en' else '設置' }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回' }}</a>
+  <h1 style="margin:0;font-size:1.15rem;">⚙️ {{ 'Settings' if ui_lang=='en' else '設置' }}</h1>
+</header>
+
+<section class="status-panel">
+  <h3 style="margin-bottom:12px">🌐 {{ 'Language' if ui_lang=='en' else '語言' }}</h3>
+  <p class="hint">{{ 'Current:' if ui_lang=='en' else '當前：' }} {{ 'English' if lang == 'en' else '中文' }}</p>
+  <form method="post" class="btn-row" style="margin-top:10px;">
+    <input type="hidden" name="action" value="lang">
+    <button class="btn {% if lang == 'zh' %}btn-primary{% else %}btn-outline{% endif %}" type="submit" name="lang" value="zh" style="width:auto;">中文</button>
+    <button class="btn {% if lang == 'en' %}btn-primary{% else %}btn-outline{% endif %}" type="submit" name="lang" value="en" style="width:auto;">English</button>
+  </form>
+</section>
+
+<section class="status-panel">
+  <h3 style="margin-bottom:12px">🔑 {{ 'Change Password' if ui_lang=='en' else '修改密碼' }}</h3>
+  <form method="post" class="auth-form" style="max-width:320px;">
+    <input type="hidden" name="action" value="password">
+    <label>{{ 'Current password' if ui_lang=='en' else '原密碼' }}</label>
+    <input type="password" name="old_password" required>
+    <label>{{ 'New password' if ui_lang=='en' else '新密碼' }}</label>
+    <input type="password" name="new_password" required minlength="3">
+    <label>{{ 'Confirm' if ui_lang=='en' else '確認新密碼' }}</label>
+    <input type="password" name="confirm_password" required minlength="3">
+    <button class="btn btn-primary" type="submit">{{ 'Save' if ui_lang=='en' else '保存' }}</button>
+  </form>
+</section>
+{% endblock %}

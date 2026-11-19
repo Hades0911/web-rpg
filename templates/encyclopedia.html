@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Encyclopedia' if ui_lang=='en' else '圖鑑' }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回' }}</a>
+  <h1 style="margin:0;font-size:1.15rem;">📖 {{ 'Encyclopedia' if ui_lang=='en' else '全圖鑑' }}</h1>
+</header>
+
+<div class="btn-row" style="margin-bottom:12px;">
+  <button id="btn-weapons" class="btn btn-sm btn-primary" onclick="showTab('weapons')">{{ 'Weapons' if ui_lang=='en' else '武器' }}</button>
+  <button id="btn-armors" class="btn btn-sm btn-outline" onclick="showTab('armors')">{{ 'Armors' if ui_lang=='en' else '防具' }}</button>
+  <button id="btn-powers" class="btn btn-sm btn-outline" onclick="showTab('powers')">{{ 'Powers' if ui_lang=='en' else '超能力' }}</button>
+</div>
+
+<div id="tab-weapons">
+  {% for tier in ['S','A','B','C','D'] %}
+  <section class="inventory-section">
+    <h2><span class="tier tier-{{ tier }}">{{ tier }}</span> {{ 'Weapons' if ui_lang=='en' else '武器' }}
+      <button class="btn btn-sm btn-outline" onclick="toggle('w-{{ tier }}')">{{ 'Open' if ui_lang=='en' else '展開' }}</button>
+    </h2>
+    <div class="item-list" id="w-{{ tier }}" style="display:none;">
+      {% for w in weapons if w.tier == tier %}
+      <div class="item-card {% if w.owned %}owned{% endif %}" title="{{ w.desc }}">
+        <div class="item-name"><span class="tier tier-{{ w.tier }}">{{ w.tier }}</span> {{ get_display_name(w.name, ui_lang) }} {% if w.owned %}<span style="color:#4caf50;font-size:0.75rem;">✓</span>{% endif %}</div>
+        <div class="item-stat">{{ 'ATK' if ui_lang=='en' else '攻擊' }} {{ w.atk }} · {{ w.element }} · {{ w.range|default('short') }} / {{ w.speed|default('medium') }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+
+<div id="tab-armors" style="display:none;">
+  {% for tier in ['helmet','chest','gloves','boots','cloak'] %}
+  <section class="inventory-section">
+    <h2>{{ {'helmet':'頭盔','chest':'胸甲','gloves':'手套','boots':'靴子','cloak':'披風'}[tier] if ui_lang!='en' else tier|capitalize }}
+      <button class="btn btn-sm btn-outline" onclick="toggle('a-{{ tier }}')">{{ 'Open' if ui_lang=='en' else '展開' }}</button>
+    </h2>
+    <div class="item-list" id="a-{{ tier }}" style="display:none;">
+      {% for a in armors if a.slot == tier %}
+      <div class="item-card {% if a.owned %}owned{% endif %}" title="{{ a.desc }}">
+        <div class="item-name"><span class="tier tier-{{ a.tier }}">{{ a.tier }}</span> {{ get_display_name(a.name, ui_lang) }} {% if a.owned %}<span style="color:#4caf50;font-size:0.75rem;">✓</span>{% endif %}</div>
+        <div class="item-stat">{{ 'DEF' if ui_lang=='en' else '防禦' }} {{ a.defense }} · {{ 'HP' if ui_lang=='en' else '生命' }}+{{ a.hp_bonus }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+
+<div id="tab-powers" style="display:none;">
+  {% for tier in ['S','A','B','C','D'] %}
+  <section class="inventory-section">
+    <h2><span class="tier tier-{{ tier }}">{{ tier }}</span> {{ 'Powers' if ui_lang=='en' else '超能力' }}
+      <button class="btn btn-sm btn-outline" onclick="toggle('p-{{ tier }}')">{{ 'Open' if ui_lang=='en' else '展開' }}</button>
+    </h2>
+    <div class="item-list" id="p-{{ tier }}" style="display:none;">
+      {% for p in powers if p.grade == tier %}
+      <div class="item-card {% if p.owned %}owned{% endif %}" title="{{ p.desc }}">
+        <div class="item-name"><span class="tier tier-{{ tier }}">{{ tier }}</span> {{ get_display_name(p.name, ui_lang) }} {% if p.owned %}<span style="color:#4caf50;font-size:0.75rem;">✓</span>{% endif %}</div>
+        <div class="item-stat">{{ p.effect }} · {{ p.score }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function showTab(name) {
+  ['weapons','armors','powers'].forEach(t => {
+    document.getElementById('tab-'+t).style.display = t===name ? 'block' : 'none';
+    const btn = document.getElementById('btn-'+t);
+    if (btn) {
+      btn.className = t===name ? 'btn btn-sm btn-primary' : 'btn btn-sm btn-outline';
+    }
+  });
+}
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === 'none' ? 'grid' : 'none';
+}
+</script>
+{% endblock %}

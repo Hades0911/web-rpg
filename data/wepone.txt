@@ -1,0 +1,105 @@
+wooden_stick 5 2 1.2 none A sturdy branch picked off the forest floor; humble, light, and better than bare fists. |從林間拾起的結實樹枝，輕便樸素，總比赤手空拳強。
+rusty_dagger 8 10 1.5 bleed A pitted, oxidized knife whose jagged edge still inflicts nasty bleeding wounds. |布滿鏽斑的破舊短刀，鋸齒般的刀刃仍能劃出棘手的流血傷口。
+broken_sword 10 3 1.3 none The snapped blade of a forgotten soldier, unbalanced yet sharp enough for desperate fights. |無名士兵遺落的斷劍，雖失衡卻仍足夠在絕境中搏命。
+wooden_club 12 5 1.4 stun A heavy knot of seasoned hardwood built for delivering concussive, stunning blows. |老硬木製成的沉重木棒，專為打出震盪擊暈的重擊而造。
+rusty_sword 15 5 1.5 none A weathered iron broadsword dulled by age, serving as a reliable starter weapon. |飽經風霜的生鏽鐵闊劍，作為新手冒險者的武器依然可靠。
+stone_axe 18 4 1.6 crush A primitive flint head lashed to timber, capable of crushing armor through sheer weight. |绑在木柄上的原始燧石斧，凭借纯粹重量砸碎護甲。
+bronze_dagger 20 12 1.6 bleed A cast-bronze dirk favored by scouts for quick thrusts that draw steady blood. |侦察兵偏爱的铸造青铜短劍，適合快速突刺造成持续流血。
+copper_sword 22 6 1.5 none A gleaming reddish blade that holds a decent edge for early-career adventurers. |泛着红光的抛光铜劍，能為初出茅庐的冒險者保持不错锋芒。
+hunting_bow 24 8 1.8 pierce A flexible recurve bow strung with sinew, ideal for piercing targets from afar. |以獸筋為弦的柔韌反曲弓，適合從远处精准穿刺目标。
+iron_dagger 26 15 1.7 bleed A balanced forged-iron stiletto designed to slip between armor plates and cause bleeding. |平衡精良的锻鐵短劍，專為刺入護甲縫隙引发流血而设计。
+iron_spear 28 8 1.6 pierce A long ash shaft tipped with a keen iron point for high-reach piercing thrusts. |白蜡木長杆配锋利鐵矛头，擅長远距离高穿透突刺。
+iron_sword 30 6 1.5 none A dependable standard-issue knight's arming sword forged from solid iron. |堅固耐用的製式骑士武装劍，由纯鐵精心锻造而成。
+iron_axe 32 5 1.7 crush A broad-bearded battle axe engineered to cleave shields and crush heavy bone. |宽刃戰斧，專為劈开盾牌與粉碎沉重骨骼而打造。
+iron_mace 34 4 1.8 stun A flanged iron bludgeon crafted to dent plate armor and stun staggered foes. |带棱翼的鐵製釘头锤，能砸凹板甲并震暈踉跄的敌人。
+steel_dagger 36 18 1.8 bleed A razor-honed assassin's blade that strikes fast and leaves deep bleeding gashes. |剃刀般锋利的刺客匕首，出招迅捷并留下深可见骨的血痕。
+steel_sword 38 8 1.6 none A tempered high-carbon longsword offering crisp balance and reliable cutting power. |回火高碳鋼長劍，兼具完美平衡與可靠的斩擊威力。
+steel_rapier 40 20 2.0 pierce A slender, basket-hilted dueling sword built for lightning-fast piercing crits. |纤细的護手决斗刺劍，專為闪电般的穿刺暴擊而生。
+steel_halberd 42 10 1.8 sweep A versatile polearm combining an axe blade and spear tip for wide sweeping strikes. |集斧刃與矛尖於一体的多用途長柄武器，擅長大范围横扫。
+steel_warhammer 44 6 2.0 stun A massive two-handed steel maul capable of shattering armor and stunning giants. |巨大的双手精鋼戰锤，足以粉碎重甲并擊暈巨人。
+silver_sword 46 10 1.7 holy A purified silver blade consecrated to burn undead and unholy creatures. |經过净化的纯银長劍，專為灼烧亡靈與邪恶生物而祝圣。
+longbow 48 12 1.9 pierce A tall yew warbow with heavy draw weight, launching arrows with deep piercing force. |拉力沉重的紫杉木長戰弓，射出的箭矢具备极深穿透力。
+crossbow 50 15 2.0 pierce A mechanical lever-drawn bow that fires heavy bolts with lethal precision. |杠杆上弦的机械劲弩，能以致命精度发射重型弩箭。
+heavy_crossbow 52 18 2.2 pierce A steel-prodded siege crossbow capable of punching straight through thick plate. |精鋼弓臂的攻城重弩，足以直接贯穿厚重的全身板甲。
+diamond_blade 55 10 2.0 sharp A translucent crystal-edged sword whose ultra-hard edge never loses its keenness. |半透明晶体刃口長劍，极致硬度使其锋芒永不磨损。
+katana 58 22 2.2 bleed A curved masterwork folded-steel blade renowned for blinding draws and deep bleeding cuts. |大师锻造的折疊鋼太刀，以拔刀神速與深邃流血斩擊闻名。
+nodachi 60 12 2.1 sweep An oversized Japanese field sword built for sweeping, high-momentum horseback slashes. |加長型日式野太刀，專為大开大合的高動能横扫斩擊打造。
+claymore 62 8 2.0 crush A towering Highland greatsword wielded with two hands to crush enemy formations. |高地双手巨劍，挥舞間以排山倒海之势碾碎敌阵。
+zweihander 65 10 2.3 sweep A colossal German greatsword designed to sweep aside pikes and cleave multiple foes. |德意志双手大劍，專為扫开長矛阵并横扫多名敌人而设计。
+flamberge 68 14 2.2 fire An undulating flame-bladed greatsword enchanted to sear flesh with every swing. |波浪焰形刃双手巨劍，附魔烈焰可在每次挥砍时灼烧血肉。
+scimitar 54 16 1.8 slash A sweeping curved desert saber optimized for fluid, high-speed slashing arcs. |弧度优雅的沙漠弯刀，專為流畅高速的连绵劈砍优化。
+cutlass 45 14 1.7 slash A short, heavy naval saber built for close-quarters deck brawls and slashing. |短小沉重的海军弯刀，適合近身甲板混戰與迅猛劈砍。
+sabre 47 15 1.8 slash A sleek cavalry blade curved for swift, precise slashing strikes on the move. |线条流畅的骑兵军刀，適合在高速移動中发動精准斩擊。
+trident 56 10 1.9 water A three-pronged sea-forged spear channeling tidal currents into every thrust. |三叉海神锻造長戟，将汹涌潮汐之力灌注於每次突刺。
+glaive 59 11 2.0 sweep A heavy single-edged blade mounted on a long pole for sweeping martial arcs. |装在長柄上的厚重單刃大刀，擅長大弧度武道横扫。
+naginata 61 13 2.1 slash A gracefully curved polearm offering extended reach and razor-sharp slashing control. |优雅弯曲的長柄薙刀，兼顧超長攻擊距离與精准斩擊控製。
+morningstar 63 7 2.2 stun A spiked iron sphere mounted on a chain-reinforced shaft to stun and puncture. |鏈柄相连的带刺鐵球晨星锤，兼具擊暈與穿刺双重杀傷。
+flail 57 9 2.0 crush A hinged striking head that whips around shields to deliver crushing momentum. |铰接式鏈枷打擊头，可绕过盾牌打出毁灭性的惯性重擊。
+battleaxe 64 6 2.1 crush A twin-bit heavy war axe balanced for devastating armor-crushing chops. |双刃重型戰斧，平衡极佳，專為劈碎重甲而生。
+greataxe 67 5 2.3 crush A gigantic executioner's axe requiring immense strength to swing with crushing force. |巨型处刑者戰斧，需要惊人神力方能挥出碾压一切的斩擊。
+war_scythe 70 15 2.4 dark A grim curved reaper blade imbued with necrotic energy that harvests enemy life. |阴森弯曲的死神戰镰，蕴含死靈能量收割敌人生命。
+mithril_sword 72 12 2.2 magic A feather-light silvery blade humming with innate arcane resonance and sharpness. |輕若無物的银白秘银劍，鸣响着天然奥术共鸣與极致锋锐。
+mithril_bow 74 15 2.3 pierce An elven-style silver-alloy bow that launches mana-guided piercing arrows. |精靈風格的银合金長弓，射出魔力引导的穿甲利箭。
+mithril_spear 76 14 2.2 magic A gleaming silver-blue lance that channels pure magic through every thrust. |闪耀银蓝光泽的秘银長枪，每次突刺都奔涌纯粹魔法。
+adamantite_blade 80 15 2.5 sharp Forged from near-indestructible dark ore, slicing effortlessly through hardened steel. |由近乎堅不可摧的陨鐵精金锻造，切开精鋼如若無物。
+adamantite_axe 84 10 2.6 crush An immensely dense war axe capable of crushing fortress gates and dragon scales. |密度惊人的精金戰斧，足以劈碎城门與巨龙鱗甲。
+orichalcum_sword 88 18 2.7 magic A golden-hued mythic alloy blade radiating ancient sun-forged magical power. |泛着金色光辉的神话山铜劍，散发远古太阳锻造的魔力。
+godly_katana 90 30 3.0 bleed A transcendent masterwork katana whose edge parts air and draws fatal bleeding wounds. |超凡入圣的宗师级妖刀，刀锋破空并斩出致命流血创口。
+obsidian_dagger 78 25 2.4 dark A volcanic glass stiletto steeped in shadow energy for lethal dark critical hits. |浸透暗影能量的火山黑曜石短匕，專打致命黑暗暴擊。
+crystal_sword 82 14 2.3 crystal A prism-forged blade that refracts light into razor-sharp crystalline shockwaves. |棱晶锻造之劍，将光芒折射為剃刀般锋利的水晶衝擊波。
+emerald_blade 85 16 2.4 poison A verdant gem-encrusted sword dripping with virulent emerald poison. |鑲嵌翠绿宝石的利劍，劍刃不斷滴落剧毒翡翠毒液。
+ruby_greatsword 87 12 2.5 fire A crimson-hearted greatsword blazing with intense elemental fire. |赤红宝石之心巨劍，燃烧着炽热的元素烈焰。
+sapphire_spear 86 15 2.4 water An azure crystal-tipped lance surging with high-pressure oceanic water energy. |蔚蓝水晶枪尖長矛，奔涌着高压深海怒涛之力。
+flame_sword 92 15 2.5 fire A steel blade wreathed in living fire that ignites targets on impact. |缠绕活体烈焰的精鋼劍，命中瞬間便点燃目标。
+inferno_blade 98 20 2.8 fire A hell-forged greatsword roaring with white-hot flames that incinerate armor. |地狱锻造的炼狱巨劍，咆哮的白炽烈焰足以焚毁重甲。
+magma_hammer 96 10 2.7 fire A volcanic warhammer housing a molten core that erupts with fire upon impact. |內藏熔融核心的火山戰锤，撞擊时喷发滚烫岩浆。
+frost_blade 91 15 2.5 ice A permafrosted saber radiating sub-zero mist that freezes foes solid. |永冻寒霜戰刀，散发零下冰雾将敌人彻底冻結。
+glacial_lance 97 12 2.7 ice A spear sculpted from eternal glacier ice capable of impaling and freezing giants. |由万年冰川雕琢而成的冰枪，足以贯穿并冰封巨人。
+thunder_axe 95 18 2.6 lightning A storm-charged battleaxe that unleashes deafening thunderclaps and lightning arcs. |充盈雷暴之力的戰斧，挥動間炸响震耳雷鸣與电弧。
+storm_bow 94 20 2.5 lightning A tempest-strung bow firing arrows that streak across the field like lightning bolts. |風暴之弦長弓，射出的箭矢如闪电般撕裂戰场。
+lightning_spear 99 22 2.9 lightning A crackling javelin of condensed storm energy that stuns and pierces instantly. |凝聚風暴能量的噼啪电矛，瞬間擊暈并贯穿敌人。
+wind_fan 75 25 2.0 wind An enchanted iron-ribbed war fan that whips up slicing gales with every flick. |附魔鐵骨戰扇，每次輕挥都能卷起切割一切的狂風。
+tornado_blade 89 16 2.5 wind A spiraling emerald sword surrounded by miniature whirlwinds that shred defenses. |螺旋翡翠長劍，周身環绕微型龙卷風撕裂敌方防禦。
+earth_hammer 93 8 2.6 earth A tectonic maul forged from mountain stone that batters foes with seismic weight. |山岳巨石锻造的构造戰锤，以地震般的重压痛擊敌人。
+quake_mace 100 10 3.0 earth A monumental earth-core mace whose strikes trigger localized ground-shattering quakes. |地心巨锤，每次重擊都能引发局部地動山摇的強震。
+shadow_dagger 102 35 2.8 dark A blade woven from pure abyssal shadow, delivering devastating unseen critical strikes. |由纯粹深渊暗影編織的匕首，打出防不胜防的毁灭暴擊。
+nightmare_scythe 108 25 3.1 dark A wicked crescent scythe that reaps sanity and engulfs foes in dark terror. |邪恶新月镰刀，收割理智并将敌人吞没於黑暗恐惧之中。
+void_blade 115 30 3.2 dark A sword forged from compressed nothingness that erases everything along its edge. |由压缩虚無锻造的利劍，抹除刀锋所及的一切存在。
+abyssal_greatsword 120 20 3.3 dark A monolithic dark-iron greatsword pulsing with bottomless void destruction. |黑鐵巨型深渊大劍，脉動着無底虚空的毁灭气息。
+light_saber 105 25 3.0 holy A focused beam of pure solidified radiance capable of slicing through dense matter. |凝聚纯粹固态光辉的光劍，足以切穿任何致密物质。
+solar_blade 118 22 3.2 fire A blazing golden greatsword burning with the relentless fury of a miniature sun. |炽热黄金烈阳巨劍，燃烧着微型恒星般的無情怒火。
+lunar_bow 112 24 3.0 ice A crescent silver bow firing moonlit arrows infused with chilling astral ice. |新月白银長弓，射出蕴含刺骨星界寒冰的月光箭矢。
+starlight_staff 110 20 3.1 magic A celestial conduit crowned with a fallen star, channeling pure cosmic magic. |顶端鑲嵌陨星的天体法杖，引导纯粹的宇宙星辰魔力。
+eclipse_scythe 122 28 3.4 dark A twin-toned scythe uniting solar fire and dark eclipse shadow in lethal harmony. |双色日蚀巨镰，将烈阳之火與暗影日蚀融為致命和谐。
+dragon_slayer 125 15 3.5 fire A colossal monster-hunting greatsword tempered specifically to cleave dragon scales. |巨型狩龙大劍，專為劈开远古巨龙厚鱗而淬炼。
+wyvern_fang 104 22 2.8 bleed A curved serrated blade carved from a venomous wyvern's tooth to inflict deep bleeding. |用剧毒双足飞龙獠牙雕琢的鋸齒弯刀，造成深度流血。
+hydra_whip 106 20 2.9 poison A multi-tailed segmented lash dripping with regenerating hydra venom. |多尾分节九头蛇皮鞭，不斷滴落再生剧毒。
+phoenix_bow 114 25 3.1 fire A feathered golden bow whose arrows ignite into rebirth flames mid-flight. |羽翼黄金長弓，射出的箭矢在飞行中化作涅槃火凤。
+demon_blade 128 20 3.5 fire A jagged crimson broadsword fueled by abyssal hellfire and demonic bloodlust. |鋸齒状猩红魔劍，由深渊地狱火與恶魔嗜血欲望驱動。
+archdemon_scythe 135 25 3.8 fire A towering infernal scythe wielded by demon lords to reap souls in hellfire. |魔王执掌的参天炼狱巨镰，在地狱火中收割靈魂。
+angelic_sword 126 22 3.5 holy A radiant feathered longsword radiating purifying holy light against darkness. |圣洁羽翼長劍，散发净化一切黑暗的神圣光芒。
+seraphim_lance 138 24 3.9 holy A six-winged celestial spear delivering blinding judgment with divine speed. |六翼炽天使神枪，以神圣极速降下耀眼天罚。
+valkyrie_spear 116 20 3.0 holy A golden-winged battle lance favored by sky-maidens to pierce armored foes. |女武神钟爱的金翼戰枪，輕松贯穿重甲敌阵。
+paladin_hammer 111 12 3.1 holy A consecrated warhammer etched with holy oaths that smites evil with sacred might. |刻滿神圣誓言的祝圣戰锤，以圣洁神力惩戒邪恶。
+excalibur 140 30 4.0 holy The legendary sword of promised victory, blazing with unmatched holy majesty. |誓约胜利之黄金圣劍，闪耀着無與伦比的神圣威严。
+durandal 132 25 3.6 holy An unbreakable peerless paladin sword housing sacred relics within its golden hilt. |劍柄封存圣遺物的無双圣骑士名劍，堅不可摧。
+joyeuse 130 28 3.5 holy The radiant coronation blade of kings, shimmering with shifting holy brilliance. |王者加冕之璀璨圣劍，流轉着变幻莫测的神圣光华。
+kusanagi 142 32 4.1 wind The mythical grass-cutting blade of storms, commanding slicing winds with every swing. |神话中的草薙神劍，每次挥斩皆能号令切割風暴。
+gungnir 145 25 4.2 lightning The all-father's rune-carved spear that never misses its mark and strikes like lightning. |众神之父的符文永恒之枪，百发百中如天雷降世。
+mjolnir 148 20 4.5 lightning The thunder god's short-handled warhammer, summoning cataclysmic lightning storms. |雷神之短柄戰锤，挥動間召唤毁天灭地的雷霆風暴。
+gram 136 22 3.7 fire The legendary dragon-slaying sword reforged from shattered shards of divine steel. |由神鋼碎片重铸的传说屠龙圣劍，斩斷一切邪恶。
+tyrfing 134 25 3.6 dark A cursed dwarven blade that gleams like fire and never returns to its sheath unblooded. |受诅咒的矮人魔劍，劍身如火闪耀且出鞘必饮鲜血。
+gae_bolg 139 28 3.8 pierce A barbed crimson spear of mortal pain that blossoms into thirty lethal thorns on impact. |蕴含凡尘剧痛的猩红倒刺魔枪，命中后绽放三十道致命荆棘。
+ame_no_habakiri 144 30 4.0 wind The celestial ten-span sword that slew the eight-headed serpent with tempest winds. |曾以狂風斩杀八岐大蛇的天界十拳神劍。
+masamune 137 35 3.9 sharp A serene, peerless Japanese sword of unmatched sharpness and spiritual purity. |静谧無双的日本圣刀，兼具极致锋锐與纯净靈性。
+muramasa 141 38 4.2 bleed A bloodthirsty cursed katana of terrifying keenness that craves endless combat. |嗜血如命的妖刀村正，锋芒骇人且永無止境地渴望厮杀。
+soul_reaver 150 30 4.5 dark A wraith-forged greatsword that drinks the spiritual essence of every foe it cuts. |怨靈锻造的噬魂巨劍，吞饮每个被斩中之敌的靈魂精粹。
+death_scythe 155 32 4.8 dark The pale reaper's own implement, severing life threads with a single silent arc. |苍白死神的本命巨镰，一记無声弧光便斩斷生命之线。
+chaos_blade 165 40 5.0 dark An ever-shifting warp-forged sword erupting with unpredictable chaotic energy. |变幻莫测的亞空間混沌魔劍，迸发無法预测的狂暴能量。
+order_sword 165 25 5.0 holy A flawless geometric blade enforcing absolute cosmic law and supreme precision. |完美無瑕的几何秩序圣劍，贯彻絕对宇宙法则與极致精准。
+chrono_dagger 170 45 5.2 wind A temporal stiletto that strikes before the user moves, bending time itself. |扭曲时間本身的时空短匕，在出招之前便已命中敌人。
+quantum_rifle 180 50 5.5 tech An advanced hyper-tech particle accelerator firing entangled beams at light speed. |尖端超科技粒子步枪，以光速发射量子纠缠毁灭光束。
+cosmic_spear 190 40 6.0 space A star-forged lance spanning galaxies, piercing space-time with cosmic power. |跨越星系的恒星锻造長枪，以宇宙伟力贯穿时空。
+divine_judgement 200 50 7.0 holy A supreme celestial greatsword delivering the final verdict of the heavens. |至高天界审判巨劍，降下诸天万界的最终裁决。
+world_ender 220 55 8.0 ruin An apocalyptic relic radiating cataclysmic ruin capable of shattering continents. |散发末日灾厄的灭世圣物，足以震碎整片大陆。
+genesis_blade 250 60 10.0 divine The primordial sword of creation itself, wielding infinite divine omnipotence. |创世之初的太初神劍，执掌無穷無尽的神圣全能之力。

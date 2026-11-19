@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Inventory' if ui_lang=='en' else '背包' }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回主选單' }}</a>
+  <h1 style="margin:0;font-size:1.1rem;">🎒 {{ 'Inventory' if ui_lang=='en' else '背包' }}</h1>
+</header>
+
+<div class="btn-row" style="margin-bottom:12px;">
+  <button class="btn btn-primary" id="equip-best">{{ 'Equip Best' if ui_lang=='en' else '一键裝備最佳' }}</button>
+  <a href="{{ url_for('encyclopedia_page') }}" class="btn btn-outline">{{ 'Encyclopedia' if ui_lang=='en' else '全圖鑑' }}</a>
+</div>
+
+<section class="status-panel">
+  <h3 style="margin-bottom:10px">{{ 'Equipped Slots' if ui_lang=='en' else '已裝備欄位' }}</h3>
+  <div class="stat-grid">
+    <div class="stat-item"><span class="tier tier-{{ status.weapon_tier }}">{{ status.weapon_tier }}</span> {{ 'Weapon' if ui_lang=='en' else '武器' }}<br><strong>{{ get_display_name(status.weapon_raw, ui_lang) }}</strong></div>
+    {% for slot in ['helmet','chest','gloves','boots','cloak'] %}
+    <div class="stat-item" style="border-color:{% if status.armor_slots.get(slot) %}#4caf50{% else %}var(--border){% endif %}">
+      {% if status.armor_slots.get(slot) %}<span class="tier tier-{{ status.slot_tiers.get(slot, 'D') }}">{{ status.slot_tiers.get(slot, 'D') }}</span> {% endif %}{{ {'helmet':'頭盔','chest':'胸甲','gloves':'手套','boots':'靴子','cloak':'披風'}[slot] if ui_lang!='en' else slot|capitalize }}<br>
+      <strong>{{ get_display_name(status.armor_slots.get(slot), ui_lang) if status.armor_slots.get(slot) else ('—' if ui_lang=='en' else '空') }}</strong>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<section class="inventory-section">
+  <h2>⚔️ {{ 'Weapons' if ui_lang=='en' else '武器' }} ({{ weapons|length }})
+    <button class="btn btn-sm btn-outline" onclick="document.getElementById('w-list').style.display=document.getElementById('w-list').style.display=='none'?'grid':'none'">{{ 'Open' if ui_lang=='en' else '展開' }}</button>
+  </h2>
+  <p class="hint">{{ 'Hover for description' if ui_lang=='en' else '滑鼠移上看說明' }}</p>
+  <div class="item-list" id="w-list" style="display:none;">
+    {% for w in weapons %}
+    <div class="item-card tier-border-{{ w.tier }} {% if w.equipped %}equipped{% endif %}" title="{{ w.desc }}">
+      <div class="item-name"><span class="tier tier-{{ w.tier }}">{{ w.tier }}</span> {{ get_display_name(w.name, ui_lang) }}{% if w.level %}+{{ w.level }}{% endif %}</div>
+      <div class="item-stat">{{ 'ATK' if ui_lang=='en' else '攻擊' }} {{ w.atk }} · {{ w.element }} · {{ w.range|default('short') }} / {{ w.speed|default('medium') }} · {{ 'Crit' if ui_lang=='en' else '暴擊' }} {{ w.crit_ch }}%</div>
+      {% if w.equipped %}<button class="btn btn-sm btn-outline equip-btn" data-type="weapon" data-name="{{ w.name }}" style="border-color:#4caf50;color:#4caf50">{{ 'Unequip' if ui_lang=='en' else '卸下' }}</button>
+      {% else %}<button class="btn btn-sm btn-primary equip-btn" data-type="weapon" data-name="{{ w.name }}">{{ 'Equip' if ui_lang=='en' else '裝備' }}</button>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="inventory-section">
+  <h2>🛡️ {{ 'Armors' if ui_lang=='en' else '防具' }} ({{ armors|length }})
+    <button class="btn btn-sm btn-outline" onclick="['helmet','chest','gloves','boots','cloak'].forEach(s=>{var e=document.getElementById('a-'+s);if(e)e.style.display=e.style.display=='none'?'grid':'none'})">{{ 'Open All' if ui_lang=='en' else '全部展開' }}</button>
+  </h2>
+  <p class="hint">{{ 'Hover for description' if ui_lang=='en' else '滑鼠移上看說明' }}</p>
+  {% for slot in ['helmet','chest','gloves','boots','cloak'] %}
+  <h3 style="margin:10px 0 4px;font-size:0.9rem;">{{ {'helmet':'頭盔','chest':'胸甲','gloves':'手套','boots':'靴子','cloak':'披風'}[slot] if ui_lang!='en' else slot|capitalize }}
+      <button class="btn btn-sm btn-outline" onclick="var e=document.getElementById('a-{{ slot }}');e.style.display=e.style.display=='none'?'grid':'none'">{{ 'Open' if ui_lang=='en' else '展開' }}</button>
+    </h3>
+  <div class="item-list" id="a-{{ slot }}" style="display:none;">
+    {% for a in armors if a.slot == slot %}
+    <div class="item-card tier-border-{{ a.tier }} {% if a.equipped %}equipped{% endif %}" title="{{ a.desc }}">
+      <div class="item-name"><span class="tier tier-{{ a.tier }}">{{ a.tier }}</span> {{ get_display_name(a.name, ui_lang) }}{% if a.level %}+{{ a.level }}{% endif %}</div>
+      <div class="item-stat">{{ 'DEF' if ui_lang=='en' else '防禦' }} {{ a.defense }} · {{ 'HP' if ui_lang=='en' else '生命' }}+{{ a.hp_bonus }} · {{ a.element }}</div>
+      {% if a.equipped %}<button class="btn btn-sm btn-outline equip-btn" data-type="armor" data-name="{{ a.name }}" style="border-color:#4caf50;color:#4caf50">{{ 'Unequip' if ui_lang=='en' else '卸下' }}</button>
+      {% else %}<button class="btn btn-sm btn-primary equip-btn" data-type="armor" data-name="{{ a.name }}">{{ 'Equip' if ui_lang=='en' else '裝備' }}</button>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.querySelectorAll('.equip-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const res = await fetch('/api/equip', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({type: btn.dataset.type, name: btn.dataset.name})});
+    const data = await res.json();
+    if (data.ok) location.reload(); else alert(data.error || 'Failed');
+  });
+});
+document.getElementById('equip-best').addEventListener('click', async () => {
+  const res = await fetch('/api/equip-best', {method:'POST'});
+  const data = await res.json();
+  if (data.ok) location.reload(); else alert(data.error || 'Failed');
+});
+</script>
+{% endblock %}

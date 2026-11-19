@@ -1,0 +1,105 @@
+Fire 2 d burn Ignites primal flames around the user, scorching foes with lingering burn damage. | 点燃原初烈焰，以持续灼烧伤害炙烤敌人。
+Water 2 d slow Surges with tidal currents that drench targets and slow their reaction speed. | 涌动潮汐水流浸湿目标，大幅减缓其反应速度。
+Ground 2 d shield Raises a dense earthen barrier that absorbs incoming blows and counters with stone force. | 升起厚重的大地壁垒吸收伤害，并以岩石之力反击。
+Wind 3 c dodge Surrounds the body in swift air currents, sharply boosting evasion against counter-attacks. | 周身环绕疾风气流，显著提升闪避敌人反击的几率。
+Strength 4 b rage Channels raw muscular fury, amplifying physical strikes with overwhelming brute force. | 激发纯粹的肌肉狂怒，以压倒性蛮力强化物理攻击。
+Explosion 3 c burst Detonates condensed kinetic energy upon impact for a sudden burst of blast damage. | 在命中瞬间引爆压缩动能，造成剧烈的冲击波爆发伤害。
+Heal 2 d regen Circulates warm restorative energy to mend wounds and regenerate vitality mid-battle. | 流转温暖的治愈能量，在战斗中修复伤势并恢复生命值。
+Gravitation 6 a crush Compresses local gravity fields to crush enemies beneath immense downward pressure. | 压缩局部重力场，以沉重的向下压力碾压敌人。
+Rule 10 s absolute Imposes absolute cosmic law, dealing heavy bonus damage and locking down enemy actions. | 降下绝对宇宙律令，造成高额额外伤害并完全封锁敌人行动。
+Time 8 s time_warp Distorts temporal flow to warp combat pacing, granting extra momentum and delaying foes. | 扭曲时间流速以篡改战斗节奏，获得额外先机并迟滞对手。
+Ruin 6 a decay Radiates entropic decay that erodes armor integrity and withers enemy vitality. | 散发熵增衰败气息，侵蚀护甲完整度并凋零敌方生命。
+Sun 5 a solar Channels blinding solar radiance that sears targets with star-forged heat. | 引导耀眼的太阳光辉，以恒星锻造般的炽热灼伤目标。
+Ice 2 d freeze Unleashes sub-zero frost that encases enemies in ice and halts their counter-attacks. | 释放零下寒霜将敌人冰封，彻底阻止其发动反击。
+Powerless 1 e none Dormant baseline resonance offering modest, steady energy without elemental traits. | 沉睡的基础能量共鸣，提供稳定温和的加成而无特殊属性。
+Speed 4 b haste Accelerates neural and physical reflexes to blinding haste for rapid consecutive strikes. | 将神经与肉体反射加速至极致，打出疾风骤雨般的连击。
+Mind 5 a psychic Projects telekinetic shockwaves that assault the enemy's psyche directly. | 投射念动力冲击波，直接轰击敌人的精神防线。
+Ores 4 b harden Infuses skin and gear with mineral density, hardening defenses against heavy impacts. | 将矿物密度注入皮肤与装备，强化防御以抵御重击。
+Lightning 5 a stun Calls down high-voltage arcs that shock nerves and briefly stun the opponent. | 召唤高压电弧麻痹神经，短暂击晕面前的对手。
+Shadow 5 a stealth Melds the user into living darkness, concealing movements for lethal ambush strikes. | 融入活体暗影之中隐匿身形，发动致命的暗杀突袭。
+Light 6 a blind Emits a dazzling flash of pure luminescence that blinds foes and disrupts their aim. | 迸发纯粹的璀璨强光致盲敌人，扰乱其攻击准星。
+Space 9 s teleport Folds spatial coordinates to blink away from danger and strike from impossible angles. | 折叠空间坐标瞬间闪避危险，并从不可思议的角度反击。
+Void 9 s erase Tears open a rift of nothingness that erases matter and bypasses conventional defenses. | 撕开虚无裂隙抹除物质，无视常规防御造成毁灭打击。
+Chaos 10 s random Unleashes untamed primordial anarchy, triggering unpredictable bursts of wild energy. | 释放狂野的原初混沌，触发不可预测的狂暴能量爆发。
+Order 10 s lock Enforces rigid geometric symmetry that suppresses enemy abilities and stabilizes combat. | 强制执行严密的几何秩序，压制敌方能力并稳定战局。
+Reality 10 s rewrite Rewrites the fabric of existence itself, bending battle outcomes to the wielder's will. | 改写存在本身的法则，随施法者意志扭转战斗结果。
+Soul 7 s drain Taps into ethereal life essence, draining spiritual energy from foes to sustain the user. | 汲取虚无的生命本源，从敌人身上抽取灵魂能量滋养自身。
+Blood 5 a bleed Manipulates crimson vitality to inflict deep hemorrhaging wounds on struck targets. | 操控猩红生命力，在击中目标时撕裂出深度流血伤口。
+Bone 3 c brittle Weaponizes calcified spikes while rendering enemy skeletal structures dangerously brittle. | 化骨为刺发动攻击，同时令敌方骨骼结构变得脆弱不堪。
+Poison 3 c poison Secretes virulent toxins that seep into wounds and steadily sap enemy health. | 分泌剧毒渗入伤口，在持续战斗中不断蚕食敌方生命。
+Acid 3 c corrode Sprays caustic venom capable of corroding tough hides, scales, and metal plates. | 喷射强腐蚀性酸液，融化坚硬兽皮、鳞片与金属护甲。
+Lava 4 b melt Summons molten rock that melts through defenses and leaves pools of searing magma. | 召唤沸腾熔岩融穿防御，在地面留下灼热的岩浆池。
+Magma 4 b scorch Erupts with volcanic heat, dealing heavy burst damage and inflicting persistent scorch. | 喷发火山地热，造成高额爆发伤害并施加持续灼烧。
+Crystal 4 b refract Manifests razor-sharp prism shards that refract energy into dazzling piercing beams. | 凝结锋利棱晶碎片，将能量折射为耀眼的穿透光束。
+Metal 4 b armor_up Controls ferrous alloys to reinforce armor plating and sharpen weapon edges. | 掌控铁质合金强化护甲涂层，并打磨武器锋芒。
+Wood 2 d root Commands ancient roots and vines to entangle foes and restrict their movement. | 驱使古老树根与藤蔓缠绕敌人，限制其行动自由。
+Nature 4 b bloom Awakens vibrant botanical life that blooms with restorative and entangling energy. | 唤醒蓬勃的草木生机，兼具恢复与缠绕控制之力。
+Beast 3 c roar Unleashes an apex predator's roar that intimidates foes and heightens feral instincts. | 发出顶级掠食者的咆哮震慑敌人，激发野性战斗本能。
+Dragon 7 s dragon_breath Channels draconic majesty to exhale devastating torrents of ancient dragon breath. | 引导巨龙威严，吐出毁灭性的远古龙息洪流。
+Phoenix 7 s resurrect Wreathes the user in immortal flames capable of resurrecting them from fatal blows. | 周身缭绕不死烈焰，具备从致命一击中浴火重生的力量。
+Demon 6 a hellfire Draws upon abyssal malice to unleash scorching hellfire upon all who oppose. | 借用深渊恶意，向所有阻挡者倾泻焚尽一切的地狱火。
+Angel 6 a divine_light Bestows celestial grace, smiting darkness with purifying beams of divine light. | 赐予天界恩典，以净化神圣之光惩戒黑暗。
+Ghost 4 b phase Shifts the body into an intangible spectral phase, letting enemy blows pass right through. | 将肉体切换为无形幽灵相位，让敌人的攻击直接穿透。
+Illusion 4 b mirror_image Projects lifelike mirror images that deceive attackers and open them to counter-strikes. | 投射逼真的镜像幻影迷惑攻击者，借机发动反击。
+Dream 5 a slumber Weaves tranquil mist that lulls enemies into deep slumber, leaving them defenseless. | 编织宁静迷雾催眠敌人，使其陷入沉睡而毫无防备。
+Nightmare 5 a terror Invades the target's mind with waking terror, shattering their focus and resolve. | 以清醒噩梦入侵目标心智，彻底击溃其专注与意志。
+Fear 4 b panic Radiates a chilling aura of dread that induces panic and weakens enemy offense. | 散发令人战栗的恐惧光环，诱发恐慌并削弱敌方攻势。
+Rage 4 b fury Fuels an unstoppable berserker fury that trades restraint for ferocious attack power. | 点燃不可阻挡的狂战士之怒，舍弃克制换取凶猛攻击力。
+Love 3 c charm Emits an enchanting resonance that charms foes and dulls their hostility. | 散发迷人共鸣魅惑敌人，瓦解其敌意与进攻欲望。
+Hope 5 a inspire Kindles an unyielding inner light that inspires peak performance against impossible odds. | 点燃不屈的内心之光，在绝境中激发出巅峰战力。
+Despair 5 a doom Shrouds the battlefield in hopeless gloom, marking enemies for inevitable doom. | 以绝望阴霾笼罩战场，为敌人打上注定毁灭的印记。
+Fate 8 s destiny Reads and tugs the threads of destiny to tilt critical moments in the user's favor. | 窥视并拨动命运丝线，在关键时刻让局势向己方倾斜。
+Destiny 8 s prophecy Aligns every strike with inevitable prophecy, ensuring attacks land with lethal precision. | 让每次攻击契合宿命预言，确保打击精准命中要害。
+Karma 7 s reflection Mirrors causality itself, reflecting enemy malice and damage back upon the attacker. | 映照因果律本身，将敌人的恶意与伤害如数反弹回去。
+Luck 6 a fortune Bends probability toward miraculous fortune, boosting critical strikes and favorable outcomes. | 扭曲概率招来奇迹好运，大幅提升暴击与有利结果。
+Fortune 5 a jackpot Attracts golden streaks of luck, hitting combat jackpots for amplified damage and rewards. | 吸引黄金般的财运与吉兆，触发战斗大奖放大伤害与收益。
+Misfortune 5 a jinx Afflicts targets with a lingering jinx that causes their attacks to falter and misfire. | 对目标施加厄运诅咒，使其攻击频频失误与哑火。
+Sound 3 c sonic_boom Compresses acoustic waves into concussive sonic booms that rattle internal organs. | 压缩声波形成震撼音爆，剧烈震荡敌人内脏。
+Vibration 4 b quake Generates high-frequency tremors that destabilize footing and quake through armor. | 产生高频震颤破坏敌人重心，使震波穿透厚重护甲。
+Plasma 6 a ionize Superheats surrounding air into ionized plasma that sears through any resistance. | 将周围空气超高温电离为等离子体，灼穿一切抗性。
+Nuclear 8 s fallout Unleashes atomic chain reactions, bathing the arena in devastating radiation fallout. | 引发原子链式反应，用毁灭性的核辐射尘笼罩竞技场。
+Atomic 8 s fission Splits subatomic bonds at point-blank range for catastrophic fission energy. | 在近距离裂解亚原子键，释放灾难性的核裂变能量。
+Quantum 9 s entanglement Entangles probability states to strike across multiple realities simultaneously. | 纠缠多重概率态，跨越平行现实同时发动攻击。
+Gravity_Well 7 s singularity Anchors a localized singularity that pulls enemies inward and crushes their guard. | 锚定局部重力奇点，将敌人向内拉扯并击碎其防御姿态。
+Black_Hole 9 s event_horizon Conjures a miniature event horizon that devours light, matter, and incoming attacks. | 召唤微型事件视界，吞噬光线、物质与来袭攻击。
+Star 7 s supernova Compresses stellar core energy to detonate in a blinding supernova burst. | 压缩恒星核心能量，以耀眼的超新星爆发轰击全场。
+Moon 5 a tide Draws upon lunar gravity to command surging tides and tranquil nocturnal power. | 借助太阴引力驾驭汹涌潮汐与静谧的夜幕之力。
+Eclipse 6 a shadow_veil Cloaks the field in a celestial shadow veil, blending solar heat with lunar mystery. | 以天体日蚀暗影遮蔽战场，融合烈阳炽热与寒月神秘。
+Meteor 6 a impact Calls down blazing celestial rock from the heavens for massive impact damage. | 从天穹召唤燃烧的陨星巨石，造成毁灭性的撞击伤害。
+Comet 5 a ice_tail Streaks forward with a freezing cosmic ice tail that chills and batters opponents. | 拖曳冰封宇宙彗尾疾驰突进，冻结并猛击对手。
+Storm 5 a lightning_strike Gathers tempest clouds that batter foes with relentless lightning strikes. | 汇聚雷暴乌云，以连绵不绝的落雷轰击敌人。
+Hurricane 5 a gale Summons roaring cyclonic gales that buffet enemies and deflect projectiles. | 召唤咆哮的飓风狂澜吹飞敌人，并偏转远程攻击。
+Tornado 4 b spin Whips up a high-speed vortex that spins targets off balance and shreds defenses. | 卷起高速龙卷漩涡，将目标卷得失去平衡并撕裂防御。
+Tsunami 5 a tidal_wave Unleashes a towering tidal wave that crashes over foes with crushing aquatic force. | 掀起遮天蔽日的海啸巨浪，以排山倒海的水压碾压敌人。
+Earthquake 5 a tremor Shatters the ground beneath enemies with violent seismic tremors. | 以猛烈的地震波撕裂大地，震碎敌人的立足点。
+Volcano 5 a eruption Triggers a catastrophic subterranean eruption of ash, fire, and molten stone. | 触发灾难性的地下火山喷发，倾泻火山灰、烈焰与熔岩。
+Blizzard 4 b frostbite Engulfs the battlefield in howling snowstorms that inflict severe frostbite. | 以狂号暴风雪吞没战场，对敌人造成严重的冻伤侵蚀。
+Frost 3 c chill Coats weapons and air in biting chill, slowing enemy reflexes with every breath. | 在武器与空气中凝结刺骨寒气，每次呼吸都迟缓敌人反射。
+Mist 2 d obscure Blankets the area in dense fog that obscures vision and lowers enemy accuracy. | 用浓密大雾笼罩区域，遮蔽视野并降低敌人命中率。
+Smoke 2 d choke Billows thick, suffocating ash clouds that choke foes and mask movements. | 滚滚升起窒息灰烟呛咳敌人，同时掩护自身行动。
+Steam 2 d scald Blasts superheated vapor that scalds exposed skin and clouds the battlefield. | 喷射超高温蒸汽烫伤裸露皮肤，并让战场云雾弥漫。
+Sand 2 d blind Whips up abrasive desert gusts that blind enemies and wear down their stamina. | 卷起粗粝的沙漠狂风致盲敌人，并不断消耗其体力。
+Dust 1 e irritation Kicks up fine particulate clouds causing constant irritation and minor distraction. | 扬起细微尘埃云团，造成持续刺激与轻微干扰。
+Mud 1 e mire Transforms solid ground into a heavy mire that bogs down enemy footwork. | 将坚实地面化为沉重泥沼，拖垮敌人的移动步伐。
+Slime 2 d sticky Coats targets in viscous, sticky gel that traps limbs and prevents counter-attacks. | 用粘稠胶液包裹目标，束缚四肢并阻止其发动反击。
+Web 2 d trap Spins tensile silk threads that ensnare opponents and restrict sudden movements. | 吐出高韧性蛛丝罗网困住对手，限制其突然动作。
+Venom 4 b toxic Injects fast-acting neurotoxins that paralyze nerves and deal toxic damage. | 注入速效神经毒素麻痹神经，造成持续剧毒伤害。
+Toxin 3 c poison Fills the air with noxious fumes that poison targets over sustained combat. | 让空气弥漫有害毒雾，在持久战中不断毒害目标。
+Decay 5 a rot Accelerates biological and structural rot, rapidly weakening enemy resilience. | 加速生物与结构的腐朽衰败，迅速削弱敌方韧性。
+Rot 3 c wither Spreads necrotic blight that withers vitality and saps physical strength. | 散布死灵枯萎瘟疫，凋零生命力并吸干体力。
+Curse 5 a hex Places a dark hex upon the foe, amplifying the damage they suffer from all sources. | 对敌人施放黑暗咒印，放大其承受的所有来源伤害。
+Blessing 5 a sanctify Invokes sacred protection that sanctifies the user and bolsters combat prowess. | 祈求神圣庇护祝福自身，全面增强战斗威能。
+Teleport 5 a blink Blinks instantaneously across short distances to dodge blows and reposition. | 在短距离内瞬间闪烁移动，躲避打击并调整站位。
+Portal 6 a gateway Opens dimensional gateways to redirect attacks and strike from blind spots. | 开启次元传送门偏转攻击，并从视觉死角发动奇袭。
+Mirror 4 b reflect Conjures reflective barriers that bounce enemy energy projectiles straight back. | 凝结镜面反射屏障，将敌方能量投射物原路弹回。
+Copy 6 a mimic Mimics the opponent's combat rhythm and techniques to turn their strength against them. | 模仿对手的战斗节奏与招式，以彼之道还施彼身。
+Steal 7 s pillage Siphons combat momentum and resources directly from the target mid-fight. | 在战斗中直接窃取目标的战斗势头与资源。
+Nullify 8 s silence Projects an anti-magic field that silences special effects and strips buffs. | 展开反魔力场沉默特殊效果，剥除敌方增益状态。
+Erase 9 s obliterate Wipes targeted space clean of obstacles and foes with pure obliterating force. | 以纯粹的抹除之力清空目标空间内的一切障碍与敌人。
+Create 9 s materialize Materializes weapons, shields, and energy constructs directly out of thin air. | 凭空具现化武器、护盾与能量造物投入战斗。
+Life 8 s regeneration Overflows with boundless vital energy, continuously regenerating health in combat. | 涌动无尽的生命本源能量，在战斗中持续恢复生命值。
+Death 8 s execution Channels the inevitability of the reaper to deliver lethal execution strikes. | 引导死神的必然宿命，斩出致命的处决一击。
+Rebirth 7 s revive Cycles eternal vitality, reviving the user's strength whenever pushed to the brink. | 循环永恒生机，每当被逼入绝境时便重焕战斗活力。
+Immortality 8 s invulnerable Grants an ageless, invulnerable physique that shrugs off mortal wounds. | 赋予不老不死之躯，轻松无视凡俗创伤。
+Invincibility 9 s absolute_defense Erects an impregnable sovereign barrier that nullifies harm and triggers fierce counters. | 竖起坚不可摧的至高壁垒，免疫伤害并触发猛烈反击。
+Omniscience 10 s foresight Grants absolute cosmic foresight, predicting and countering every enemy move before it happens. | 赋予绝对的宇宙全知视界，在敌人出招前便洞悉并反制一切。

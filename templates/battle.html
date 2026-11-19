@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Battle' if ui_lang=='en' else '戰鬥' }} - {{ status.username }}{% endblock %}
+
+
+<style>
+@keyframes hitFlash { 0% { filter: brightness(3); } 100% { filter: brightness(1); } }
+@keyframes floatUp { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-40px); } }
+@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+.hit-flash { animation: hitFlash 0.1s ease; }
+.dmg-num { position: absolute; color: #ff6b6b; font-weight: bold; font-size: 1.2rem; animation: floatUp 0.8s ease forwards; pointer-events: none; }
+.dmg-crit { color: #ffd54f; font-size: 1.5rem; }
+.shake-screen { animation: shake 0.2s ease; }
+#battle-scene { position: relative; }
+</style>
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回主选單' }}</a>
+  <div class="player-brief">
+    <span class="name">{{ status.username }}</span>
+    <span class="lvl">Lv.<span id="lvl-text">{{ status.level }}</span></span>
+    <span class="cp">⚡ <span id="cp-text">{{ "{:,}".format(status.combat_power) }}</span></span>
+  </div>
+</header>
+
+<section class="status-panel compact">
+  <div class="stat-row">
+    <div class="stat" title="HP {{ status.hp }} / {{ status.max_hp }}">
+      <span class="label">{{ 'HP' if ui_lang=='en' else '生命' }}</span>
+      <div class="bar-wrap">
+        <div class="bar hp" id="hp-bar" style="width: {{ (status.hp / status.max_hp * 100)|int }}%"></div>
+      </div>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat" title="XP {{ status.xp }} / {{ status.xp_to_next_level }}">
+      <span class="label">{{ 'XP' if ui_lang=='en' else '經驗' }}</span>
+      <div class="bar-wrap">
+        <div class="bar xp" id="xp-bar" style="width: {{ status.xp_percent }}%"></div>
+      </div>
+    </div>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-item">🪙 <span id="gold-text">{{ "{:,}".format(status.gold) }}</span></div>
+    <div class="stat-item" title="{{ status.weapon_desc }}">⚔️ [{{ status.weapon_tier }}] {{ get_display_name(status.weapon, ui_lang) }} ({{ status.weapon_range }}/{{ status.weapon_speed }})</div>
+    <div class="stat-item" title="{{ status.armor_desc }}">🛡️ [{{ status.armor_tier }}] {{ get_display_name(status.armor, ui_lang) }}</div>
+  </div>
+</section>
+
+
+<div id="battle-scene" style="display:none;text-align:center;padding:10px;background:#000;border-radius:8px;margin:12px 0;">
+  <img id="anim-img" src="/static/img/anim/f1.jpg" style="width:400px;height:250px;object-fit:contain;">
+</div>
+<section class="battle-controls">
+  <h2>{{ 'Auto Fight' if ui_lang=='en' else '智能掛機戰鬥' }}</h2>
+  <p class="hint">{{ 'Choose limited waves or fight until death / stop.' if ui_lang=='en' else '可选择有限波數或持續掛機直到死亡/停止。' }}</p>
+  <div class="wave-select">
+    <label>{{ 'Mode:' if ui_lang=='en' else '模式：' }}</label>
+    <select id="fight-mode">
+      <option value="limited">{{ 'Limited waves' if ui_lang=='en' else '有限波數' }}</option>
+      <option value="endless" selected>{{ 'Endless (until death or stop)' if ui_lang=='en' else '持續掛機（直到死亡或停止）' }}</option>
+    </select>
+  </div>
+  <div class="wave-select" id="waves-wrap" style="display:none">
+    <label>{{ 'Waves:' if ui_lang=='en' else '波數：' }}</label>
+    <select id="max-waves">
+      <option value="5">5</option>
+      <option value="10" selected>10</option>
+      <option value="20">20</option>
+    </select>
+  </div>
+  <div class="btn-row">
+    <button id="start-fight" class="btn btn-primary btn-lg">{{ 'Start' if ui_lang=='en' else '開始掛機' }}</button>
+    <button id="stop-fight" class="btn btn-outline btn-lg" style="display:none;border-color:var(--red);color:var(--red)">{{ 'Stop' if ui_lang=='en' else '停止掛機' }}</button>
+    <button id="use-potion" class="btn btn-outline">{{ 'Use Potion' if ui_lang=='en' else '使用生命藥劑' }}</button>
+  </div>
+</section>
+
+<section class="battle-result" id="result-panel" style="display:none">
+  <div id="result-stats"></div>
+  <div class="battle-log" id="battle-log"></div>
+  <a href="{{ url_for('dashboard') }}" class="btn btn-outline" style="margin-top:10px">{{ 'Back' if ui_lang=='en' else '返回主选單' }}</a>
+  <button id="again-btn" class="btn btn-primary" style="display:none;margin-top:10px">{{ 'Again' if ui_lang=='en' else '再打一次' }}</button>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+let fighting = false;
+let stopRequested = false;
+
+// Reset state on page load
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('start-fight').style.display = 'inline-block';
+  document.getElementById('stop-fight').style.display = 'none';
+  document.getElementById('result-panel').style.display = 'none';
+  fighting = false;
+  stopRequested = false;
+});
+
+document.getElementById('fight-mode').addEventListener('change', e => {
+  document.getElementById('waves-wrap').style.display = e.target.value === 'limited' ? 'block' : 'none';
+});
+
+function updateBars(p) {
+  if (!p) return;
+  const hpBar = document.getElementById('hp-bar');
+  const xpBar = document.getElementById('xp-bar');
+  if (hpBar && p.max_hp) hpBar.style.width = Math.min(100, Math.round(p.hp / p.max_hp * 100)) + '%';
+  if (xpBar && p.xp_percent !== undefined) xpBar.style.width = p.xp_percent + '%';
+  const gold = document.getElementById('gold-text');
+  if (gold && p.gold !== undefined) gold.textContent = p.gold.toLocaleString();
+  const lvl = document.getElementById('lvl-text');
+  if (lvl && p.level !== undefined) lvl.textContent = p.level;
+  const cp = document.getElementById('cp-text');
+  if (cp && p.combat_power !== undefined) cp.textContent = p.combat_power.toLocaleString();
+}
+
+async function runBatch(maxWaves) {
+  const res = await fetch('/api/fight', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({max_waves: maxWaves})
+  });
+  return await res.json();
+}
+
+function appendLog(lines, logEl, speedMs) {
+  return new Promise(resolve => {
+    let i = 0;
+    function next() {
+      if (i >= lines.length || stopRequested) { resolve(); return; }
+      const line = document.createElement('div');
+      const text = lines[i];
+      line.className = 'log-line afk-pulse';
+      if (text.includes('你攻擊') || text.includes('你造成') || text.includes('擊败')) {
+        line.style.color = '#4caf50';
+      } else if (text.includes('受到') || text.includes('反擊') || text.includes('戰败')) {
+        line.style.color = '#ef5350';
+      } else if (text.includes('能力') || text.includes('💊') || text.includes('智能')) {
+        line.style.color = '#5ccfe6';
+      } else if (text.includes('---')) {
+        line.style.color = '#ffd54f';
+      }
+      line.textContent = text;
+      logEl.appendChild(line);
+      // Sound and vibration
+      if (text.includes('暴擊') || text.includes('CRIT')) { playSound('crit'); if(navigator.vibrate) navigator.vibrate(50); }
+      else if (text.includes('攻擊') || text.includes('hit')) { playSound('hit'); }
+      else if (text.includes('擊敗') || text.includes('Defeated')) { playSound('win'); }
+      logEl.scrollTop = logEl.scrollHeight;
+      // Update HP from log
+      const hpMatch = text.match(/剩餘 HP:\s*(\d+)/i) || text.match(/\(HP:\s*(\d+)\)/i);
+      if (hpMatch) {
+        const hpBar = document.getElementById('hp-bar');
+        if (hpBar) {
+          const maxHp = parseInt(document.getElementById('hp-text')?.textContent?.split('/')[1]) || 1000;
+          hpBar.style.width = Math.min(100, Math.round(parseInt(hpMatch[1]) / maxHp * 100)) + '%';
+        }
+      }
+      i++;
+      setTimeout(next, speedMs);
+    }
+    next();
+  });
+}
+
+document.getElementById('start-fight').addEventListener('click', async () => {
+  if (fighting) return;
+  fighting = true;
+  // animation disabled
+  stopRequested = false;
+  const mode = document.getElementById('fight-mode').value;
+  const btn = document.getElementById('start-fight');
+  const stopBtn = document.getElementById('stop-fight');
+  btn.style.display = 'none';
+  stopBtn.style.display = 'inline-block';
+
+  const panel = document.getElementById('result-panel');
+  panel.style.display = 'block';
+  const logEl = document.getElementById('battle-log');
+  const statsEl = document.getElementById('result-stats');
+  logEl.innerHTML = '';
+
+  let totalKills = 0, totalXp = 0, totalGold = 0, waves = 0;
+  const batchSize = mode === 'endless' ? 5 : parseInt(document.getElementById('max-waves').value);
+
+  while (!stopRequested) {
+    const data = await runBatch(batchSize);
+    if (!data.ok) { alert(data.error || 'Fight failed'); break; }
+    totalKills += data.kills || 0;
+    totalXp += data.xp_gained || 0;
+    totalGold += data.gold_gained || 0;
+    waves += data.waves || 0;
+    statsEl.innerHTML = '<div class="result-item">Kills: <strong>' + totalKills + '</strong></div>' +
+      '<div class="result-item">XP: <strong>+' + totalXp.toLocaleString() + '</strong></div>' +
+      '<div class="result-item">Gold: <strong>+' + totalGold.toLocaleString() + '</strong></div>' +
+      '<div class="result-item">Waves: <strong>' + waves + '</strong></div>';
+    updateBars(data.player);
+    await appendLog(data.log || [], logEl, 400);
+    if (mode === 'limited') break;
+    if (data.died || (data.player && data.player.hp <= 30)) {
+      const line = document.createElement('div');
+      line.className = 'log-line afk-pulse';
+      line.style.color = '#ef5350';
+      line.textContent = '❌ Defeated. Auto fight stopped.';
+      logEl.appendChild(line);
+      break;
+    }
+  }
+  fighting = false;
+  stopBtn.style.display = 'none';
+  btn.style.display = 'inline-block';
+  document.getElementById('again-btn').style.display = 'inline-block';
+});
+
+document.getElementById('stop-fight').addEventListener('click', () => {
+  stopRequested = true;
+  fighting = false;
+  document.getElementById('start-fight').style.display = 'inline-block';
+  document.getElementById('stop-fight').style.display = 'none';
+});
+
+document.getElementById('use-potion').addEventListener('click', async () => {
+  const res = await fetch('/api/heal', {method: 'POST'});
+  const data = await res.json();
+  if (data.ok) { updateBars(data.status); alert('Healed ' + data.healed); }
+  else alert(data.error || 'No potion');
+});
+
+document.getElementById('again-btn').addEventListener('click', () => {
+  document.getElementById('start-fight').click();
+});
+</script>
+{% endblock %}

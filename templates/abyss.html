@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Abyss' if ui_lang=='en' else '無尽深淵' }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回主选單' }}</a>
+  <div class="player-brief">
+    <span class="name">{{ status.username }}</span>
+    <span>🔮 <span id="token-display">{{ status.abyss_tokens }}</span></span>
+  </div>
+</header>
+
+<section class="status-panel">
+  <div class="stat-grid">
+    <div class="stat-item">{{ 'Floor' if ui_lang=='en' else '當前層數' }}<br><strong>{{ 'Floor' if ui_lang=='en' else '第' }} {{ status.abyss_floor }}</strong></div>
+    <div class="stat-item">{{ 'HP' if ui_lang=='en' else '生命' }}<br><strong>{{ status.hp }} / {{ status.max_hp }}</strong></div>
+    <div class="stat-item">{{ 'Power' if ui_lang=='en' else '戰力' }}<br><strong>{{ status.combat_power }}</strong></div>
+  </div>
+</section>
+
+<section class="battle-controls">
+  <h2>{{ 'Boss Rush' if ui_lang=='en' else '深淵首领试煉' }}</h2>
+  <p class="hint">{{ 'Auto clear floors. Win gold, XP, and abyss tokens.' if ui_lang=='en' else '自動挑戰連續多層首领，勝利獲得金幣、經驗與深淵代幣。' }}</p>
+  <label>{{ 'Floors:' if ui_lang=='en' else '挑戰層數：' }}</label>
+  <select id="floors">
+    <option value="3">3</option>
+    <option value="5" selected>5</option>
+    <option value="10">10</option>
+  </select>
+  <button id="start-abyss" class="btn btn-primary btn-lg">{{ 'Start' if ui_lang=='en' else '開始自動爬塔' }}</button>
+</section>
+
+<section class="battle-result" id="abyss-result" style="display:none;">
+  <div id="abyss-log" class="battle-log"></div>
+</section>
+
+<section class="inventory-section">
+  <h2>{{ 'Token Shop' if ui_lang=='en' else '深淵代幣商店' }}</h2>
+  <p class="hint">{{ 'Exchange tokens for potions, gold, and A gear.' if ui_lang=='en' else '可用代幣兌換藥劑、金幣，以及 A 級武器與防具。' }}</p>
+  <div class="item-list">
+    <div class="item-card"><div class="item-name">{{ 'Potion x10' if ui_lang=='en' else '藥劑 x10' }}</div><div class="item-stat">5 {{ 'tokens' if ui_lang=='en' else '代幣' }}</div><button class="btn btn-sm btn-primary shop-btn" data-item="potion">{{ 'Buy' if ui_lang=='en' else '購買' }}</button></div>
+    <div class="item-card"><div class="item-name">{{ 'Gold +100,000' if ui_lang=='en' else '金幣 +100,000' }}</div><div class="item-stat">20 {{ 'tokens' if ui_lang=='en' else '代幣' }}</div><button class="btn btn-sm btn-primary shop-btn" data-item="gold">{{ 'Buy' if ui_lang=='en' else '購買' }}</button></div>
+    <div class="item-card"><div class="item-name">A {{ 'Weapon' if ui_lang=='en' else '級武器' }}</div><div class="item-stat">30 {{ 'tokens' if ui_lang=='en' else '代幣' }}</div><button class="btn btn-sm btn-primary shop-btn" data-item="a_weapon">{{ 'Buy' if ui_lang=='en' else '購買' }}</button></div>
+    
+    <div class="item-card"><div class="item-name">A {{ 'Armor' if ui_lang=='en' else '級防具' }}</div><div class="item-stat">30 {{ 'tokens' if ui_lang=='en' else '代幣' }}</div><button class="btn btn-sm btn-primary shop-btn" data-item="a_armor">{{ 'Buy' if ui_lang=='en' else '購買' }}</button></div>
+    
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('start-abyss').addEventListener('click', async () => {
+  const btn = document.getElementById('start-abyss');
+  btn.disabled = true;
+  btn.textContent = 'Fighting...';
+  const floors = parseInt(document.getElementById('floors').value) || 5;
+  const res = await fetch('/api/abyss-rush', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({floors: floors})});
+  const data = await res.json();
+  const panel = document.getElementById('abyss-result');
+  const log = document.getElementById('abyss-log');
+  panel.style.display = 'block';
+  btn.disabled = false;
+  btn.textContent = '{{ "Start" if ui_lang=="en" else "開始自動爬塔" }}';
+  if (!data.ok) { log.textContent = data.error || 'Failed'; return; }
+  log.innerHTML = '';
+  const lines = data.log || [];
+  let i = 0;
+  function showNext() {
+    if (i >= lines.length) return;
+    const line = document.createElement('div');
+    line.className = 'log-line';
+    line.textContent = lines[i];
+    if (lines[i].includes('擊敗') || lines[i].includes('Defeated')) line.style.color = '#4caf50';
+    else if (lines[i].includes('戰敗') || lines[i].includes('倒下')) line.style.color = '#ef5350';
+    else if (lines[i].includes('---')) line.style.color = '#ffd54f';
+    log.appendChild(line);
+    log.scrollTop = log.scrollHeight;
+    i++;
+    setTimeout(showNext, 300);
+  }
+  showNext();
+  if (data.player && data.player.abyss_tokens !== undefined) {
+    document.getElementById('token-display').textContent = data.player.abyss_tokens;
+  }
+});
+document.querySelectorAll('.shop-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const res = await fetch('/api/abyss-shop', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({item: btn.dataset.item})});
+    const data = await res.json();
+    alert(data.ok ? (data.message || 'Done') : (data.error || 'Failed'));
+    if (data.ok) location.reload();
+  });
+});
+</script>
+{% endblock %}

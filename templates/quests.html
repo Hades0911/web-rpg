@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Daily Quests' if ui_lang=='en' else '每日任務' }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回' }}</a>
+  <h1 style="margin:0;font-size:1.1rem;">📋 {{ 'Daily Quests' if ui_lang=='en' else '每日任務' }}</h1>
+</header>
+
+<section class="inventory-section">
+  <div class="item-list" style="display:grid;">
+    {% for q in quests %}
+    <div class="item-card" style="{% if q.progress >= q.goal %}border-color:#4caf50{% endif %}">
+      <div class="item-name">{{ q.name }}</div>
+      <div class="item-stat">{{ q.progress }}/{{ q.goal }}</div>
+      <div style="margin-top:8px;">
+        {% if q.progress >= q.goal %}
+          {% if q.id in claimed %}
+          <span style="color:#4caf50">✅ {{ 'Claimed' if ui_lang=='en' else '已領取' }}</span>
+          {% else %}
+          <button class="btn btn-sm btn-primary claim-btn" data-id="{{ q.id }}">{{ 'Claim' if ui_lang=='en' else '領取' }} {{ q.reward }}{% if q.id == 'abyss1' %}🔮{% else %}g{% endif %}</button>
+          {% endif %}
+        {% else %}
+          <div style="background:#333;height:6px;border-radius:3px;"><div style="background:#6c8cff;height:100%;width:{{ (q.progress / q.goal * 100)|int }}%;border-radius:3px;"></div></div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.querySelectorAll('.claim-btn').forEach(btn => {
+  btn.onclick = async () => {
+    const res = await fetch('/api/claim-quest', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({quest_id: btn.dataset.id})});
+    const data = await res.json();
+    alert(data.ok ? '領取成功！' : (data.error || '失敗'));
+    if (data.ok) location.reload();
+  };
+});
+</script>
+{% endblock %}

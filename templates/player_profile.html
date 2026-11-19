@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ profile.username }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('leaderboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回' }}</a>
+  <h1 style="margin:0;font-size:1.1rem;">👤 {{ profile.username }}</h1>
+</header>
+
+<section class="status-panel">
+  <div class="stat-grid">
+    <div class="stat-item">{{ 'Level' if ui_lang=='en' else '等級' }}<br><strong>Lv.{{ profile.level }}</strong></div>
+    <div class="stat-item">{{ 'Combat Power' if ui_lang=='en' else '戰力' }}<br><strong>{{ profile.combat_power }}</strong></div>
+    <div class="stat-item">{{ 'Abyss Floor' if ui_lang=='en' else '深淵層數' }}<br><strong>{{ profile.abyss_floor }}</strong></div>
+  </div>
+</section>
+
+<section class="status-panel">
+  <div class="stat-grid">
+    <div class="stat-item">{{ 'Weapon' if ui_lang=='en' else '武器' }}<br><strong>{{ profile.weapon }}</strong></div>
+    <div class="stat-item">{{ 'Armor' if ui_lang=='en' else '防具' }}<br><strong>{{ profile.armor }}</strong></div>
+  </div>
+</section>
+
+<section class="status-panel">
+  <button class="btn btn-primary" id="pvp-btn" data-target="{{ profile.username }}">⚔️ {{ 'Challenge' if ui_lang=='en' else '挑戰' }}</button>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('pvp-btn').onclick = async () => {
+  const res = await fetch('/api/pvp', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({target: document.getElementById('pvp-btn').dataset.target})});
+  const data = await res.json();
+  if (data.ok) {
+    let msg = data.winner + ' wins!\n';
+    if (data.log) msg += data.log.join('\n') + '\n';
+    msg += 'Rounds: ' + (data.rounds || '?') + (data.reward ? '\nReward: ' + data.reward + ' gold' : '');
+    alert(msg);
+  } else {
+    alert(data.error || 'Failed');
+  }
+};
+</script>
+{% endblock %}

@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Blacksmith' if ui_lang=='en' else '鐵匠铺' }}{% endblock %}
+
+{% block content %}
+<header class="topbar">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline">← {{ 'Back' if ui_lang=='en' else '返回主选單' }}</a>
+  <div class="player-brief">
+    <span class="name">{{ status.username }}</span>
+    <span>🪙 {{ "{:,}".format(status.gold) }}</span>
+  </div>
+</header>
+
+
+
+<section class="battle-controls">
+  <h2>{{ 'Forge Gear' if ui_lang=='en' else '鍛造裝備' }}</h2>
+  <div class="btn-row">
+    <button class="btn btn-primary" id="forge-w-1">{{ 'Forge 1 Weapon (5,000g)' if ui_lang=='en' else '抽 1 把武器 (5,000g)' }}</button>
+    <button class="btn btn-primary" id="forge-w-10">{{ 'Forge 10 Weapons (45,000g)' if ui_lang=='en' else '抽 10 把武器 (45,000g)' }}</button>
+    <button class="btn btn-primary" id="forge-a-1">{{ 'Forge 1 Armor (5,000g)' if ui_lang=='en' else '抽 1 件防具 (5,000g)' }}</button>
+    <button class="btn btn-primary" id="forge-a-10">{{ 'Forge 10 Armors (45,000g)' if ui_lang=='en' else '抽 10 件防具 (45,000g)' }}</button>
+    <button class="btn btn-outline" id="buy-potion">{{ 'Buy Potion x5 (10,000g)' if ui_lang=='en' else '買藥劑 x5 (10,000g)' }}</button>
+  </div>
+</section>
+
+<section class="battle-controls">
+  <h2>{{ 'Upgrade Current' if ui_lang=='en' else '強化當前裝備' }}</h2>
+  <div class="btn-row">
+    <button class="btn btn-primary" id="up-w">{{ 'Upgrade Weapon +1' if ui_lang=='en' else '強化武器 +1' }}</button>
+  </div>
+  <div class="btn-row" style="margin-top:8px;">
+    <select id="armor-slot" class="wave-select" style="width:auto;">
+      <option value="chest">{{ 'Chest' if ui_lang=='en' else '胸甲' }}</option>
+      <option value="helmet">{{ 'Helmet' if ui_lang=='en' else '頭盔' }}</option>
+      <option value="gloves">{{ 'Gloves' if ui_lang=='en' else '手套' }}</option>
+      <option value="boots">{{ 'Boots' if ui_lang=='en' else '靴子' }}</option>
+      <option value="cloak">{{ 'Cloak' if ui_lang=='en' else '披風' }}</option>
+    </select>
+    <button class="btn btn-primary" id="up-a">{{ 'Upgrade Armor +1' if ui_lang=='en' else '強化防具 +1' }}</button>
+  </div>
+  <p class="hint">{{ 'Cost depends on current stats. Duplicate forge becomes upgrade and refunds 1,000g.' if ui_lang=='en' else '強化費用依當前屬性計算，重複抽到的裝備會自動強化並返還 1,000g。' }}</p>
+</section>
+
+
+<div id="roll-anim" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:9999;text-align:center;padding-top:15%;">
+  <div id="roll-phase" style="font-size:0.9rem;color:#888;margin-bottom:10px;">{{ 'Charging...' if ui_lang=='en' else '蓄力中...' }}</div>
+  <div id="roll-circle" style="width:150px;height:150px;margin:0 auto;border-radius:50%;background:radial-gradient(circle,#333,#111);border:3px solid #444;display:flex;align-items:center;justify-content:center;font-size:2rem;transition:all 0.3s;">
+    <span id="roll-icon" style="font-size:2.5rem;font-weight:bold;">✨</span>
+  </div>
+  <p id="roll-text" style="margin-top:15px;font-size:1.2rem;">{{ 'Summoning' if ui_lang=='en' else '召喚中' }}</p>
+  <div id="roll-result" style="display:none;margin-top:15px;font-size:1rem;"></div>
+  <button id="roll-close" class="btn btn-outline" style="display:none;position:absolute;top:20px;right:20px;padding:8px 20px;" onclick="document.getElementById('roll-anim').style.display='none'">{{ '✕ Close' if ui_lang=='en' else '✕ 關閉' }}</button>
+</div>
+<div id="result" class="battle-result forge-result" style="display:none;margin-top:12px;"></div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+function showUpgradeResult(data) {
+  if (!data.ok) { alert(data.error || 'Failed'); return; }
+  let msg = '';
+  if (data.old_atk !== undefined) {
+    msg = data.name + ' +' + data.old_lv + ' → +' + data.new_lv + '\nATK: ' + data.old_atk + ' → ' + data.new_atk;
+  } else if (data.old_def !== undefined) {
+    msg = data.name + ' +' + data.old_lv + ' → +' + data.new_lv + '\nDEF: ' + data.old_def + ' → ' + data.new_def + '\nHP: ' + data.old_hp + ' → ' + data.new_hp;
+  }
+  alert(msg || 'Upgraded!');
+  location.reload();
+}
+
+async function post(url, body) {
+  const res = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body||{})});
+  return await res.json();
+}
+
+function startRoll() {
+  const anim = document.getElementById('roll-anim');
+  const circle = document.getElementById('roll-circle');
+  const text = document.getElementById('roll-text');
+  const phase = document.getElementById('roll-phase');
+  const icon = document.getElementById('roll-icon');
+  anim.style.display = 'block';
+  document.getElementById('roll-circle').style.display = 'flex';
+  document.getElementById('roll-icon').style.display = 'inline';
+  document.getElementById('roll-text').style.display = 'block';
+  document.getElementById('roll-result').style.display = 'none';
+  document.getElementById('roll-close').style.display = 'none';
+  
+  const colors = ['#9e9e9e','#26c6da','#ab47bc','#ffd54f','#ef5350'];
+  const names = ['D','C','B','A','S'];
+  const icons = ['⚪','🔵','🟣','🟡','🔴'];
+  
+  let step = 0;
+  const timer = setInterval(() => {
+    const ci = step % 5;
+    phase.textContent = step < 10 ? '{{ 'Charging...' if ui_lang=='en' else '蓄力中...' }}' : '稀有度判定...';
+    circle.style.background = 'radial-gradient(circle,' + colors[ci] + ',#111)';
+    circle.style.borderColor = colors[ci];
+    circle.style.transform = 'scale(' + (1 + Math.sin(step * 0.5) * 0.1) + ')';
+    icon.textContent = icons[ci];
+    icon.innerHTML = '<span class="tier tier-' + names[ci] + '" style="font-size:2.5rem;">' + names[ci] + '</span>';
+    text.textContent = '';
+    step++;
+  }, 80);
+  return timer;
+}
+function stopRoll(timer) { clearInterval(timer); }
+
+function showRollResult(data) {
+  const colors = {S:'#ef5350', A:'#ffd54f', B:'#ab47bc', C:'#26c6da', D:'#9e9e9e'};
+  const circle = document.getElementById('roll-circle');
+  const icon = document.getElementById('roll-icon');
+  const phase = document.getElementById('roll-phase');
+  // Show highest tier
+  if (data.results && data.results.length) {
+    const tiers = ['S','A','B','C','D'];
+    let best = 'D';
+    data.results.forEach(r => { if (tiers.indexOf(r.tier) < tiers.indexOf(best)) best = r.tier; });
+    circle.style.background = 'radial-gradient(circle,' + colors[best] + ',#111)';
+    circle.style.borderColor = colors[best];
+    icon.innerHTML = '<span class="tier tier-' + best + '" style="font-size:2.5rem;">' + best + '</span>';
+  }
+  const text = document.getElementById('roll-text');
+  const resultDiv = document.getElementById('roll-result');
+  const closeBtn = document.getElementById('roll-close');
+  
+  if (!data.ok || !data.results || !data.results.length) {
+    phase.textContent = '{{ 'Failed' if ui_lang=='en' else '失敗' }}';
+    resultDiv.innerHTML = '<span style="color:#ef5350">' + (data.error || '失敗') + '</span>';
+    resultDiv.style.display = 'block';
+    closeBtn.style.display = 'inline-block';
+    return;
+  }
+  
+  const tierOrder = {S:5, A:4, B:3, C:2, D:1};
+  
+  let highest = data.results[0];
+  data.results.sort((a,b) => (tierOrder[b.tier]||0) - (tierOrder[a.tier]||0));
+    data.results.forEach(r => {
+    if ((tierOrder[r.tier] || 0) > (tierOrder[highest.tier] || 0)) highest = r;
+  });
+  
+  circle.style.borderColor = colors[highest.tier];
+  circle.style.boxShadow = '0 0 40px ' + colors[highest.tier];
+  circle.style.transform = 'scale(1.2)';
+  document.getElementById('roll-icon').innerHTML = '<span class="tier tier-' + highest.tier + '" style="font-size:3rem;">' + highest.tier + '</span>';
+  text.textContent = highest.tier;
+  phase.textContent = '{{ 'Highest:' if ui_lang=='en' else '最高：' }} ' + highest.tier;
+  
+  setTimeout(() => {
+    circle.style.display = 'none';
+    // keep icon visible
+    text.style.display = 'none';
+    phase.textContent = '{{ 'Got' if ui_lang=='en' else '獲得' }} ' + data.results.length + ' {{ 'items' if ui_lang=='en' else '件' }}';
+    let html = '<div style="max-height:60vh;overflow-y:auto;padding:10px;">';
+    data.results.sort((a,b) => (tierOrder[b.tier]||0) - (tierOrder[a.tier]||0));
+    data.results.forEach(r => {
+      html += '<div style="margin:8px auto;padding:12px;background:#1a1a1a;border-radius:8px;border-left:4px solid ' + colors[r.tier] + ';max-width:400px;">';
+      html += '<span class="tier tier-' + r.tier + '" style="font-size:1.2rem;">' + r.tier + '</span> ';
+      html += '<span style="font-size:1rem;">' + (r.display || r.name) + '</span>';
+      html += '</div>';
+    });
+    html += '</div>';
+    resultDiv.innerHTML = html;
+    resultDiv.style.display = 'block';
+    closeBtn.style.display = 'inline-block';
+  }, 2000);
+}
+function showResult(data) {
+  const el = document.getElementById('result');
+  el.style.display = 'block'; el.classList.add('forge-result');
+  if (!data.ok) { el.textContent = data.error || 'Failed'; return; }
+  let lines = [];
+  const colors = {S:'#ef5350', A:'#ffd54f', B:'#ab47bc', C:'#26c6da', D:'#9e9e9e'};
+  (data.results || []).forEach(r => {
+    let t = (r.tier||'') + ' ' + r.name + ' (ATK/DEF ' + (r.atk||r.defense||'') + ')';
+    if (r.new) t += ' [NEW]';
+    else if (r.upgraded) t += ' [+1]';
+    lines.push('<span style="color:' + (colors[r.tier]||'#fff') + '">' + t + '</span>');
+  });
+  el.innerHTML = lines.join('<br>') || 'Done';
+  setTimeout(() => location.reload(), 2500);
+}
+document.getElementById('forge-w-1').onclick = async () => { 
+  const anim = startRoll();
+  const apiPromise = post('/api/forge', {type:'weapon', count:1});
+  await new Promise(r => setTimeout(r, 3000));
+  stopRoll(anim);
+  const d = await apiPromise;
+  showRollResult(d); 
+};
+document.getElementById('forge-w-10').onclick = async () => { const anim = startRoll(); const apiPromise = post('/api/forge', {type:'weapon', count:10}); await new Promise(r => setTimeout(r, 3000)); stopRoll(anim); const d = await apiPromise; showRollResult(d); };
+document.getElementById('forge-a-1').onclick = async () => { const anim = startRoll(); const apiPromise = post('/api/forge', {type:'armor', count:1}); await new Promise(r => setTimeout(r, 3000)); stopRoll(anim); const d = await apiPromise; showRollResult(d); };
+document.getElementById('forge-a-10').onclick = async () => { const anim = startRoll(); const apiPromise = post('/api/forge', {type:'armor', count:10}); await new Promise(r => setTimeout(r, 3000)); stopRoll(anim); const d = await apiPromise; showRollResult(d); };
+document.getElementById('buy-potion').onclick = async () => { const d = await post('/api/buy-potions', {amount:5}); showResult({ok:d.ok, results:[{tier:'D', name:'Potion x5', atk:''}], error:d.error}); };
+document.getElementById('up-w').onclick = async () => { const d = await post('/api/upgrade', {type:'weapon'}); showUpgradeResult(d); showResult({ok:d.ok, results:[{tier:'A', name:'Upgraded', atk:''}], error:d.error}); };
+document.getElementById('up-a').onclick = async () => { const d = await post('/api/upgrade', {type:'armor', slot: document.getElementById('armor-slot').value}); showUpgradeResult(d); showResult({ok:d.ok, results:[{tier:'A', name:'Upgraded', atk:''}], error:d.error}); };
+</script>
+{% endblock %}
